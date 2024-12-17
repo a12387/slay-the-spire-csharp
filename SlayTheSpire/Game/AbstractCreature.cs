@@ -34,7 +34,7 @@ namespace SlayTheSpire.Game
             }
             for (int i = 0; i < BuffList.Count; i++)
             {
-                BuffList[i].OnAttack(amount);
+                BuffList[i].OnAttack(ref amount);
             }
             target.Hurt(amount);
         }
@@ -46,7 +46,7 @@ namespace SlayTheSpire.Game
             }
             for (int i =0; i < BuffList.Count; i++)
             {
-                BuffList[i].OnHurt(amount);
+                BuffList[i].OnHurt(ref amount);
             }
             if (CurrentBlock > 0)
             {
@@ -75,7 +75,7 @@ namespace SlayTheSpire.Game
             }
             for (int i = 0; i < BuffList.Count; i++)
             {
-                BuffList[i].OnLoseHealth(amount);
+                BuffList[i].OnLoseHealth(ref amount);
             }
             CurrentHealth -= amount;
             if (CurrentHealth <= 0)
@@ -125,6 +125,18 @@ namespace SlayTheSpire.Game
         public void Die()
         {
 
+        }
+        public void ApplyPower(AbstractPower power)
+        {
+            int index = BuffList.FindIndex(pwr => pwr.Name.Equals(power.Name)); 
+            if(index < 0)
+            {
+                BuffList.Add(power);
+            }
+            else
+            {
+                BuffList[index].Amount += power.Amount;
+            }
         }
     }
 }

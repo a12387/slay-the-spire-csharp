@@ -23,6 +23,7 @@ namespace SlayTheSpire.Game
         public int Energy { get; set; }
         public const int MaxEnergy = 5;
         public const int MaxHandCards = 10;
+        public const int NumDrawCardsEachTurn = 5;
 
         protected AbstractPlayer(string name, int maxHealth) : base(true, name, maxHealth)
         {
@@ -34,7 +35,7 @@ namespace SlayTheSpire.Game
             Facing = PlayerFacing.Right;
             Energy = MaxEnergy;
         }
-        public void BattleStart()
+        public void BeforeBattle()
         {
             MasterDeck.Clear();
             DrawPile.Clear();
@@ -48,11 +49,19 @@ namespace SlayTheSpire.Game
             MasterDeck.ForEach(i => DrawPile.Add(i));
             DrawPile.Shuffle();
         }
+        public void TurnStart()
+        {
+            for (int i = 0; i < BuffList.Count; i++)
+            {
+                BuffList[i].OnTurnStart();
+            }
+            DrawCard(NumDrawCardsEachTurn);
+        }
         public void DrawCard(int count)
         {
             for (int i = 0; i < BuffList.Count; i++)
             {
-                BuffList[i].OnDrawCard(count);
+                BuffList[i].OnDrawCard(ref count);
             }
             if(count == 0)
             {
