@@ -30,11 +30,13 @@ namespace SlayTheSpire.Game
         {
 
         }
-        public abstract void act(AbstractPlayer player);
+        public abstract void Act(AbstractPlayer player);
         public abstract void GenerateNewIntent();
         public virtual void BeforeBattle()
         {
             GenerateNewIntent();
+            // Add buff or others
         }
+        
     }
 }

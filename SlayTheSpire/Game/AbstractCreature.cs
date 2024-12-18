@@ -62,7 +62,7 @@ namespace SlayTheSpire.Game
                 }
             }
             CurrentHealth -= amount;
-            if (CurrentHealth <= 0)
+            if (CurrentHealth <= 0 && Die != null)
             {
                 Die();
             }
@@ -78,7 +78,7 @@ namespace SlayTheSpire.Game
                 BuffList[i].OnLoseHealth(ref amount);
             }
             CurrentHealth -= amount;
-            if (CurrentHealth <= 0)
+            if (CurrentHealth <= 0 && Die != null)
             {
                 Die();
             }
@@ -122,10 +122,6 @@ namespace SlayTheSpire.Game
                 CurrentHealth = MaxHealth;
             }
         }
-        public void Die()
-        {
-
-        }
         public void ApplyPower(AbstractPower power)
         {
             int index = BuffList.FindIndex(pwr => pwr.Name.Equals(power.Name)); 
@@ -138,5 +134,6 @@ namespace SlayTheSpire.Game
                 BuffList[index].Amount += power.Amount;
             }
         }
+        public event Action? Die;
     }
 }
