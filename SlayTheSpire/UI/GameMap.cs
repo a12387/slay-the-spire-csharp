@@ -15,24 +15,16 @@ namespace SlayTheSpire.UI
         public GameMap()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.Opaque, true);  // 不透明
         }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            using (Brush semiTransparentBrush = new SolidBrush(Color.FromArgb(128, 255, 0, 0)))  // 半透明红色
+            using (Brush semiTransparentBrush = new SolidBrush(Color.FromArgb(200, 0, 0, 0)))  // 半透明黑色
             {
                 e.Graphics.FillRectangle(semiTransparentBrush, this.ClientRectangle);  // 用半透明颜色填充背景
             }
             base.OnPaint(e);
-        }
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x20; // WS_EX_TRANSPARENT
-                return cp;
-            }
         }
     }
 }

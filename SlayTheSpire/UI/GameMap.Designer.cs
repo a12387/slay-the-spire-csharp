@@ -28,43 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            buttonElite = new Button();
-            buttonBoss = new Button();
             SuspendLayout();
-            // 
-            // buttonElite
-            // 
-            buttonElite.Location = new Point(552, 347);
-            buttonElite.Name = "buttonElite";
-            buttonElite.Size = new Size(75, 23);
-            buttonElite.TabIndex = 0;
-            buttonElite.Text = "button1";
-            buttonElite.UseVisualStyleBackColor = true;
-            // 
-            // buttonBoss
-            // 
-            buttonBoss.Location = new Point(552, 220);
-            buttonBoss.Name = "buttonBoss";
-            buttonBoss.Size = new Size(75, 23);
-            buttonBoss.TabIndex = 1;
-            buttonBoss.Text = "button2";
-            buttonBoss.UseVisualStyleBackColor = true;
             // 
             // GameMap
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
-            Controls.Add(buttonBoss);
-            Controls.Add(buttonElite);
+            BackgroundImageLayout = ImageLayout.None;
             Name = "GameMap";
             Size = new Size(1280, 720);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button buttonElite;
-        private Button buttonBoss;
     }
 }

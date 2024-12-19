@@ -16,12 +16,12 @@ namespace SlayTheSpire.UI
         {
             InitializeComponent();
         }
-
         
         private void GameStart(object sender, MouseEventArgs e)
         {
             GameStartUI();
         }
+
         private void GameStartUI()
         {
             var starterRoom = new StarterRoom();

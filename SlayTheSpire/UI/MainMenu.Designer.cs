@@ -29,30 +29,50 @@
         private void InitializeComponent()
         {
             buttonStart = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // buttonStart
             // 
-            buttonStart.Location = new Point(396, 259);
+            buttonStart.BackColor = Color.Transparent;
+            buttonStart.Font = new Font("黑体", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            buttonStart.Location = new Point(88, 432);
             buttonStart.Name = "buttonStart";
-            buttonStart.Size = new Size(105, 72);
+            buttonStart.Size = new Size(158, 52);
             buttonStart.TabIndex = 0;
-            buttonStart.Text = "Start";
-            buttonStart.UseVisualStyleBackColor = true;
+            buttonStart.Text = "开始游戏";
+            buttonStart.UseVisualStyleBackColor = false;
             buttonStart.MouseClick += GameStart;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.eng;
+            pictureBox1.Location = new Point(390, 130);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(500, 400);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = Properties.Resources.menu;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(pictureBox1);
             Controls.Add(buttonStart);
             Name = "MainMenu";
             Size = new Size(1280, 720);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Button buttonStart;
+        private PictureBox pictureBox1;
     }
 }

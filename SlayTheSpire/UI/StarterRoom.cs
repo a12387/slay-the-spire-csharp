@@ -26,6 +26,20 @@ namespace SlayTheSpire
         {
             var map = new GameMap();
             Program.MainForm.AddPage(map, this);
+            playerInfo.BringToFront();
+        }
+
+        private void buttonTalk_Click(object sender, EventArgs e)
+        {
+            buttonTalk.Enabled = false;
+            buttonGetDeck.Visible = true;
+            labelDialog.Text = "来挑战我吧……";
+        }
+
+        private void buttonGetDeck_Click(object sender, EventArgs e)
+        {
+            buttonGetDeck.Visible = false;
+            buttonLeave.Visible = true;
         }
     }
 }

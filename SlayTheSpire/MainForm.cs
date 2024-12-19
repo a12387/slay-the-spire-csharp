@@ -7,6 +7,8 @@ namespace SlayTheSpire
         {
             InitializeComponent();
             ChangePage(new MainMenu());
+            cursor = new Bitmap(Properties.Resources.cursor, 40, 40);
+            Cursor = new Cursor(cursor.GetHicon());
         }
 
         public void AddPage(Control control, Control parent)
@@ -20,5 +22,7 @@ namespace SlayTheSpire
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(control);
         }
+
+        private readonly Bitmap cursor;
     }
 }
