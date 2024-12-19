@@ -28,6 +28,6 @@ namespace SlayTheSpire.Game
         public virtual void OnLoseHealth(ref int amount) { }
         public virtual void OnDrawCard(ref int amount) { }
         public virtual void OnExhaustCard() { }
-    
+        public virtual void OnTurnStart() { }
     }
 }
