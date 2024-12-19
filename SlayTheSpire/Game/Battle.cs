@@ -25,8 +25,11 @@ namespace SlayTheSpire.Game
             for (int i = 0; i < Monsters.Count; i++)
             {
                 Monsters[i].BeforeBattle();
+                Monsters[i].Die += () => Monsters.RemoveAt(i);
             }
             PlayerTurnStart();
+
+
         }
         public void PlayerTurnStart()
         {
@@ -36,7 +39,7 @@ namespace SlayTheSpire.Game
         {
             for(int i = 0; i < Monsters.Count; i++)
             {
-                Monsters[i].act(Player);
+                Monsters[i].Act(Player);
                 Monsters[i].GenerateNewIntent();
             }
             PlayerTurnStart();
