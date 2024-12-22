@@ -45,18 +45,18 @@ namespace SlayTheSpire.Game
         public CardTarget Target { get; }
         public CardType Type { get; }
 
-        public abstract string Description { get; protected set; }
+        public string Description { get; protected set; }
         // public abstract bool IsUpgrade;
-        public abstract bool IsRetain { get; }
-        public abstract bool IsInnate { get; }
-        public abstract bool IsExhaust { get; }
-        public abstract bool IsEthereal { get; }
+        public bool IsRetain { get; protected set; }
+        public bool IsInnate { get; protected set; }
+        public bool IsExhaust { get; protected set; }
+        public bool IsEthereal { get; protected set; }
 
-        public abstract int BaseDamage { get; }
-        public abstract int BaseBlock { get; }
-        public abstract int BaseMagicNumber { get; }
-        public abstract int BaseDraw { get; }
-        public abstract int BaseDiscard { get; }
+        public int BaseDamage { get; protected set; }
+        public int BaseBlock { get; protected set; }
+        public int BaseMagicNumber { get; protected set; }
+        public int BaseDraw { get; protected set; }
+        public int BaseDiscard { get; protected set; }
 
 
         protected AbstractCard(string name, int cost, CardColor color, CardRarity rarity, CardTarget target, CardType type)
