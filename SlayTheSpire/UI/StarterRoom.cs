@@ -13,6 +13,8 @@ namespace SlayTheSpire
 {
     public partial class StarterRoom : UserControl
     {
+        SlayTheSpire.UI.GameMap? map;
+
         public StarterRoom()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace SlayTheSpire
         }
         private void ShowMap()
         {
-            var map = new GameMap();
+            map = new GameMap();
             Program.MainForm.AddPage(map, this);
             playerInfo.BringToFront();
         }
@@ -40,6 +42,26 @@ namespace SlayTheSpire
         {
             buttonGetDeck.Visible = false;
             buttonLeave.Visible = true;
+        }
+
+        private void CloseMap()
+        {
+            if (map != null)
+            {
+                Program.MainForm.DeledePage(map);
+            }
+        }
+
+        private void mapIcon_Click(object sender, EventArgs e)
+        {
+            if (map != null)
+            {
+                CloseMap();
+            }
+            else
+            {
+                ShowMap();
+            }
         }
     }
 }

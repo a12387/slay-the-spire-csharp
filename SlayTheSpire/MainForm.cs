@@ -22,6 +22,10 @@ namespace SlayTheSpire
             MainPanel.Controls.Clear();
             MainPanel.Controls.Add(control);
         }
+        public void DeledePage(Control control)
+        {
+            MainPanel.Controls.Remove(control);
+        }
 
         private readonly Bitmap cursor;
     }

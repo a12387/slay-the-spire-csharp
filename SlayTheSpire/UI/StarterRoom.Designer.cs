@@ -35,8 +35,10 @@
             pictureBoxHeart = new PictureBox();
             pictureBoxDialog = new PictureBox();
             labelDialog = new Label();
+            pictureBoxIronclad = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBoxHeart).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDialog).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxIronclad).BeginInit();
             SuspendLayout();
             // 
             // buttonTalk
@@ -95,7 +97,7 @@
             // 
             pictureBoxDialog.BackColor = Color.Transparent;
             pictureBoxDialog.Image = Properties.Resources.speechBubble2;
-            pictureBoxDialog.Location = new Point(451, 171);
+            pictureBoxDialog.Location = new Point(453, 182);
             pictureBoxDialog.Name = "pictureBoxDialog";
             pictureBoxDialog.Size = new Size(409, 357);
             pictureBoxDialog.SizeMode = PictureBoxSizeMode.Zoom;
@@ -105,12 +107,24 @@
             // labelDialog
             // 
             labelDialog.AutoSize = true;
+            labelDialog.BackColor = Color.White;
             labelDialog.Font = new Font("黑体", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 134);
             labelDialog.Location = new Point(577, 338);
             labelDialog.Name = "labelDialog";
             labelDialog.Size = new Size(43, 22);
             labelDialog.TabIndex = 6;
             labelDialog.Text = "...";
+            // 
+            // pictureBoxIronclad
+            // 
+            pictureBoxIronclad.BackColor = Color.Transparent;
+            pictureBoxIronclad.Image = Properties.Resources.ironclad;
+            pictureBoxIronclad.Location = new Point(55, 165);
+            pictureBoxIronclad.Name = "pictureBoxIronclad";
+            pictureBoxIronclad.Size = new Size(317, 374);
+            pictureBoxIronclad.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxIronclad.TabIndex = 7;
+            pictureBoxIronclad.TabStop = false;
             // 
             // StarterRoom
             // 
@@ -119,6 +133,7 @@
             BackgroundImage = Properties.Resources.scene;
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(labelDialog);
+            Controls.Add(pictureBoxIronclad);
             Controls.Add(playerInfo);
             Controls.Add(pictureBoxHeart);
             Controls.Add(pictureBoxDialog);
@@ -129,6 +144,7 @@
             Size = new Size(1280, 720);
             ((System.ComponentModel.ISupportInitialize)pictureBoxHeart).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDialog).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxIronclad).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -142,5 +158,6 @@
         private PictureBox pictureBoxHeart;
         private PictureBox pictureBoxDialog;
         private Label labelDialog;
+        private PictureBox pictureBoxIronclad;
     }
 }
