@@ -1,6 +1,6 @@
 ﻿namespace SlayTheSpire.UI
 {
-    partial class PlayerUI
+    partial class CreatureUI
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -36,7 +36,6 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.ironclad;
             pictureBox1.Location = new Point(21, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(250, 213);
@@ -46,6 +45,7 @@
             // 
             // healthBar1
             // 
+            healthBar1.BackColor = Color.Transparent;
             healthBar1.Location = new Point(21, 210);
             healthBar1.Name = "healthBar1";
             healthBar1.Size = new Size(250, 50);
@@ -59,7 +59,7 @@
             statusBar1.Size = new Size(250, 30);
             statusBar1.TabIndex = 2;
             // 
-            // PlayerUI
+            // CreatureUI
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -67,7 +67,7 @@
             Controls.Add(statusBar1);
             Controls.Add(healthBar1);
             Controls.Add(pictureBox1);
-            Name = "PlayerUI";
+            Name = "CreatureUI";
             Size = new Size(300, 300);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

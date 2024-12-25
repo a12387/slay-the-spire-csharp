@@ -29,10 +29,7 @@ namespace SlayTheSpire.UI
         }
         public void AddPage(Control control, Control parent)
         {
-            if(!control.Visible)
-            {
-                control.Show();
-            }
+            MainPanel.Controls.Add(control);
             control.Parent = parent;
             control.BringToFront();
         }
@@ -43,8 +40,7 @@ namespace SlayTheSpire.UI
         }
         public void DeletePage(Control control)
         {
-            control.Dispose();
-            Program.MainForm.Invalidate();
+            MainPanel.Controls.Remove(control);
         }
         public void ShowMap()
         {
@@ -75,15 +71,20 @@ namespace SlayTheSpire.UI
 
         public void ChangeRoom(Object? sender, int floor)
         {
+            BattleScene room;
             switch (floor)
             {
                 case 1:
-                    var room = new BattleScene(new Battle(Dungeon.Player, new List<AbstractMonster>() { new SpireShield(), new SpireSpear()}, 1));
-                    CloseMap();
-                    ChangePage(room);
+                    room = new BattleScene(new Battle(Dungeon.Player, new List<AbstractMonster>() { new SpireShield(), new SpireSpear()}, 1));
                     break;
-
+                case 2:
+                    room = new BattleScene(new Battle(Dungeon.Player, new List<AbstractMonster> { new CorruptHeart()}, 2));
+                    break;
+                default:
+                    throw new Exception();
             }
+            CloseMap();
+            ChangePage(room);
         }
     }
 }

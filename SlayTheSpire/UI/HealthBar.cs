@@ -16,6 +16,33 @@ namespace SlayTheSpire.UI
         {
             InitializeComponent();
             labelHealth.Parent = progressBar;
+            //progressBar.Parent = labelHealth;
+        }
+        private int currentHealth;
+        public int CurrentHealth
+        {
+            get { return currentHealth; }
+            set
+            {
+                if (currentHealth != value)
+                {
+                    currentHealth = value;
+                    labelHealth.Text = String.Format("{0}/{1}", CurrentHealth, MaxHealth);
+                }
+            }
+        }
+        private int maxHealth;
+        public int MaxHealth
+        {
+            get { return maxHealth; }
+            set
+            {
+                if (maxHealth != value)
+                {
+                    maxHealth = value;
+                    labelHealth.Text = String.Format("{0}/{1}", CurrentHealth, MaxHealth);
+                }
+            }
         }
     }
 }

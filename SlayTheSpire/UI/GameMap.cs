@@ -27,7 +27,13 @@ namespace SlayTheSpire.UI
             pictureBoxElite.Click -= pictureBoxElite_Click;
         }
 
-        
+        private void pictureBoxHeart_Click(object? sender, EventArgs e)
+        {
+            RoomChanged?.Invoke(this, 2);
+            pictureBoxHeart.Click -= pictureBoxHeart_Click;
+        }
+
+
 
         //protected override void OnPaint(PaintEventArgs e)
         //{

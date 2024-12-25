@@ -57,6 +57,7 @@
             pictureBoxHeart.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxHeart.TabIndex = 3;
             pictureBoxHeart.TabStop = false;
+            pictureBoxHeart.Click += pictureBoxHeart_Click;
             // 
             // pictureBoxElite
             // 

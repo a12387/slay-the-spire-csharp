@@ -28,17 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelPlayer = new Panel();
             operationArea = new OperationArea();
+            panelPlayerLeft = new Panel();
+            panelPlayerMiddle = new Panel();
+            panelMonsterLeft = new Panel();
+            panelMonsterRight = new Panel();
+            panelPlayerLeft.SuspendLayout();
             SuspendLayout();
-            // 
-            // panelPlayer
-            // 
-            panelPlayer.BackColor = Color.Transparent;
-            panelPlayer.Location = new Point(549, 144);
-            panelPlayer.Name = "panelPlayer";
-            panelPlayer.Size = new Size(300, 300);
-            panelPlayer.TabIndex = 0;
             // 
             // operationArea
             // 
@@ -48,22 +44,60 @@
             operationArea.Size = new Size(1280, 270);
             operationArea.TabIndex = 1;
             // 
+            // panelPlayerLeft
+            // 
+            panelPlayerLeft.BackColor = Color.Transparent;
+            panelPlayerLeft.Controls.Add(panelPlayerMiddle);
+            panelPlayerLeft.Location = new Point(70, 74);
+            panelPlayerLeft.Name = "panelPlayerLeft";
+            panelPlayerLeft.Size = new Size(393, 370);
+            panelPlayerLeft.TabIndex = 2;
+            // 
+            // panelPlayerMiddle
+            // 
+            panelPlayerMiddle.BackColor = Color.Transparent;
+            panelPlayerMiddle.Location = new Point(373, 0);
+            panelPlayerMiddle.Name = "panelPlayerMiddle";
+            panelPlayerMiddle.Size = new Size(383, 370);
+            panelPlayerMiddle.TabIndex = 2;
+            // 
+            // panelMonsterLeft
+            // 
+            panelMonsterLeft.BackColor = Color.Transparent;
+            panelMonsterLeft.Location = new Point(70, 71);
+            panelMonsterLeft.Name = "panelMonsterLeft";
+            panelMonsterLeft.Size = new Size(393, 373);
+            panelMonsterLeft.TabIndex = 2;
+            // 
+            // panelMonsterRight
+            // 
+            panelMonsterRight.BackColor = Color.Transparent;
+            panelMonsterRight.Location = new Point(832, 71);
+            panelMonsterRight.Name = "panelMonsterRight";
+            panelMonsterRight.Size = new Size(406, 373);
+            panelMonsterRight.TabIndex = 2;
+            // 
             // BattleScene
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.scene;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(panelMonsterRight);
+            Controls.Add(panelMonsterLeft);
+            Controls.Add(panelPlayerLeft);
             Controls.Add(operationArea);
-            Controls.Add(panelPlayer);
             Name = "BattleScene";
             Size = new Size(1280, 720);
+            panelPlayerLeft.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panelPlayer;
         private OperationArea operationArea;
+        private Panel panelPlayerLeft;
+        private Panel panelPlayerMiddle;
+        private Panel panelMonsterLeft;
+        private Panel panelMonsterRight;
     }
 }

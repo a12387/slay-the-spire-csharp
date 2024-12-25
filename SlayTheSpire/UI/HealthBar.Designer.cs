@@ -54,6 +54,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Transparent;
             Controls.Add(labelHealth);
             Controls.Add(progressBar);
             Name = "HealthBar";
