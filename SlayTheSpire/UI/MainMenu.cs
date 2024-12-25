@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SlayTheSpire.Game;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,7 @@ namespace SlayTheSpire.UI
         private void GameStart(object sender, MouseEventArgs e)
         {
             GameStartUI();
+            GameStartMain();
         }
 
         private void GameStartUI()
@@ -31,6 +33,10 @@ namespace SlayTheSpire.UI
             starterRoom.ShowMap += room.ShowMapD;
             room.ChangePage(starterRoom);
             Program.MainForm.ChangePage(room);
+        }
+        private void GameStartMain() 
+        {
+            Dungeon.Init();
         }
 
         //private Room room;

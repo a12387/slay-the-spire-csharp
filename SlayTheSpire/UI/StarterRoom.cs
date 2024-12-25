@@ -14,8 +14,7 @@ namespace SlayTheSpire
 {
     public partial class StarterRoom : UserControl
     {
-        //SlayTheSpire.UI.GameMap? map;
-
+        const int NumCardsToGet = 15;
         public StarterRoom()
         {
             InitializeComponent();
@@ -39,6 +38,9 @@ namespace SlayTheSpire
         {
             buttonGetDeck.Visible = false;
             buttonLeave.Visible = true;
+            var cardSelection = new CardSelection(NumCardsToGet);
+            Program.MainForm.AddPage(cardSelection, this);
+            playerInfo.BringToFront();
         }
 
         //private void CloseMap()

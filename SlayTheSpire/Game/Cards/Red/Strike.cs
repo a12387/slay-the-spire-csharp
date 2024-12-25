@@ -8,6 +8,7 @@ namespace SlayTheSpire.Game.Cards.Red
 {
     internal class Strike : AbstractCard
     {
+        static public Strike Instance { get; } = new Strike();
         public Strike() : base("Strike", 1, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
@@ -15,6 +16,10 @@ namespace SlayTheSpire.Game.Cards.Red
             IsExhaust = false;
             IsEthereal = false;
             BaseDamage = 6;
+            Description = """
+                攻击
+                造成6点伤害。
+                """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {

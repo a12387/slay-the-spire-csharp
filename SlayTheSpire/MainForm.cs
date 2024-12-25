@@ -13,7 +13,6 @@ namespace SlayTheSpire
 
         public void AddPage(Control control, Control parent)
         {
-            MainPanel.Controls.Add(control);
             control.Parent = parent;
             control.BringToFront();
         }
@@ -24,7 +23,8 @@ namespace SlayTheSpire
         }
         public void DeletePage(Control control)
         {
-            MainPanel.Controls.Remove(control);
+            control.Dispose();
+            Refresh();
         }
 
         private readonly Bitmap cursor;

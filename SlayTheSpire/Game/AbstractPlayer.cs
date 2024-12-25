@@ -94,5 +94,6 @@ namespace SlayTheSpire.Game
             }
             card.OnExhaust();
         }
+
     }
 }

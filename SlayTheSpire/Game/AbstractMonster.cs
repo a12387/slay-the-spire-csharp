@@ -24,17 +24,20 @@ namespace SlayTheSpire.Game
     internal abstract class AbstractMonster : AbstractCreature
     {
         public MonsterIntent CurrentIntent { get; protected set; }
-        private int LastMove { get; set; }
+        public int DamageAmount { get; protected set; }
+        public int DamageTimes { get; protected set; }
+        //protected MonsterIntent LastMove { get; set; }
 
         protected AbstractMonster(string name, int maxHealth) : base(false, name, maxHealth)
         {
 
         }
         public abstract void Act(AbstractPlayer player);
-        public abstract void GenerateNewIntent();
+        public abstract void GenerateNewIntent(int round);
+        //protected abstract void SetIntent(MonsterIntent intent);
         public virtual void BeforeBattle()
         {
-            GenerateNewIntent();
+            GenerateNewIntent(0);
             // Add buff or others
         }
         
