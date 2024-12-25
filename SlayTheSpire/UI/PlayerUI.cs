@@ -7,19 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SlayTheSpire.Game;
 
 namespace SlayTheSpire.UI
 {
-    public partial class BattleScene : UserControl
+    public partial class PlayerUI : UserControl
     {
-        public BattleScene()
+        public PlayerUI()
         {
             InitializeComponent();
-            var playerui = new PlayerUI();
-            panelPlayer.Controls.Add(playerui);
         }
-
-        private Battle battle;
     }
 }

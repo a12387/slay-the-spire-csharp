@@ -1,6 +1,6 @@
 ﻿namespace SlayTheSpire.UI
 {
-    partial class BattleScene
+    partial class StatusBar
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,31 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelPlayer = new Panel();
             SuspendLayout();
             // 
-            // panelPlayer
-            // 
-            panelPlayer.BackColor = Color.Transparent;
-            panelPlayer.Location = new Point(490, 150);
-            panelPlayer.Name = "panelPlayer";
-            panelPlayer.Size = new Size(300, 400);
-            panelPlayer.TabIndex = 0;
-            // 
-            // BattleScene
+            // StatusBar
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.scene;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            Controls.Add(panelPlayer);
-            Name = "BattleScene";
-            Size = new Size(1280, 720);
+            BackColor = Color.Transparent;
+            Name = "StatusBar";
+            Size = new Size(250, 30);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panelPlayer;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace SlayTheSpire.UI
 {
-    partial class BattleScene
+    partial class HealthBar
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,31 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelPlayer = new Panel();
+            progressBar = new ProgressBar();
+            labelHealth = new Label();
             SuspendLayout();
             // 
-            // panelPlayer
+            // progressBar
             // 
-            panelPlayer.BackColor = Color.Transparent;
-            panelPlayer.Location = new Point(490, 150);
-            panelPlayer.Name = "panelPlayer";
-            panelPlayer.Size = new Size(300, 400);
-            panelPlayer.TabIndex = 0;
+            progressBar.Location = new Point(12, 9);
+            progressBar.Name = "progressBar";
+            progressBar.Size = new Size(224, 31);
+            progressBar.TabIndex = 0;
+            progressBar.Value = 100;
             // 
-            // BattleScene
+            // labelHealth
+            // 
+            labelHealth.BackColor = Color.Transparent;
+            labelHealth.Location = new Point(12, 9);
+            labelHealth.Name = "labelHealth";
+            labelHealth.Size = new Size(224, 31);
+            labelHealth.TabIndex = 1;
+            labelHealth.Text = "80/80";
+            labelHealth.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // HealthBar
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.scene;
-            BackgroundImageLayout = ImageLayout.Stretch;
-            Controls.Add(panelPlayer);
-            Name = "BattleScene";
-            Size = new Size(1280, 720);
+            Controls.Add(labelHealth);
+            Controls.Add(progressBar);
+            Name = "HealthBar";
+            Size = new Size(250, 50);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Panel panelPlayer;
+        private ProgressBar progressBar;
+        private Label labelHealth;
     }
 }

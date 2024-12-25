@@ -19,11 +19,14 @@ namespace SlayTheSpire.UI
             panelMap.Parent = myPictureBoxMap;
         }
 
+        public event EventHandler<int>? RoomChanged;
+
         private void pictureBoxElite_Click(object sender, EventArgs e)
         {
-            var scene = new BattleScene();
-
+            RoomChanged?.Invoke(this, 1);
         }
+
+        
 
         //protected override void OnPaint(PaintEventArgs e)
         //{

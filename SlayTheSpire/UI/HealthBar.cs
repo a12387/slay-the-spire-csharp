@@ -7,19 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SlayTheSpire.Game;
 
 namespace SlayTheSpire.UI
 {
-    public partial class BattleScene : UserControl
+    public partial class HealthBar : UserControl
     {
-        public BattleScene()
+        public HealthBar()
         {
             InitializeComponent();
-            var playerui = new PlayerUI();
-            panelPlayer.Controls.Add(playerui);
+            labelHealth.Parent = progressBar;
         }
-
-        private Battle battle;
     }
 }

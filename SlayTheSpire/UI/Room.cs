@@ -15,7 +15,8 @@ namespace SlayTheSpire.UI
     {
 
         private readonly Player player;
-        private GameMap? map;
+        private readonly GameMap map;
+        bool mapExists = false;
 
         internal Room(Player player) : base()
         {
@@ -24,6 +25,8 @@ namespace SlayTheSpire.UI
             this.player.CurrentHealthChanged += this.playerInfo.SetCurrentHealth;
             this.player.MaxHealthChanged += this.playerInfo.SetMaxHealth;
             this.playerInfo.MapIconClicked += this.MapIcon_Click;
+            this.map = new GameMap();
+            this.map.RoomChanged += ChangeRoom;
         }
         public void AddPage(Control control, Control parent)
         {
@@ -42,9 +45,9 @@ namespace SlayTheSpire.UI
         }
         public void ShowMap()
         {
-            map = new GameMap();
             this.AddPage(map, MainPanel);
             playerInfo.BringToFront();
+            mapExists = true;
         }
         public void ShowMapD(Object? sender, EventArgs e)
         {
@@ -52,22 +55,35 @@ namespace SlayTheSpire.UI
         }
         public void CloseMap()
         {
-            if (map != null)
+            if (mapExists)
             {
                 DeletePage(map);
-                map = null;
+                mapExists = false;
             }
         }
 
         private void MapIcon_Click(object? sender, EventArgs e)
         {
-            if (map != null)
+            if (mapExists)
             {
                 CloseMap();
             }
             else
             {
                 ShowMap();
+            }
+        }
+
+        public void ChangeRoom(Object? sender, int floor)
+        {
+            switch (floor)
+            {
+                case 1:
+                    var room = new BattleScene();
+                    CloseMap();
+                    ChangePage(room);
+                    break;
+
             }
         }
     }
