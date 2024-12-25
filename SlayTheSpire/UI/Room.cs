@@ -8,29 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SlayTheSpire.Game;
+using SlayTheSpire.Game.Monsters;
 
 namespace SlayTheSpire.UI
 {
     public partial class Room : UserControl
     {
-
-        private readonly Player player;
         private readonly GameMap map;
         bool mapExists = false;
 
-        internal Room(Player player) : base()
+        internal Room() : base()
         {
+            var player = Dungeon.Player;
             InitializeComponent();
-            this.player = player;
-            this.player.CurrentHealthChanged += this.playerInfo.SetCurrentHealth;
-            this.player.MaxHealthChanged += this.playerInfo.SetMaxHealth;
-            this.playerInfo.MapIconClicked += this.MapIcon_Click;
-            this.map = new GameMap();
-            this.map.RoomChanged += ChangeRoom;
+            player.CurrentHealthChanged += this.playerInfo.SetCurrentHealth;
+            player.MaxHealthChanged += this.playerInfo.SetMaxHealth;
+            playerInfo.MapIconClicked += this.MapIcon_Click;
+            map = new GameMap();
+            map.RoomChanged += ChangeRoom;
         }
         public void AddPage(Control control, Control parent)
         {
-            MainPanel.Controls.Add(control);
+            if(!control.Visible)
+            {
+                control.Show();
+            }
             control.Parent = parent;
             control.BringToFront();
         }
@@ -41,17 +43,14 @@ namespace SlayTheSpire.UI
         }
         public void DeletePage(Control control)
         {
-            MainPanel.Controls.Remove(control);
+            control.Dispose();
+            Program.MainForm.Invalidate();
         }
         public void ShowMap()
         {
             this.AddPage(map, MainPanel);
             playerInfo.BringToFront();
             mapExists = true;
-        }
-        public void ShowMapD(Object? sender, EventArgs e)
-        {
-            ShowMap();
         }
         public void CloseMap()
         {
@@ -79,7 +78,7 @@ namespace SlayTheSpire.UI
             switch (floor)
             {
                 case 1:
-                    var room = new BattleScene();
+                    var room = new BattleScene(new Battle(Dungeon.Player, new List<AbstractMonster>() { new SpireShield(), new SpireSpear()}, 1));
                     CloseMap();
                     ChangePage(room);
                     break;

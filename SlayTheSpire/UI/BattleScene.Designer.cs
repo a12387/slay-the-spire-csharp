@@ -29,15 +29,24 @@
         private void InitializeComponent()
         {
             panelPlayer = new Panel();
+            operationArea = new OperationArea();
             SuspendLayout();
             // 
             // panelPlayer
             // 
             panelPlayer.BackColor = Color.Transparent;
-            panelPlayer.Location = new Point(490, 150);
+            panelPlayer.Location = new Point(549, 144);
             panelPlayer.Name = "panelPlayer";
-            panelPlayer.Size = new Size(300, 400);
+            panelPlayer.Size = new Size(300, 300);
             panelPlayer.TabIndex = 0;
+            // 
+            // operationArea
+            // 
+            operationArea.BackColor = Color.Transparent;
+            operationArea.Location = new Point(0, 450);
+            operationArea.Name = "operationArea";
+            operationArea.Size = new Size(1280, 270);
+            operationArea.TabIndex = 1;
             // 
             // BattleScene
             // 
@@ -45,6 +54,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.scene;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(operationArea);
             Controls.Add(panelPlayer);
             Name = "BattleScene";
             Size = new Size(1280, 720);
@@ -54,5 +64,6 @@
         #endregion
 
         private Panel panelPlayer;
+        private OperationArea operationArea;
     }
 }

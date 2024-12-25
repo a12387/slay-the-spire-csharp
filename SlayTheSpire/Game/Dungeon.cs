@@ -8,11 +8,11 @@ namespace SlayTheSpire.Game
 {
     internal static class Dungeon
     {
-        static public AbstractPlayer Player { get; private set; }
+        static public AbstractPlayer Player { get; set; }
 
         static public void Init()
         {
-            //Player = new Player();
+            Player = new Player("Ironclad", 80);
         }
     }
 }

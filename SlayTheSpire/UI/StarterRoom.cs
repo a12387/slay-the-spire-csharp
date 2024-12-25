@@ -20,11 +20,11 @@ namespace SlayTheSpire
             InitializeComponent();
         }
 
-        public event EventHandler? ShowMap;
+        public event Action ShowMap;
 
         private void StartJourney(object sender, EventArgs e)
         {
-            ShowMap?.Invoke(this, e);
+            ShowMap?.Invoke();
         }
 
         private void buttonTalk_Click(object sender, EventArgs e)

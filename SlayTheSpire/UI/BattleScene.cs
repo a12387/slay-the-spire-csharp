@@ -8,18 +8,30 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SlayTheSpire.Game;
+using SlayTheSpire.Game.Cards;
 
 namespace SlayTheSpire.UI
 {
-    public partial class BattleScene : UserControl
+    internal partial class BattleScene : UserControl
     {
-        public BattleScene()
+        public BattleScene(Battle battle)
         {
             InitializeComponent();
+            Battle = battle;
             var playerui = new PlayerUI();
             panelPlayer.Controls.Add(playerui);
+
+            List<AbstractCard> cards = CardLibrary.GetRandomCards(1);
+            operationArea.AddCard(new CardButton(cards[0]));
+            operationArea.AddCard(new CardButton(cards[0]));
+            operationArea.AddCard(new CardButton(cards[0]));
+            operationArea.AddCard(new CardButton(cards[0]));
+            operationArea.AddCard(new CardButton(cards[0]));
+            operationArea.AddCard(new CardButton(cards[0]));
+            operationArea.AddCard(new CardButton(cards[0]));
+
         }
 
-        private Battle battle;
+        private Battle Battle;
     }
 }

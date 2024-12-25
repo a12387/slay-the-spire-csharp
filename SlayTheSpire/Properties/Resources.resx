@@ -127,11 +127,17 @@
   <data name="frame_skill_common" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frame_skill_common.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ironclad" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\creature\ironclad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bg_power" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_power.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frame_attack_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frame_attack_rare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg_energy_colorless" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg_energy_colorless.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="panelHeart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\panelHeart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +175,8 @@
   <data name="bg_colorless" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_colorless.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="bg_energy_colorless" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bg_energy_colorless.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="strike" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\strike.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="frame_power_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frame_power_rare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +187,8 @@
   <data name="frame_skill_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frame_skill_rare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="spear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\creature\spear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="deck1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ui\deck.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="corpse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\creature\corpse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,14 +205,17 @@
   <data name="bg_attack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_attack.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dot1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ui\dot1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="banner_rare" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\banner_rare.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="elite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ui\elite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ironclad" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\creature\ironclad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="discard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ui\discard.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="eng" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ui\eng.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,8 +229,14 @@
   <data name="frame_power_common" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frame_power_common.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="energyRed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ui\energyRed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="frame_skill_uncommon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\frame_skill_uncommon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\creature\spear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg_skill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg_skill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -232,10 +247,7 @@
   <data name="cursor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ui\cursor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="dot1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ui\dot1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="strike" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cards\strike.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="exhaust" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ui\exhaust.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

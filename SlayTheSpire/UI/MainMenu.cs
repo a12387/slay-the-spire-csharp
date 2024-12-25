@@ -20,16 +20,15 @@ namespace SlayTheSpire.UI
         
         private void GameStart(object sender, MouseEventArgs e)
         {
-            GameStartUI();
             GameStartMain();
+            GameStartUI();
         }
 
         private void GameStartUI()
         {
-            var player = new Player("IronClad", 80);
-            var room = new Room(player);
+            var room = new Room();
             var starterRoom = new StarterRoom();
-            starterRoom.ShowMap += room.ShowMapD;
+            starterRoom.ShowMap += room.ShowMap;
             room.ChangePage(starterRoom);
             Program.MainForm.ChangePage(room);
         }

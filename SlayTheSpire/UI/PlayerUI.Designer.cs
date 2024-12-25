@@ -39,21 +39,22 @@
             pictureBox1.Image = Properties.Resources.ironclad;
             pictureBox1.Location = new Point(21, 3);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(250, 300);
+            pictureBox1.Size = new Size(250, 213);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // healthBar1
             // 
-            healthBar1.Location = new Point(21, 351);
+            healthBar1.Location = new Point(21, 210);
             healthBar1.Name = "healthBar1";
             healthBar1.Size = new Size(250, 50);
             healthBar1.TabIndex = 1;
             // 
             // statusBar1
             // 
-            statusBar1.Location = new Point(21, 315);
+            statusBar1.BackColor = Color.Transparent;
+            statusBar1.Location = new Point(21, 266);
             statusBar1.Name = "statusBar1";
             statusBar1.Size = new Size(250, 30);
             statusBar1.TabIndex = 2;
@@ -67,7 +68,7 @@
             Controls.Add(healthBar1);
             Controls.Add(pictureBox1);
             Name = "PlayerUI";
-            Size = new Size(300, 400);
+            Size = new Size(300, 300);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }

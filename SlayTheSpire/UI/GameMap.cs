@@ -21,9 +21,10 @@ namespace SlayTheSpire.UI
 
         public event EventHandler<int>? RoomChanged;
 
-        private void pictureBoxElite_Click(object sender, EventArgs e)
+        private void pictureBoxElite_Click(object? sender, EventArgs e)
         {
             RoomChanged?.Invoke(this, 1);
+            pictureBoxElite.Click -= pictureBoxElite_Click;
         }
 
         

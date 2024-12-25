@@ -193,6 +193,26 @@ namespace SlayTheSpire.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap deck1 {
+            get {
+                object obj = ResourceManager.GetObject("deck1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap discard {
+            get {
+                object obj = ResourceManager.GetObject("discard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap dot1 {
             get {
                 object obj = ResourceManager.GetObject("dot1", resourceCulture);
@@ -213,9 +233,29 @@ namespace SlayTheSpire.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap energyRed {
+            get {
+                object obj = ResourceManager.GetObject("energyRed", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap eng {
             get {
                 object obj = ResourceManager.GetObject("eng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap exhaust {
+            get {
+                object obj = ResourceManager.GetObject("exhaust", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
