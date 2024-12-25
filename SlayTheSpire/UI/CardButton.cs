@@ -1,4 +1,5 @@
 ﻿using SlayTheSpire.Game;
+using SlayTheSpire.Game.Cards;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -87,7 +88,7 @@ namespace SlayTheSpire
         }
         private void SetImage(string name)
         {
-            // Not implemented
+            pictureBoxImage.Image = CardLibrary.GetCardImage(name);
         }
         private void SetName(string name)
         {
