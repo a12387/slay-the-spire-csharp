@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SlayTheSpire.Game;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,12 +21,17 @@ namespace SlayTheSpire.UI
         private void GameStart(object sender, MouseEventArgs e)
         {
             GameStartUI();
+            GameStartMain();
         }
 
         private void GameStartUI()
         {
             var starterRoom = new StarterRoom();
             Program.MainForm.ChangePage(starterRoom);
+        }
+        private void GameStartMain() 
+        {
+            Dungeon.Init();
         }
         
     }

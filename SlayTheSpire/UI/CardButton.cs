@@ -14,8 +14,18 @@ namespace SlayTheSpire
 {
     internal partial class CardButton : UserControl
     {
+        const int OriginX = 180;
+        const int OriginY = 252;
+        private float ScaleX;
+        private float ScaleY;
         private static Dictionary<CardRarity, Dictionary<CardType, Bitmap>> Frames = new()
         {
+            [CardRarity.Basic] = new Dictionary<CardType, Bitmap>()
+            {
+                [CardType.Attack] = Properties.Resources.frame_attack_common,
+                [CardType.Skill] = Properties.Resources.frame_skill_common,
+                [CardType.Power] = Properties.Resources.frame_power_common
+            },
             [CardRarity.Common] = new Dictionary<CardType, Bitmap>()
             {
                 [CardType.Attack] = Properties.Resources.frame_attack_common,
@@ -35,68 +45,105 @@ namespace SlayTheSpire
                 [CardType.Power] = Properties.Resources.frame_power_rare
             },
         };
-        AbstractCard Card { get; }
+        public AbstractCard Card { get; }
         public CardButton(AbstractCard card)
         {
             InitializeComponent();
+            DoubleBuffered = true;
             Card = card;
-            InitializeCard(card);
-            
         }
-        private void InitializeCard(AbstractCard card)
+        private void SetBackground(PaintEventArgs e)
         {
-            SetBackground(card.Type, card.Color);
-            SetDescription(card.Description);
-            SetFrame(card.Rarity, card.Type);
-            SetImage(card.Name);
-            SetName(card.Name);
-            SetCost(card.Cost);
-        }
-        private void SetBackground(CardType type, CardColor color)
-        {
-            if(color == CardColor.Colorless)
+            CardColor color = Card.Color;
+            CardType type  = Card.Type;
+            Image img;
+            if (color == CardColor.Colorless)
             {
-                pictureBoxCost.Image = Properties.Resources.bg_energy_colorless;
-                BackgroundImage = Properties.Resources.bg_colorless;
+                img = Properties.Resources.bg_colorless;
             }
             else
             {
-                pictureBoxCost.Image = Properties.Resources.bg_energy;
                 switch (type)
                 {
                     case CardType.Attack:
-                        BackgroundImage = Properties.Resources.bg_attack;
+                        img = Properties.Resources.bg_attack;
                         break;
                     case CardType.Skill:
-                        BackgroundImage = Properties.Resources.bg_skill;
+                        img = Properties.Resources.bg_skill;
                         break;
                     case CardType.Power:
-                        BackgroundImage = Properties.Resources.bg_power;
+                        img = Properties.Resources.bg_power;
                         break;
                     default:
                         throw new ArgumentException("Status must be colorless!");
                 }
             }
+            e.Graphics.DrawImage(img, 0, 0, Width, Height);   
         }
-        private void SetDescription(string description)
+        private void SetImage(PaintEventArgs e)
         {
-            labelDescription.Text = description;
+            e.Graphics.DrawImage(CardLibrary.GetCardImage(Card.Name), 18 * ScaleX, 36 * ScaleY, 240 * ScaleX, 183 * ScaleY);
         }
-        private void SetFrame(CardRarity rarity, CardType type)
+        private void SetFrame(PaintEventArgs e)
         {
-            pictureBoxFrame.Image = Frames[rarity][type];
+            CardRarity rarity = Card.Rarity;
+            CardType type = Card.Type;
+            e.Graphics.DrawImage(Frames[rarity][type], 15 *ScaleX, 54 * ScaleY, 243 * ScaleX, 168 * ScaleY);
         }
-        private void SetImage(string name)
+        private void SetBanner(PaintEventArgs e)
         {
-            pictureBoxImage.Image = CardLibrary.GetCardImage(name);
+            Image img;
+            switch (Card.Rarity)
+            {
+                case CardRarity.Basic:
+                case CardRarity.Common:
+                    img = Properties.Resources.banner_common;
+                    break;
+                case CardRarity.Uncommon:
+                    img = Properties.Resources.banner_uncommon;
+                    break;
+                case CardRarity.Rare:
+                    img = Properties.Resources.banner_rare;
+                    break;
+                default:
+                    throw new Exception("Illegal Rarity");
+            }
+            e.Graphics.DrawImage(img, 0F, 0F, 270 * ScaleX, 75 * ScaleY);
         }
-        private void SetName(string name)
+        private void SetCost(PaintEventArgs e)
         {
-            labelName.Text = name;
+            e.Graphics.DrawImage(Properties.Resources.bg_energy, 0F, 0F, 48 * ScaleX, 48 * ScaleY);
+            Font stringFont = new Font("Arial", 16);
+            StringFormat stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Center;
+            e.Graphics.DrawString(Card.Cost.ToString(), stringFont, Brushes.Black, new RectangleF(0, 0, 48 * ScaleX, 48 * ScaleY),stringFormat);
         }
-        private void SetCost(int cost)
+        private void SetName(PaintEventArgs e)
         {
-            labelCost.Text = cost.ToString();
+            Font stringFont = new Font("Arial", 16);
+            StringFormat stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Center;
+            e.Graphics.DrawString(Card.Name, stringFont, Brushes.White, new RectangleF(0, 6 * ScaleY, 270 * ScaleX, 45 * ScaleY), stringFormat);
+        }
+        private void SetDescription(PaintEventArgs e)
+        {
+            Font stringFont = new Font("Arial", 10);
+            StringFormat stringFormat = new StringFormat();
+            stringFormat.Alignment = StringAlignment.Center;
+            e.Graphics.DrawString(Card.Description, stringFont, Brushes.White, new RectangleF(30 * ScaleX, 225 * ScaleY, 210 * ScaleX, 135 * ScaleY), stringFormat);
+        }
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            ScaleX = Width / (OriginX * 1.5f);
+            ScaleY = Height / (OriginY * 1.5f);
+            SetBackground(e);
+            SetImage(e);
+            SetFrame(e);
+            SetBanner(e);
+            SetCost(e);
+            SetName(e);
+            SetDescription(e);
         }
     }
 }
