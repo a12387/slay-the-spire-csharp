@@ -40,7 +40,7 @@ namespace SlayTheSpire
             buttonLeave.Visible = true;
             var cardSelection = new CardSelection(NumCardsToGet);
             Program.MainForm.AddPage(cardSelection, this);
-            playerInfo.BringToFront();
+            //playerInfo.BringToFront();
         }
 
         //private void CloseMap()

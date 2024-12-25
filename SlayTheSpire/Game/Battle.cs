@@ -40,7 +40,8 @@ namespace SlayTheSpire.Game
             for(int i = 0; i < Monsters.Count; i++)
             {
                 Monsters[i].Act(Player);
-                Monsters[i].GenerateNewIntent();
+                // 不知道是第几轮
+                // Monsters[i].GenerateNewIntent();
             }
             PlayerTurnStart();
         }
