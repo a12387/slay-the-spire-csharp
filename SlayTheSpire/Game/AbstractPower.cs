@@ -29,6 +29,7 @@ namespace SlayTheSpire.Game
         public virtual void OnDrawCard(ref int amount) { }
         public virtual void OnExhaustCard() { }
         public virtual void OnTurnStart() { }
-    
+        public virtual void OnAppliedDebuff() { }
+
     }
 }
