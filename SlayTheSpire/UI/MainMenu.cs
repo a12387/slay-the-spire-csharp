@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SlayTheSpire.Game;
 
 namespace SlayTheSpire.UI
 {
@@ -24,9 +25,14 @@ namespace SlayTheSpire.UI
 
         private void GameStartUI()
         {
+            var player = new Player("IronClad", 80);
+            var room = new Room(player);
             var starterRoom = new StarterRoom();
-            Program.MainForm.ChangePage(starterRoom);
+            starterRoom.ShowMap += room.ShowMapD;
+            room.ChangePage(starterRoom);
+            Program.MainForm.ChangePage(room);
         }
-        
+
+        //private Room room;
     }
 }

@@ -32,7 +32,7 @@
             labelCharacter = new Label();
             pictureBoxMap = new PictureBox();
             pictureBoxDeck = new PictureBox();
-            healthInfo1 = new HealthInfo();
+            healthInfo = new HealthInfo();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMap).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDeck).BeginInit();
             SuspendLayout();
@@ -68,6 +68,7 @@
             pictureBoxMap.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxMap.TabIndex = 1;
             pictureBoxMap.TabStop = false;
+            pictureBoxMap.Click += pictureBoxMap_Click;
             // 
             // pictureBoxDeck
             // 
@@ -79,19 +80,21 @@
             pictureBoxDeck.TabIndex = 1;
             pictureBoxDeck.TabStop = false;
             // 
-            // healthInfo1
+            // healthInfo
             // 
-            healthInfo1.Location = new Point(219, -1);
-            healthInfo1.Name = "healthInfo1";
-            healthInfo1.Size = new Size(124, 41);
-            healthInfo1.TabIndex = 2;
+            healthInfo.CurrentHealth = 80;
+            healthInfo.Location = new Point(219, -1);
+            healthInfo.MaxHealth = 80;
+            healthInfo.Name = "healthInfo";
+            healthInfo.Size = new Size(124, 41);
+            healthInfo.TabIndex = 2;
             // 
             // PlayerInfo
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(65, 76, 81);
-            Controls.Add(healthInfo1);
+            Controls.Add(healthInfo);
             Controls.Add(pictureBoxDeck);
             Controls.Add(pictureBoxMap);
             Controls.Add(labelCharacter);
@@ -109,6 +112,6 @@
         private Label labelCharacter;
         private PictureBox pictureBoxMap;
         private PictureBox pictureBoxDeck;
-        private HealthInfo healthInfo1;
+        private HealthInfo healthInfo;
     }
 }

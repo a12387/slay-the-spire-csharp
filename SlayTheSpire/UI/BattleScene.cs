@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SlayTheSpire.Game;
 
 namespace SlayTheSpire.UI
 {
@@ -16,5 +17,7 @@ namespace SlayTheSpire.UI
         {
             InitializeComponent();
         }
+
+        private Battle battle;
     }
 }

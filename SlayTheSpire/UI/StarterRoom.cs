@@ -1,4 +1,5 @@
 ﻿using SlayTheSpire.UI;
+using SlayTheSpire.Game;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,22 +14,18 @@ namespace SlayTheSpire
 {
     public partial class StarterRoom : UserControl
     {
-        SlayTheSpire.UI.GameMap? map;
+        //SlayTheSpire.UI.GameMap? map;
 
         public StarterRoom()
         {
             InitializeComponent();
         }
 
+        public event EventHandler? ShowMap;
+
         private void StartJourney(object sender, EventArgs e)
         {
-            ShowMap();
-        }
-        private void ShowMap()
-        {
-            map = new GameMap();
-            Program.MainForm.AddPage(map, this);
-            playerInfo.BringToFront();
+            ShowMap?.Invoke(this, e);
         }
 
         private void buttonTalk_Click(object sender, EventArgs e)
@@ -44,24 +41,24 @@ namespace SlayTheSpire
             buttonLeave.Visible = true;
         }
 
-        private void CloseMap()
-        {
-            if (map != null)
-            {
-                Program.MainForm.DeledePage(map);
-            }
-        }
+        //private void CloseMap()
+        //{
+        //    if (map != null)
+        //    {
+        //        Program.MainForm.DeletePage(map);
+        //    }
+        //}
 
-        private void mapIcon_Click(object sender, EventArgs e)
-        {
-            if (map != null)
-            {
-                CloseMap();
-            }
-            else
-            {
-                ShowMap();
-            }
-        }
+        //private void mapIcon_Click(object sender, EventArgs e)
+        //{
+        //    if (map != null)
+        //    {
+        //        CloseMap();
+        //    }
+        //    else
+        //    {
+        //        ShowMap();
+        //    }
+        //}
     }
 }

@@ -47,7 +47,7 @@
             ClientSize = new Size(1280, 720);
             Controls.Add(MainPanel);
             Name = "MainForm";
-            Text = "Form1";
+            Text = "C# the Spire";
             ResumeLayout(false);
         }
 

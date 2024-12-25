@@ -10,11 +10,34 @@ namespace SlayTheSpire.Game
     {
         public bool IsPlayer { get; }
         public string Name { get; }
-        public int CurrentHealth { get; protected set; }
-        public int MaxHealth { get; protected set; }
+        private int currentHealth;
+        public int CurrentHealth 
+        { 
+            get { return currentHealth; }
+            protected set
+            {
+                if (currentHealth != value)
+                {
+                    currentHealth = value;
+                    CurrentHealthChanged?.Invoke(this, currentHealth);
+                }
+            }
+        }
+        private int maxHealth;
+        public int MaxHealth 
+        { 
+            get { return  maxHealth; }
+            protected set
+            {
+                maxHealth = value;
+                MaxHealthChanged?.Invoke(this, maxHealth);
+            }
+        }
         public int CurrentBlock {  get; protected set; }
         public int Money { get; protected set; }
         public List<AbstractPower> BuffList { get; protected set; }
+        public event EventHandler<int> CurrentHealthChanged;
+        public event EventHandler<int> MaxHealthChanged;
 
         protected AbstractCreature(bool isPlayer, string name, int maxHealth ) 
         { 

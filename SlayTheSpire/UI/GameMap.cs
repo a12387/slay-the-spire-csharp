@@ -19,6 +19,12 @@ namespace SlayTheSpire.UI
             panelMap.Parent = myPictureBoxMap;
         }
 
+        private void pictureBoxElite_Click(object sender, EventArgs e)
+        {
+            var scene = new BattleScene();
+
+        }
+
         //protected override void OnPaint(PaintEventArgs e)
         //{
         //    using (Brush semiTransparentBrush = new SolidBrush(Color.FromArgb(200, 0, 0, 0)))  // 半透明黑色

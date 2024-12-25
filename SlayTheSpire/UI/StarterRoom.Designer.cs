@@ -31,7 +31,6 @@
             buttonTalk = new Button();
             buttonGetDeck = new Button();
             buttonLeave = new Button();
-            playerInfo = new UI.PlayerInfo();
             pictureBoxHeart = new PictureBox();
             pictureBoxDialog = new PictureBox();
             labelDialog = new Label();
@@ -72,14 +71,6 @@
             buttonLeave.UseVisualStyleBackColor = true;
             buttonLeave.Visible = false;
             buttonLeave.Click += StartJourney;
-            // 
-            // playerInfo
-            // 
-            playerInfo.BackColor = Color.FromArgb(65, 76, 81);
-            playerInfo.Location = new Point(0, 0);
-            playerInfo.Name = "playerInfo";
-            playerInfo.Size = new Size(1280, 40);
-            playerInfo.TabIndex = 3;
             // 
             // pictureBoxHeart
             // 
@@ -134,7 +125,6 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(labelDialog);
             Controls.Add(pictureBoxIronclad);
-            Controls.Add(playerInfo);
             Controls.Add(pictureBoxHeart);
             Controls.Add(pictureBoxDialog);
             Controls.Add(buttonLeave);
@@ -154,7 +144,6 @@
         private Button buttonTalk;
         private Button buttonGetDeck;
         private Button buttonLeave;
-        private UI.PlayerInfo playerInfo;
         private PictureBox pictureBoxHeart;
         private PictureBox pictureBoxDialog;
         private Label labelDialog;

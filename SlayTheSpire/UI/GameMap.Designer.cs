@@ -67,6 +67,7 @@
             pictureBoxElite.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxElite.TabIndex = 3;
             pictureBoxElite.TabStop = false;
+            pictureBoxElite.Click += pictureBoxElite_Click;
             // 
             // myPictureBoxMap
             // 
