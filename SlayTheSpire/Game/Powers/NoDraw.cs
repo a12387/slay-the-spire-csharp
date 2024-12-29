@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Powers
 {
-    internal class BarricadePower : AbstractPower
+    internal class NoDraw : AbstractPower
     {
-        public BarricadePower() : base("BarricadePower", 1, PowerType.Buff)
+        public NoDraw() : base("NoDraw", 1, PowerType.Debuff)
+        { 
+        }
+        public override void OnDrawCard(ref int amount)
         {
+            amount = 0;
         }
         public override void OnTurnStart(ref bool loseblock, AbstractPlayer player)
         {
-            loseblock = false;
+            Amount = 0;
         }
     }
 }

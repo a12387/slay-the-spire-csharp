@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class Strike : AbstractCard
+    internal class Bludgeon : AbstractCard
     {
-        static public Strike Instance { get; } = new Strike();
-        public Strike() : base("Strike", 1, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
+        static public Bludgeon Instance { get; } = new Bludgeon();
+        public Bludgeon() : base("Bludgeon", 3, CardColor.Red, CardRarity.Rare, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDamage = 9;
+            BaseDamage = 42;
             Description = """
                 攻击
-                造成9点伤害。
+                造成42点伤害。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)

@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Powers
 {
-    internal class BarricadePower : AbstractPower
+    internal class DemonFormPower : AbstractPower
     {
-        public BarricadePower() : base("BarricadePower", 1, PowerType.Buff)
+        public DemonFormPower(int amount) : base("DemonFormPower", amount, PowerType.Buff)
         {
         }
         public override void OnTurnStart(ref bool loseblock, AbstractPlayer player)
         {
-            loseblock = false;
+            player.ApplyPower(new Strength(this.Amount));
         }
     }
 }

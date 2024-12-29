@@ -24,14 +24,14 @@ namespace SlayTheSpire.UI
                 case 1:
                     var shieldui = new CreatureUI(Battle.Monsters[0]);
                     var spearui = new CreatureUI(Battle.Monsters[1]);
-                    panelPlayerMiddle.Controls.Add(playerui);
-                    panelMonsterLeft.Controls.Add(shieldui);
-                    panelMonsterRight.Controls.Add(spearui);
+                    panelMiddle.Controls.Add(playerui);
+                    panelLeft.Controls.Add(shieldui);
+                    panelRight.Controls.Add(spearui);
                     break;
                 case 2:
                     var heartui = new CreatureUI(Battle.Monsters[0]);
-                    panelPlayerLeft.Controls.Add(playerui);
-                    panelMonsterRight.Controls.Add((heartui));
+                    panelLeft.Controls.Add(playerui);
+                    panelRight.Controls.Add((heartui));
                     break;
                 default:
                     break;
@@ -49,5 +49,10 @@ namespace SlayTheSpire.UI
         }
 
         private Battle Battle;
+
+        private void panelMonsterLeft_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

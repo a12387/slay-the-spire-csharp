@@ -6,24 +6,25 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class Strike : AbstractCard
+    internal class BurningPact : AbstractCard
     {
-        static public Strike Instance { get; } = new Strike();
-        public Strike() : base("Strike", 1, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
+        static public BurningPact Instance { get; } = new BurningPact();
+        public BurningPact() : base("BurningPact", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDamage = 9;
+            BaseMagicNumber = 3;
             Description = """
-                攻击
-                造成9点伤害。
+                技能
+                消耗1张牌。
+                抽3张牌。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.Attack(BaseDamage, target);
+            user.DrawCard(BaseMagicNumber);
         }
     }
 }

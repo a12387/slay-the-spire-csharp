@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Powers
 {
-    internal class DarkEmbracePower : AbstractPower
+    internal class FeelNoPainPower : AbstractPower
     {
-        public DarkEmbracePower(int amount) : base("DarkEmbracePower", amount, PowerType.Buff)
+        public FeelNoPainPower(int amount) : base("FeelNoPainPower", amount, PowerType.Buff)
         {
         }
         public override void OnExhaustCard(AbstractPlayer player)
         {
-            player.DrawCard(this.Amount);
+            player.AddBlock(this.Amount);
         }
     }
 }

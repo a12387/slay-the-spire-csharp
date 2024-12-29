@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Powers
 {
-    internal class BackAttackRight
+    internal class BackAttackRight : AbstractPower
     {
+        public BackAttackRight() : base("BackAttackRight", 1, PowerType.Buff)
+        {
+        }
+        public override void OnHurt(ref int amount)
+        {
+            amount = (int)(amount * 1.5);
+        }
     }
 }

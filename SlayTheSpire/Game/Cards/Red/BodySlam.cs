@@ -6,24 +6,23 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class Strike : AbstractCard
+    internal class BodeSlam : AbstractCard
     {
-        static public Strike Instance { get; } = new Strike();
-        public Strike() : base("Strike", 1, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
+        static public BodeSlam Instance { get; } = new BodeSlam();
+        public BodeSlam() : base("BodeSlam", 0, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDamage = 9;
             Description = """
                 攻击
-                造成9点伤害。
+                造成你当前格挡值的伤害。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.Attack(BaseDamage, target);
+            user.Attack(user.CurrentBlock, target);
         }
     }
 }

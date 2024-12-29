@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Powers
 {
-    internal class BeatOfDeath
+    internal class BeatOfDeath : AbstractPower
     {
+        public BeatOfDeath(int amount) : base("BeatOfDeath", amount, PowerType.Buff)
+        {
+        }
+        public override void OnUseCard(AbstractPlayer player)
+        {
+            player.Hurt(this.Amount);
+        }
     }
 }

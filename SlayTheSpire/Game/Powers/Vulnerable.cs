@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Powers
 {
-    internal class BarricadePower : AbstractPower
+    internal class Vulnerable : AbstractPower
     {
-        public BarricadePower() : base("BarricadePower", 1, PowerType.Buff)
+        public Vulnerable(int amount) : base("Vulnerable", amount, PowerType.Debuff)
         {
+        }
+        public override void OnHurt(ref int amount)
+        {
+            amount = (int)(amount * 1.5);
         }
         public override void OnTurnStart(ref bool loseblock, AbstractPlayer player)
         {
-            loseblock = false;
+            Amount--;
         }
     }
 }

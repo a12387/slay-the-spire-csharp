@@ -3,27 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class Strike : AbstractCard
+    internal class DarkEmbrace : AbstractCard
     {
-        static public Strike Instance { get; } = new Strike();
-        public Strike() : base("Strike", 1, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
+        static public DarkEmbrace Instance { get; } = new DarkEmbrace();
+        public DarkEmbrace() : base("DarkEmbrace", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Power)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDamage = 9;
+            BaseMagicNumber = 1;
             Description = """
-                攻击
-                造成9点伤害。
+                能力
+                每当有一张牌被消耗时，抽1张牌。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.Attack(BaseDamage, target);
+            user.ApplyPower(new DarkEmbracePower(BaseMagicNumber));
         }
     }
 }

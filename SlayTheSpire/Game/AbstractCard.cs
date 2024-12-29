@@ -39,7 +39,7 @@ namespace SlayTheSpire.Game
     internal abstract class AbstractCard
     {
         public string Name { get; }
-        public int Cost { get; }
+        public int Cost { set; get; }
         public CardColor Color { get; }
         public CardRarity Rarity { get; }
         public CardTarget Target { get; }
@@ -49,7 +49,7 @@ namespace SlayTheSpire.Game
         // public abstract bool IsUpgrade;
         public bool IsRetain { get; protected set; }
         public bool IsInnate { get; protected set; }
-        public bool IsExhaust { get; protected set; }
+        public bool IsExhaust { get; set; }
         public bool IsEthereal { get; protected set; }
 
         public int BaseDamage { get; protected set; }
@@ -70,9 +70,11 @@ namespace SlayTheSpire.Game
         }
         // public abstract void Upgrade();
 
-        public abstract void OnUse(AbstractPlayer user, AbstractCreature target);
+        public virtual void OnUse(AbstractPlayer user, AbstractCreature target) { }
+        public virtual void OnUse(AbstractPlayer user, List<AbstractMonster> targets) { }
 
         public virtual void OnDrawn() { }
         public virtual void OnExhaust() { }
+        //public virtual void MakeCopy() { }
     }
 }

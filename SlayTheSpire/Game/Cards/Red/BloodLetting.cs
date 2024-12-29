@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class Strike : AbstractCard
+    internal class BloodLetting : AbstractCard
     {
-        static public Strike Instance { get; } = new Strike();
-        public Strike() : base("Strike", 1, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
+        static public BloodLetting Instance { get; } = new BloodLetting();
+        public BloodLetting() : base("BloodLetting", 0, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDamage = 9;
+            BaseMagicNumber = 3;
             Description = """
-                攻击
-                造成9点伤害。
+                技能
+                获得3点能量。
+                失去3点生命。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.Attack(BaseDamage, target);
+            user.LoseHealth(3);
+            user.Energy += 3;
         }
     }
 }

@@ -11,9 +11,10 @@ namespace SlayTheSpire.Game.Powers
         public Artifact(int amount) : base("Artifact", amount, PowerType.Buff)
         {
         }
-        public override void OnAppliedDebuff()
+        public override void OnAppliedDebuff(ref int amount)
         {
-            
+            this.Amount--;
+            amount = 0;
         }
     }
 }

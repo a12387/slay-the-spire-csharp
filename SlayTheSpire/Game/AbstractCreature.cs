@@ -57,7 +57,11 @@ namespace SlayTheSpire.Game
             }
             for (int i = 0; i < BuffList.Count; i++)
             {
-                BuffList[i].OnAttack(ref amount);
+                BuffList[i].OnAttack(ref amount, 1);
+            }
+            for (int i = 0; i < BuffList.Count; i++)
+            {
+                BuffList[i].OnAttack(ref amount, 2);
             }
             target.Hurt(amount);
         }
@@ -125,7 +129,14 @@ namespace SlayTheSpire.Game
             {
                 throw new ArgumentOutOfRangeException("Cannot gain a negative amount of block!");
             }
-
+            for (int i = 0; i < BuffList.Count; i++)
+            {
+                BuffList[i].OnAddBlock(ref amount, 1);
+            }
+            for (int i = 0; i < BuffList.Count; i++)
+            {
+                BuffList[i].OnAddBlock(ref amount, 2);
+            }
             CurrentBlock += amount;
             if (CurrentBlock > 999)
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SlayTheSpire.Game.Powers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,24 +7,23 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class Strike : AbstractCard
+    internal class Barricade : AbstractCard
     {
-        static public Strike Instance { get; } = new Strike();
-        public Strike() : base("Strike", 1, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
+        static public Barricade Instance { get; } = new Barricade();
+        public Barricade() : base("Barricade", 3, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Power)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDamage = 9;
             Description = """
-                攻击
-                造成9点伤害。
+                能力
+                格挡不再在你的回合开始时消失。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.Attack(BaseDamage, target);
+            user.ApplyPower(new BarricadePower());
         }
     }
 }

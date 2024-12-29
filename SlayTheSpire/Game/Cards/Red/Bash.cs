@@ -3,27 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class Strike : AbstractCard
+    internal class Bash : AbstractCard
     {
-        static public Strike Instance { get; } = new Strike();
-        public Strike() : base("Strike", 1, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
+        static public Bash Instance { get; } = new Bash();
+        public Bash() : base("Bash", 2, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDamage = 9;
+            BaseDamage = 10;
+            BaseMagicNumber = 3;
             Description = """
                 攻击
-                造成9点伤害。
+                造成10点伤害。
+                给予3层易伤。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
             user.Attack(BaseDamage, target);
+            target.ApplyPower(new Vulnerable(BaseMagicNumber));
         }
     }
 }

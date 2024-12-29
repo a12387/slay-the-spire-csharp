@@ -51,9 +51,14 @@ namespace SlayTheSpire.Game
         }
         public void TurnStart()
         {
+            bool loseBlock = true;
             for (int i = 0; i < BuffList.Count; i++)
             {
-                BuffList[i].OnTurnStart();
+                BuffList[i].OnTurnStart(ref loseBlock,this);
+            }
+            if(loseBlock)
+            {
+                CurrentBlock = 0;
             }
             DrawCard(NumDrawCardsEachTurn);
         }
@@ -68,16 +73,17 @@ namespace SlayTheSpire.Game
                 return;
             }
 
-            if (DrawPile.Any())
+            if (!DrawPile.Any())
             {
                 DiscardPile.ForEach(i => DrawPile.Add(i));
+                DiscardPile.Clear();
                 DrawPile.Shuffle();
             }
-            for (int i = 0; i < count && Hand.Count <= MaxHandCards && !DrawPile.Any(); i++)
+            for (int i = 0; i < count && Hand.Count <= MaxHandCards && DrawPile.Any(); i++)
             {
                 var card = DrawPile.First();
-                Hand.Add(card);
 
+                Hand.Add(card);
                 card.OnDrawn();
                 DrawPile.RemoveAt(0);
             }
@@ -90,10 +96,16 @@ namespace SlayTheSpire.Game
             ExhaustPile.Insert(0, card);
             for (int i = 0; i < BuffList.Count; i++)
             {
-                BuffList[i].OnExhaustCard();
+                BuffList[i].OnExhaustCard(this);
             }
             card.OnExhaust();
         }
-
+        public void UseCard(AbstractCard card, AbstractCreature target)
+        {
+            for (int i = 0; i < BuffList.Count; i++)
+            {
+                BuffList[i].OnUseCard(this);
+            }
+        }
     }
 }
