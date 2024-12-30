@@ -78,8 +78,9 @@ namespace SlayTheSpire.Game
         }
         public void TurnEnd()
         {
-            Hand.ForEach(card =>
+            for(int i = 0; i < Hand.Count; i++)
             {
+                var card = Hand[i];
                 if (card.IsEthereal)
                 {
                     ExhaustCard(card);
@@ -87,9 +88,10 @@ namespace SlayTheSpire.Game
                 else if(!card.IsRetain)
                 {
                     DiscardPile.Add(card);
+                    Hand.Remove(card);
                 }
-            });
-            Hand.Clear();
+                i--;
+            }
             TurnEnded?.Invoke();
         }
         public void DrawCard(int count)

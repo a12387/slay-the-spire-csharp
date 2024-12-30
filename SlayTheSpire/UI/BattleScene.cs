@@ -56,6 +56,11 @@ namespace SlayTheSpire.UI
                     switch (btn.Card.Target)
                     {
                         case CardTarget.None:
+                            if (battle.Player.CanSelectCard(btn.Card))
+                            {
+                                battle.Player.UseCard(btn.Card, battle, battle.Player);
+                                selectedCard = null;
+                            }
                             break;
                         case CardTarget.Self:
                             if (battle.Player.CanSelectCard(btn.Card))
