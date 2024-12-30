@@ -26,7 +26,7 @@ namespace SlayTheSpire.Game.Cards.Red
         }
         public override void OnDrawn(AbstractPlayer player)
         {
-            player.loseEnergy(BaseMagicNumber);
+            player.LoseEnergy(BaseMagicNumber);
         }
     }
 }

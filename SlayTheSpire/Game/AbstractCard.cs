@@ -70,7 +70,7 @@ namespace SlayTheSpire.Game
         }
         // public abstract void Upgrade();
 
-        public virtual void OnUse(AbstractPlayer user, AbstractCreature target) { }
+        public virtual void OnUse(AbstractPlayer user, AbstractCreature? target) { }
         public virtual void OnUse(AbstractPlayer user, List<AbstractMonster> targets) { }
 
         public virtual void OnDrawn(AbstractPlayer player) { }

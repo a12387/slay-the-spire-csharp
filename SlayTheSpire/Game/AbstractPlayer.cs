@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SlayTheSpire.Game.Cards.Red;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
@@ -84,7 +85,7 @@ namespace SlayTheSpire.Game
                 var card = DrawPile.First();
 
                 Hand.Add(card);
-                card.OnDrawn();
+                card.OnDrawn(this);
                 DrawPile.RemoveAt(0);
             }
         }
@@ -107,11 +108,67 @@ namespace SlayTheSpire.Game
                 BuffList[i].OnUseCard(this);
             }
         }
-        public void loseEnergy(int cost)
+        public void LoseEnergy(int cost)
         {
             if (Energy >= cost)
             {
                 Energy -= cost;
+            }
+        }
+        public bool CanSelectCard(AbstractCard card)
+        {
+            if(card.Cost == -1 || Energy >= card.Cost)
+            {
+                return true;
+            }
+            else return false;
+        }
+        public void UseCard(AbstractCard card, Battle battle, AbstractMonster? target)
+        {
+            BeforeUseCard(battle);
+            card.OnUse(this, target);
+            AfterUseCard(card);
+        }
+        public void UseCard(AbstractCard card, Battle battle, List<AbstractMonster> targets)
+        {
+            BeforeUseCard(battle);
+            card.OnUse(this, targets);
+            AfterUseCard(card);
+        }
+        private void BeforeUseCard(Battle battle)
+        {
+            for (int i = 0; i < BuffList.Count; i++)
+            {
+                BuffList[i].OnUseCard(this);
+            }
+            for (int i = 0; i < battle.Monsters.Count; i++)
+            {
+                var buffList = battle.Monsters[i].BuffList;
+                for (int j = 0; j < buffList.Count; j++)
+                {
+                    buffList[j].OnUseCard(this);
+                }
+            }
+        }
+        private void AfterUseCard(AbstractCard card)
+        {
+            Hand.Remove(card);
+            if (card.IsExhaust)
+            {
+                ExhaustPile.Add(card);
+            }
+            else
+            {
+                DiscardPile.Add(card);
+            }
+            
+            if(card.Cost == -1)
+            {
+                Energy = 0;
+            }
+            else
+            {
+                Energy -= card.Cost;
             }
         }
     }
