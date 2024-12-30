@@ -44,6 +44,10 @@ namespace SlayTheSpire
                 [CardType.Skill] = Properties.Resources.frame_skill_rare,
                 [CardType.Power] = Properties.Resources.frame_power_rare
             },
+            [CardRarity.Special] = new Dictionary<CardType, Bitmap>()
+            {
+                [CardType.Status] = Properties.Resources.frame_skill_common,
+            },
         };
         public AbstractCard Card { get; }
         public CardButton(AbstractCard card)
@@ -88,7 +92,14 @@ namespace SlayTheSpire
         {
             CardRarity rarity = Card.Rarity;
             CardType type = Card.Type;
-            e.Graphics.DrawImage(Frames[rarity][type], 15 *ScaleX, 54 * ScaleY, 243 * ScaleX, 168 * ScaleY);
+            if (type == CardType.Power)
+            {
+                e.Graphics.DrawImage(Frames[rarity][type], 15 * ScaleX, 10 * ScaleY, 243 * ScaleX, 210 * ScaleY);
+            }
+            else
+            {
+                e.Graphics.DrawImage(Frames[rarity][type], 15 * ScaleX, 54 * ScaleY, 243 * ScaleX, 168 * ScaleY);
+            }
         }
         private void SetBanner(PaintEventArgs e)
         {
@@ -112,18 +123,29 @@ namespace SlayTheSpire
         }
         private void SetCost(PaintEventArgs e)
         {
+            if(Card.Rarity == CardRarity.Special)
+            {
+                return;
+            }
             e.Graphics.DrawImage(Properties.Resources.bg_energy, 0F, 0F, 48 * ScaleX, 48 * ScaleY);
             Font stringFont = new Font("Arial", 16);
             StringFormat stringFormat = new StringFormat();
             stringFormat.Alignment = StringAlignment.Center;
-            e.Graphics.DrawString(Card.Cost.ToString(), stringFont, Brushes.Black, new RectangleF(0, 0, 48 * ScaleX, 48 * ScaleY),stringFormat);
+            if(Card.Cost != -1)
+            {
+                e.Graphics.DrawString(Card.Cost.ToString(), stringFont, Brushes.Black, new RectangleF(0, 0, 48 * ScaleX, 48 * ScaleY), stringFormat);
+            }
+            else
+            {
+                e.Graphics.DrawString("X", stringFont, Brushes.Black, new RectangleF(0, 0, 48 * ScaleX, 48 * ScaleY), stringFormat);
+            }
         }
         private void SetName(PaintEventArgs e)
         {
-            Font stringFont = new Font("Arial", 16);
+            Font stringFont = new Font("Arial", 15);
             StringFormat stringFormat = new StringFormat();
             stringFormat.Alignment = StringAlignment.Center;
-            e.Graphics.DrawString(Card.Name, stringFont, Brushes.White, new RectangleF(0, 6 * ScaleY, 270 * ScaleX, 45 * ScaleY), stringFormat);
+            e.Graphics.DrawString(Card.Name, stringFont, Brushes.Black, new RectangleF(0, 6 * ScaleY, 270 * ScaleX, 45 * ScaleY), stringFormat);
         }
         private void SetDescription(PaintEventArgs e)
         {

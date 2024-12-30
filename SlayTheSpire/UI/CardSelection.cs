@@ -53,11 +53,13 @@ namespace SlayTheSpire.UI
         private void Select(object? sender, MouseEventArgs e)
         {
             var btn = sender as CardButton;
-            //if (btn != null)
-            //{
-            //    var card = btn.Card;
-            //    Dungeon.Player.MasterDeck.Add(card);
-            //}
+            if (btn != null)
+            {
+                var card = btn.Card;
+                var type = card.GetType();
+                var newCard = (AbstractCard?)Activator.CreateInstance(type);
+                Dungeon.Player.MasterDeck.Add(newCard ?? throw new Exception("Failed to create card!"));
+            }
             panel1.Controls.Clear();
             panel2.Controls.Clear();
             panel3.Controls.Clear();

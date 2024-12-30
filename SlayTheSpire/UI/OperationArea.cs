@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SlayTheSpire.Game;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,6 +28,17 @@ namespace SlayTheSpire.UI
         {
             panelHand.Controls.Add(btn);
             btn.Location = new Point((panelHand.Controls.Count - 1) * (btn.Width + Interval), 0);
+        }
+        public void ShowHandCards(CardGroup hand)
+        {
+            hand.ForEach(card =>
+            {
+                AddCard(new CardButton(card));
+            });
+        }
+        public void Clear()
+        {
+            panelHand.Controls.Clear();
         }
     }
 }

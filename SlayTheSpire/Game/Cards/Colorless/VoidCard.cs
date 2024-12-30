@@ -7,10 +7,10 @@ using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class Void : AbstractCard
+    internal class VoidCard : AbstractCard
     {
-        static public Void Instance { get; } = new Void();
-        public Void() : base("Void", 1000, CardColor.Colorless, CardRarity.Special, CardTarget.None, CardType.Status)
+        static public VoidCard Instance { get; } = new VoidCard();
+        public VoidCard() : base("Void", 1000, CardColor.Colorless, CardRarity.Special, CardTarget.None, CardType.Status)
         {
             IsRetain = false;
             IsInnate = false;

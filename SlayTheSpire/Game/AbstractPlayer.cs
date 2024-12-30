@@ -38,7 +38,6 @@ namespace SlayTheSpire.Game
         }
         public void BeforeBattle()
         {
-            MasterDeck.Clear();
             DrawPile.Clear();
             Hand.Clear();
             DiscardPile.Clear();
@@ -62,6 +61,20 @@ namespace SlayTheSpire.Game
                 CurrentBlock = 0;
             }
             DrawCard(NumDrawCardsEachTurn);
+        }
+        public void TurnEnd()
+        {
+            Hand.ForEach(card =>
+            {
+                if (card.IsEthereal)
+                {
+                    ExhaustCard(card);
+                }
+                else if(!card.IsRetain)
+                {
+                    DiscardPile.Add(card);
+                }
+            });
         }
         public void DrawCard(int count)
         {
@@ -155,7 +168,7 @@ namespace SlayTheSpire.Game
             Hand.Remove(card);
             if (card.IsExhaust)
             {
-                ExhaustPile.Add(card);
+                ExhaustCard(card);
             }
             else
             {
