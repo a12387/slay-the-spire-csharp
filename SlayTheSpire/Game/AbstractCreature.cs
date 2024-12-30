@@ -19,7 +19,7 @@ namespace SlayTheSpire.Game
                 if (currentHealth != value)
                 {
                     currentHealth = value;
-                    CurrentHealthChanged?.Invoke(this, currentHealth);
+                    CurrentHealthChanged?.Invoke(currentHealth);
                 }
             }
         }
@@ -30,14 +30,27 @@ namespace SlayTheSpire.Game
             protected set
             {
                 maxHealth = value;
-                MaxHealthChanged?.Invoke(this, maxHealth);
+                MaxHealthChanged?.Invoke(maxHealth);
             }
         }
-        public int CurrentBlock { get; set; }
+        public int currentBlock;
+        public int CurrentBlock 
+        { 
+            get { return currentBlock; }
+            set 
+            {
+                if (currentBlock != value)
+                {
+                    currentBlock = value;
+                    CurrentBlockChanged?.Invoke(currentBlock);
+                }
+            } 
+        }
         public int Money { get; protected set; }
         public List<AbstractPower> BuffList { get; protected set; }
-        public event EventHandler<int> CurrentHealthChanged;
-        public event EventHandler<int> MaxHealthChanged;
+        public event Action<int>? CurrentHealthChanged;
+        public event Action<int>? MaxHealthChanged;
+        public event Action<int>? CurrentBlockChanged;
 
         protected AbstractCreature(bool isPlayer, string name, int maxHealth)
         {

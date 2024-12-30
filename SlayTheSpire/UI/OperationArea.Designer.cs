@@ -43,6 +43,7 @@
             pictureBoxDrawPile.BackColor = Color.Transparent;
             pictureBoxDrawPile.Image = Properties.Resources.deck1;
             pictureBoxDrawPile.Location = new Point(0, 150);
+            pictureBoxDrawPile.Margin = new Padding(0);
             pictureBoxDrawPile.Name = "pictureBoxDrawPile";
             pictureBoxDrawPile.Size = new Size(120, 120);
             pictureBoxDrawPile.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -52,9 +53,10 @@
             // pictureBoxDiscardPile
             // 
             pictureBoxDiscardPile.Image = Properties.Resources.discard;
-            pictureBoxDiscardPile.Location = new Point(1160, 160);
+            pictureBoxDiscardPile.Location = new Point(1160, 150);
+            pictureBoxDiscardPile.Margin = new Padding(0);
             pictureBoxDiscardPile.Name = "pictureBoxDiscardPile";
-            pictureBoxDiscardPile.Size = new Size(120, 110);
+            pictureBoxDiscardPile.Size = new Size(120, 120);
             pictureBoxDiscardPile.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxDiscardPile.TabIndex = 1;
             pictureBoxDiscardPile.TabStop = false;
@@ -62,6 +64,7 @@
             // labelEnergy
             // 
             labelEnergy.Location = new Point(0, 30);
+            labelEnergy.Margin = new Padding(0);
             labelEnergy.Name = "labelEnergy";
             labelEnergy.Size = new Size(120, 120);
             labelEnergy.TabIndex = 2;
@@ -71,8 +74,9 @@
             // labelExhaust
             // 
             labelExhaust.Location = new Point(1160, 48);
+            labelExhaust.Margin = new Padding(0);
             labelExhaust.Name = "labelExhaust";
-            labelExhaust.Size = new Size(120, 109);
+            labelExhaust.Size = new Size(120, 102);
             labelExhaust.TabIndex = 3;
             labelExhaust.Text = "0";
             labelExhaust.TextAlign = ContentAlignment.MiddleCenter;
@@ -96,8 +100,9 @@
             buttonEndTurn.FlatAppearance.MouseOverBackColor = Color.Transparent;
             buttonEndTurn.FlatStyle = FlatStyle.Flat;
             buttonEndTurn.Location = new Point(1160, 0);
+            buttonEndTurn.Margin = new Padding(0);
             buttonEndTurn.Name = "buttonEndTurn";
-            buttonEndTurn.Size = new Size(120, 45);
+            buttonEndTurn.Size = new Size(120, 48);
             buttonEndTurn.TabIndex = 5;
             buttonEndTurn.Text = "EndTurn";
             buttonEndTurn.UseVisualStyleBackColor = false;
