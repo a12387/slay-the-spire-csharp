@@ -3,29 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class BurningPact : AbstractCard
+    internal class Entrench : AbstractCard
     {
-        static public BurningPact Instance { get; } = new BurningPact();
-        public BurningPact() : base("BurningPact", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        static public Entrench Instance { get; } = new Entrench();
+        public Entrench() : base("Entrench", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDraw = 3;
             Description = """
                 技能
-                消耗1张牌。
-                抽3张牌。
+                将你当前的格挡翻倍。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.DrawCard(BaseDraw);
-            //等待选牌操作
+            user.CurrentBlock *= 2;
         }
     }
 }

@@ -3,29 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class BurningPact : AbstractCard
+    internal class ShrugItOff : AbstractCard
     {
-        static public BurningPact Instance { get; } = new BurningPact();
-        public BurningPact() : base("BurningPact", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        static public ShrugItOff Instance { get; } = new ShrugItOff();
+        public ShrugItOff() : base("ShrugItOff", 1, CardColor.Red, CardRarity.Common, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDraw = 3;
+            BaseBlock = 11;
+            BaseDraw = 1;
             Description = """
                 技能
-                消耗1张牌。
-                抽3张牌。
+                获得11点格挡。
+                抽1张牌。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
+            user.AddBlock(BaseBlock);
             user.DrawCard(BaseDraw);
-            //等待选牌操作
         }
     }
 }

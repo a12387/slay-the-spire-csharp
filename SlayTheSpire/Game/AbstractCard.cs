@@ -73,8 +73,9 @@ namespace SlayTheSpire.Game
         public virtual void OnUse(AbstractPlayer user, AbstractCreature target) { }
         public virtual void OnUse(AbstractPlayer user, List<AbstractMonster> targets) { }
 
-        public virtual void OnDrawn() { }
+        public virtual void OnDrawn(AbstractPlayer player) { }
         public virtual void OnExhaust() { }
+        public virtual void OnTurnEnd(AbstractPlayer player) { }
         //public virtual void MakeCopy() { }
     }
 }

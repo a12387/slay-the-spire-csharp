@@ -16,5 +16,9 @@ namespace SlayTheSpire.Game.Powers
         {
             if(order==1)amount += Amount;
         }
+        public override void OnLimitBreak()
+        {
+            Amount *= 2;
+        }
     }
 }

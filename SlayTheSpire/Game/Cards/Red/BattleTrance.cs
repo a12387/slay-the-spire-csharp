@@ -16,7 +16,7 @@ namespace SlayTheSpire.Game.Cards.Red
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseMagicNumber = 4;
+            BaseDraw = 4;
             Description = """
                 技能
                 抽4张牌。
@@ -25,7 +25,7 @@ namespace SlayTheSpire.Game.Cards.Red
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.DrawCard(BaseMagicNumber);
+            user.DrawCard(BaseDraw);
             user.ApplyPower(new NoDraw());
         }
     }

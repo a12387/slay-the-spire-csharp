@@ -13,7 +13,7 @@ namespace SlayTheSpire.Game.Powers
         }
         public override void OnExhaustCard(AbstractPlayer player)
         {
-            player.AddBlock(this.Amount);
+            player.CurrentBlock += Amount;
         }
     }
 }

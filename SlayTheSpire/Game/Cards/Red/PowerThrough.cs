@@ -3,29 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class BurningPact : AbstractCard
+    internal class PowerThrough : AbstractCard
     {
-        static public BurningPact Instance { get; } = new BurningPact();
-        public BurningPact() : base("BurningPact", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        static public PowerThrough Instance { get; } = new PowerThrough();
+        public PowerThrough() : base("PowerThrough", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDraw = 3;
+            BaseBlock = 20;
             Description = """
                 技能
-                消耗1张牌。
-                抽3张牌。
+                增加2张伤口到你的手牌。
+                获得20点格挡。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.DrawCard(BaseDraw);
-            //等待选牌操作
+            user.AddBlock(BaseBlock);
+            //伤口
         }
     }
 }

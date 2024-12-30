@@ -3,29 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class BurningPact : AbstractCard
+    internal class PommelStrike : AbstractCard
     {
-        static public BurningPact Instance { get; } = new BurningPact();
-        public BurningPact() : base("BurningPact", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        static public PommelStrike Instance { get; } = new PommelStrike();
+        public PommelStrike() : base("PommelStrike", 1, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDraw = 3;
+            BaseDamage = 10;
+            BaseDraw = 2;
             Description = """
-                技能
-                消耗1张牌。
-                抽3张牌。
+                攻击
+                造成10点伤害。
+                抽2张牌。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
+            user.Attack(BaseDamage, target);
             user.DrawCard(BaseDraw);
-            //等待选牌操作
         }
     }
 }

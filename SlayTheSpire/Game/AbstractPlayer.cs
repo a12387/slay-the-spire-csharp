@@ -107,5 +107,12 @@ namespace SlayTheSpire.Game
                 BuffList[i].OnUseCard(this);
             }
         }
+        public void loseEnergy(int cost)
+        {
+            if (Energy >= cost)
+            {
+                Energy -= cost;
+            }
+        }
     }
 }

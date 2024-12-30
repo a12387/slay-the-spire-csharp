@@ -3,29 +3,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class BurningPact : AbstractCard
+    internal class TrueGrit : AbstractCard
     {
-        static public BurningPact Instance { get; } = new BurningPact();
-        public BurningPact() : base("BurningPact", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        static public TrueGrit Instance { get; } = new TrueGrit();
+        public TrueGrit() : base("TrueGrit", 1, CardColor.Red, CardRarity.Common, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDraw = 3;
+            BaseBlock = 9;
             Description = """
                 技能
-                消耗1张牌。
-                抽3张牌。
+                获得9点格挡。
+                消耗一张手牌。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.DrawCard(BaseDraw);
-            //等待选牌操作
+            user.AddBlock(BaseBlock);
+            //需要选牌
         }
     }
 }

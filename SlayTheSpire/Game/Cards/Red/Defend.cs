@@ -3,29 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class BurningPact : AbstractCard
+    internal class Defend : AbstractCard
     {
-        static public BurningPact Instance { get; } = new BurningPact();
-        public BurningPact() : base("BurningPact", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        static public Defend Instance { get; } = new Defend();
+        public Defend() : base("Defend", 1, CardColor.Red, CardRarity.Basic, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;
             IsExhaust = false;
             IsEthereal = false;
-            BaseDraw = 3;
+            BaseBlock = 8;
             Description = """
                 技能
-                消耗1张牌。
-                抽3张牌。
+                获得8点格挡。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.DrawCard(BaseDraw);
-            //等待选牌操作
+            user.AddBlock(BaseBlock);
         }
     }
 }

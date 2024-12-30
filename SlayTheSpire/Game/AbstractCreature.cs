@@ -33,7 +33,7 @@ namespace SlayTheSpire.Game
                 MaxHealthChanged?.Invoke(this, maxHealth);
             }
         }
-        public int CurrentBlock {  get; protected set; }
+        public int CurrentBlock {  get; set; }
         public int Money { get; protected set; }
         public List<AbstractPower> BuffList { get; protected set; }
         public event EventHandler<int> CurrentHealthChanged;
@@ -158,6 +158,15 @@ namespace SlayTheSpire.Game
         }
         public void ApplyPower(AbstractPower power)
         {
+            if (power.Type == PowerType.Debuff)
+            {
+                int amount = power.Amount;
+                for (int i = 0; i < BuffList.Count; i++)
+                {
+                    BuffList[i].OnAppliedDebuff(ref amount);
+                }
+                power.Amount = amount;
+            }
             int index = BuffList.FindIndex(pwr => pwr.Name.Equals(power.Name)); 
             if(index < 0)
             {
@@ -167,6 +176,13 @@ namespace SlayTheSpire.Game
             {
                 BuffList[index].Amount += power.Amount;
             }
+            BuffList.ForEach(power =>
+            {
+                if (power.Amount == 0)
+                {
+                    BuffList.Remove(power);
+                }
+            });
         }
         public event Action? Die;
     }

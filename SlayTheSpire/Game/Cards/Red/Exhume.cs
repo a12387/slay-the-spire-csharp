@@ -3,28 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class BurningPact : AbstractCard
+    internal class Exhume : AbstractCard
     {
-        static public BurningPact Instance { get; } = new BurningPact();
-        public BurningPact() : base("BurningPact", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        static public Exhume Instance { get; } = new Exhume();
+        public Exhume() : base("Exhume", 0, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;
-            IsExhaust = false;
+            IsExhaust = true;
             IsEthereal = false;
-            BaseDraw = 3;
             Description = """
                 技能
-                消耗1张牌。
-                抽3张牌。
+                选择一张已消耗的牌，将其放入你的手牌。
+                消耗。
                 """;
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature target)
         {
-            user.DrawCard(BaseDraw);
             //等待选牌操作
         }
     }

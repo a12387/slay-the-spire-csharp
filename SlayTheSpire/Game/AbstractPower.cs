@@ -33,6 +33,6 @@ namespace SlayTheSpire.Game
         public virtual void OnTurnStart(ref bool loseblock, AbstractPlayer player) { }
         public virtual void OnAppliedDebuff(ref int amount) { }
         public virtual void OnUseCard(AbstractPlayer player) { }
-
+        public virtual void OnLimitBreak() { }
     }
 }
