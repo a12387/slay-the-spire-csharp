@@ -21,12 +21,12 @@ namespace SlayTheSpire.UI
         {
             InitializeComponent();
             creature = abstractCreature;
-            healthBar.CurrentHealth = abstractCreature.CurrentHealth;
-            healthBar.MaxHealth = abstractCreature.MaxHealth;
-            healthBar.CurrentBlock = abstractCreature.CurrentBlock;
             abstractCreature.CurrentHealthChanged += SetCurrentHealth;
             abstractCreature.MaxHealthChanged += SetMaxHealth;
             abstractCreature.CurrentBlockChanged += SetCurrentBlock;
+            SetMaxHealth(abstractCreature.MaxHealth);
+            SetCurrentHealth(abstractCreature.CurrentHealth);
+            SetCurrentBlock(abstractCreature.CurrentBlock);
             switch (abstractCreature.Name)
             {
                 case "Ironclad":

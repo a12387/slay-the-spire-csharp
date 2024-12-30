@@ -97,15 +97,11 @@ namespace SlayTheSpire.Game
                 }
                 else
                 {
-                    amount = 0;
                     LoseBlock(amount);
+                    amount = 0;
                 }
             }
-            CurrentHealth -= amount;
-            if (CurrentHealth <= 0 && Die != null)
-            {
-                Die();
-            }
+            LoseHealth(amount);
         }
         public void LoseHealth(int amount)
         {

@@ -13,7 +13,7 @@ namespace SlayTheSpire.Game.Monsters
         MonsterIntent LastMove;
         public SpireSpear() : base("Spire Spear", 10)
         {
-
+            CurrentBlock = 14;
         }
         public override void GenerateNewIntent(int round)
         {
