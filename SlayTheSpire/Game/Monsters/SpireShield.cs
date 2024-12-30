@@ -25,7 +25,7 @@ namespace SlayTheSpire.Game.Monsters
                     int randomValue = random.Next(0, 2);
                     if (randomValue == 0)
                     {
-                        SetIntent(MonsterIntent.AttackDefend);
+                        SetIntent(MonsterIntent.AttackDebuff);
                     }
                     else
                     {
@@ -34,7 +34,7 @@ namespace SlayTheSpire.Game.Monsters
                     break;
                 case 1:
                     if(LastMove== MonsterIntent.Defend)
-                        SetIntent(MonsterIntent.AttackDefend);
+                        SetIntent(MonsterIntent.AttackDebuff);
                     else
                         SetIntent(MonsterIntent.Defend);
                     break;
@@ -53,7 +53,7 @@ namespace SlayTheSpire.Game.Monsters
                     DamageTimes = 1;
                     break;
                 case MonsterIntent.AttackDefend:
-                    DamageAmount = 30;
+                    DamageAmount = 34;
                     DamageTimes = 1;
                     CurrentIntent = Game.MonsterIntent.AttackDefend;
                     break;
