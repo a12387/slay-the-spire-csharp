@@ -70,7 +70,10 @@ namespace SlayTheSpire.Game.Monsters
             switch (CurrentIntent)
             {
                 case Game.MonsterIntent.Defend:
-                    monsters.ForEach(monster => monster.AddBlock(30));
+                    for(int i=0;i<monsters.Count; i++)
+                    {
+                        monsters[i].AddBlock(30);
+                    }
                     break;
                 case Game.MonsterIntent.AttackDebuff:
                     Attack(DamageAmount, player);

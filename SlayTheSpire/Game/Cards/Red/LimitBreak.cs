@@ -23,7 +23,10 @@ namespace SlayTheSpire.Game.Cards.Red
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
-            user.BuffList.ForEach(buff => buff.OnLimitBreak());
+            for(int i=0;i<user.BuffList.Count; i++)
+            {
+                user.BuffList[i].OnLimitBreak();
+            }
         }
     }
 }
