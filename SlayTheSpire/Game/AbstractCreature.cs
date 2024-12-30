@@ -11,8 +11,8 @@ namespace SlayTheSpire.Game
         public bool IsPlayer { get; }
         public string Name { get; }
         private int currentHealth;
-        public int CurrentHealth 
-        { 
+        public int CurrentHealth
+        {
             get { return currentHealth; }
             protected set
             {
@@ -24,23 +24,23 @@ namespace SlayTheSpire.Game
             }
         }
         private int maxHealth;
-        public int MaxHealth 
-        { 
-            get { return  maxHealth; }
+        public int MaxHealth
+        {
+            get { return maxHealth; }
             protected set
             {
                 maxHealth = value;
                 MaxHealthChanged?.Invoke(this, maxHealth);
             }
         }
-        public int CurrentBlock {  get; set; }
+        public int CurrentBlock { get; set; }
         public int Money { get; protected set; }
         public List<AbstractPower> BuffList { get; protected set; }
         public event EventHandler<int> CurrentHealthChanged;
         public event EventHandler<int> MaxHealthChanged;
 
-        protected AbstractCreature(bool isPlayer, string name, int maxHealth ) 
-        { 
+        protected AbstractCreature(bool isPlayer, string name, int maxHealth)
+        {
             IsPlayer = isPlayer;
             Name = name;
             CurrentHealth = maxHealth;
@@ -71,13 +71,13 @@ namespace SlayTheSpire.Game
             {
                 throw new ArgumentOutOfRangeException("Hurt Damage amount must be large than 0");
             }
-            for (int i =0; i < BuffList.Count; i++)
+            for (int i = 0; i < BuffList.Count; i++)
             {
                 BuffList[i].OnHurt(ref amount);
             }
             if (CurrentBlock > 0)
             {
-                if(amount >= CurrentBlock)
+                if (amount >= CurrentBlock)
                 {
                     amount -= CurrentBlock;
                     LoseBlock(CurrentBlock);
@@ -96,7 +96,7 @@ namespace SlayTheSpire.Game
         }
         public void LoseHealth(int amount)
         {
-            if(amount < 0)
+            if (amount < 0)
             {
                 throw new ArgumentOutOfRangeException("Cannot lose a negative amount of health!");
             }
@@ -112,13 +112,13 @@ namespace SlayTheSpire.Game
         }
         public void LoseBlock(int amount)
         {
-            if(amount < 0)
+            if (amount < 0)
             {
                 throw new ArgumentOutOfRangeException("Cannot lose a negative amount of block!");
             }
 
             CurrentBlock -= amount;
-            if(CurrentBlock < 0)
+            if (CurrentBlock < 0)
             {
                 CurrentBlock = 0;
             }
@@ -151,7 +151,7 @@ namespace SlayTheSpire.Game
             }
 
             CurrentHealth += amount;
-            if(CurrentHealth > MaxHealth)
+            if (CurrentHealth > MaxHealth)
             {
                 CurrentHealth = MaxHealth;
             }
@@ -167,8 +167,8 @@ namespace SlayTheSpire.Game
                 }
                 power.Amount = amount;
             }
-            int index = BuffList.FindIndex(pwr => pwr.Name.Equals(power.Name)); 
-            if(index < 0)
+            int index = BuffList.FindIndex(pwr => pwr.Name.Equals(power.Name));
+            if (index < 0)
             {
                 BuffList.Add(power);
             }
@@ -186,4 +186,5 @@ namespace SlayTheSpire.Game
                 power.OnUpdate(this);
             });
         }
+    }
 }
