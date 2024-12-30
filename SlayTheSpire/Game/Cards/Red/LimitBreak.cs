@@ -21,7 +21,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 将你的力量翻倍。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.BuffList.ForEach(buff => buff.OnLimitBreak());
         }

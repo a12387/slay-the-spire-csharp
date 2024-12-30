@@ -24,10 +24,13 @@ namespace SlayTheSpire.Game.Cards.Red
                 抽2张牌。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
-            user.Attack(BaseDamage, target);
-            user.DrawCard(BaseDraw);
+            if (target != null)
+            {
+                user.Attack(BaseDamage, target);
+                user.DrawCard(BaseDraw);
+            }
         }
     }
 }

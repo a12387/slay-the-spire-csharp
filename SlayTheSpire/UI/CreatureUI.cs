@@ -14,9 +14,13 @@ namespace SlayTheSpire.UI
 {
     public partial class CreatureUI : UserControl
     {
+        private AbstractCreature creature;
+        public PictureBox CreatruePictureBox { get { return pictureBoxCreature; } }
+        internal AbstractCreature Creature { get { return creature; } }
         internal CreatureUI(AbstractCreature abstractCreature)
         {
             InitializeComponent();
+            creature = abstractCreature;
             healthBar.CurrentHealth = abstractCreature.CurrentHealth;
             healthBar.MaxHealth = abstractCreature.MaxHealth;
             abstractCreature.CurrentHealthChanged += SetCurrentHealth;

@@ -23,7 +23,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 你在这个回合内不能再抽任何牌。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.DrawCard(BaseDraw);
             user.ApplyPower(new NoDraw());

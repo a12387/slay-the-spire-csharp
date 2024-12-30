@@ -33,7 +33,7 @@
             labelEnergy = new Label();
             labelExhaust = new Label();
             panelHand = new Panel();
-            pictureBoxWithLabelEndTurn = new PictureBoxWithLabel();
+            buttonEndTurn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDrawPile).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxDiscardPile).BeginInit();
             SuspendLayout();
@@ -85,22 +85,28 @@
             panelHand.Size = new Size(1040, 270);
             panelHand.TabIndex = 4;
             // 
-            // pictureBoxWithLabelEndTurn
+            // buttonEndTurn
             // 
-            pictureBoxWithLabelEndTurn.Image = null;
-            pictureBoxWithLabelEndTurn.labelText = null;
-            pictureBoxWithLabelEndTurn.Location = new Point(1160, 0);
-            pictureBoxWithLabelEndTurn.Name = "pictureBoxWithLabelEndTurn";
-            pictureBoxWithLabelEndTurn.Size = new Size(120, 45);
-            pictureBoxWithLabelEndTurn.TabIndex = 0;
-            pictureBoxWithLabelEndTurn.Load += pictureBoxWithLabelEndTurn_Load;
+            buttonEndTurn.BackColor = Color.Transparent;
+            buttonEndTurn.BackgroundImage = Properties.Resources.endturn1;
+            buttonEndTurn.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonEndTurn.FlatAppearance.BorderSize = 0;
+            buttonEndTurn.FlatAppearance.MouseDownBackColor = Color.Transparent;
+            buttonEndTurn.FlatAppearance.MouseOverBackColor = Color.Transparent;
+            buttonEndTurn.FlatStyle = FlatStyle.Flat;
+            buttonEndTurn.Location = new Point(1160, 0);
+            buttonEndTurn.Name = "buttonEndTurn";
+            buttonEndTurn.Size = new Size(120, 45);
+            buttonEndTurn.TabIndex = 5;
+            buttonEndTurn.Text = "EndTurn";
+            buttonEndTurn.UseVisualStyleBackColor = false;
             // 
             // OperationArea
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
-            Controls.Add(pictureBoxWithLabelEndTurn);
+            Controls.Add(buttonEndTurn);
             Controls.Add(panelHand);
             Controls.Add(labelExhaust);
             Controls.Add(labelEnergy);
@@ -120,6 +126,6 @@
         private Label labelEnergy;
         private Label labelExhaust;
         private Panel panelHand;
-        private PictureBoxWithLabel pictureBoxWithLabelEndTurn;
+        private Button buttonEndTurn;
     }
 }

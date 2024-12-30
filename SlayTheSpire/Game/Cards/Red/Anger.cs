@@ -22,10 +22,13 @@ namespace SlayTheSpire.Game.Cards.Red
                 在弃牌堆放入一张此牌的复制品。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
-            user.Attack(BaseDamage, target);
-            user.DiscardPile.Add(new Anger());
+            if (target != null)
+            {
+                user.Attack(BaseDamage, target);
+                user.DiscardPile.Add(new Anger());
+            }
         }
     }
 }

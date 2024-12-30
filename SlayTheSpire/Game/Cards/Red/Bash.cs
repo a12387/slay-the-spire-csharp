@@ -24,10 +24,13 @@ namespace SlayTheSpire.Game.Cards.Red
                 给予3层易伤。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
-            user.Attack(BaseDamage, target);
-            target.ApplyPower(new Vulnerable(BaseMagicNumber));
+            if (target == null)
+            {
+                user.Attack(BaseDamage, target);
+                target.ApplyPower(new Vulnerable(BaseMagicNumber));
+            }
         }
     }
 }

@@ -28,7 +28,7 @@ namespace SlayTheSpire.UI
         public void AddCard(CardButton btn)
         {
             panelHand.Controls.Add(btn);
-            //btn.Click += 
+            btn.Click += onCardSelected;
             btn.Location = new Point((panelHand.Controls.Count - 1) * (btn.Width + Interval), 0);
         }
         public void ShowHandCards(CardGroup hand)
@@ -42,5 +42,15 @@ namespace SlayTheSpire.UI
         {
             panelHand.Controls.Clear();
         }
+        private void onCardSelected(object? sender, EventArgs e)
+        {
+            CardButton? btn = sender as CardButton;
+            if (btn != null)
+            {
+                OnCardSelected?.Invoke(btn);
+            }
+        }
+
+        public event Action<CardButton> OnCardSelected;
     }
 }

@@ -20,9 +20,12 @@ namespace SlayTheSpire.Game.Cards.Red
                 造成你当前格挡值的伤害。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
-            user.Attack(user.CurrentBlock, target);
+            if (target != null)
+            {
+                user.Attack(user.CurrentBlock, target);
+            }
         }
     }
 }

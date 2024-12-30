@@ -22,7 +22,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 每当有一张牌被消耗时，抽1张牌。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.ApplyPower(new DarkEmbracePower(BaseMagicNumber));
         }

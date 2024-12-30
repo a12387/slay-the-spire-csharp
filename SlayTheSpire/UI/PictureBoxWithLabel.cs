@@ -33,6 +33,7 @@ namespace SlayTheSpire.UI
             }
         }
         private Image image;
+
         public Image Image
         {
             get { return image; }

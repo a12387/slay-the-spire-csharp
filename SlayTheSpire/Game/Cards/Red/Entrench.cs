@@ -21,7 +21,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 将你当前的格挡翻倍。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.CurrentBlock *= 2;
         }

@@ -46,9 +46,10 @@
             // healthBar
             // 
             healthBar.BackColor = Color.Transparent;
-            healthBar.CurrentHealth = 0;
+            healthBar.Block = 0;
+            healthBar.CurrentHealth = 80;
             healthBar.Location = new Point(21, 210);
-            healthBar.MaxHealth = 0;
+            healthBar.MaxHealth = 80;
             healthBar.Name = "healthBar";
             healthBar.Size = new Size(250, 29);
             healthBar.TabIndex = 1;

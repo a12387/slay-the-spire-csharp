@@ -23,7 +23,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 每张获得7点格挡。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.Hand.ForEach(card =>
             {

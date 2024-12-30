@@ -22,7 +22,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 消耗。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             //等待选牌操作
         }
