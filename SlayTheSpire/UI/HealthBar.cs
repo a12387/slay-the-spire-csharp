@@ -63,12 +63,18 @@ namespace SlayTheSpire.UI
             {
                 e.Graphics.FillRectangle(semiTransparentBrush, this.ClientRectangle);  // 用半透明颜色填充背景
             }
-            using (Brush redBrush = new SolidBrush(Color.Red))
+            Brush brush;
+            if (block > 0)
             {
-                Rectangle r = this.ClientRectangle;
-                r.Width = this.ClientRectangle.Width * currentHealth / maxHealth;
-                e.Graphics.FillRectangle(redBrush, r);
+                brush = new SolidBrush(Color.Blue);
             }
+            else
+            {
+                brush = new SolidBrush(Color.Red);
+            }
+            Rectangle r = this.ClientRectangle;
+            r.Width = this.ClientRectangle.Width * currentHealth / maxHealth;
+            e.Graphics.FillRectangle(brush, r);
         }
     }
 }
