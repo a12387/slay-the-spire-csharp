@@ -7,10 +7,10 @@ using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class CLothesline : AbstractCard
+    internal class Clothesline : AbstractCard
     {
-        static public CLothesline Instance { get; } = new CLothesline();
-        public CLothesline() : base("CLothesline", 2, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
+        static public Clothesline Instance { get; } = new Clothesline();
+        public Clothesline() : base("Clothesline", 2, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;

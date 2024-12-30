@@ -256,4 +256,100 @@
   <data name="endturn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ui\endturn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="anger" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\anger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barricade" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\barricade.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\bash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="battle_trance" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\battle_trance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bloodletting" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\bloodletting.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bludgeon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\bludgeon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="body_slam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\body_slam.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="burn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\burn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="burning_pact" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\burning_pact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cleave" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\cleave.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="clothesline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\clothesline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="corruption" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\corruption.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_embrace" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\dark_embrace.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dazed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\dazed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="defend" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\defend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="demon_form" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\demon_form.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="entrench" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\entrench.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="exhume" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\exhume.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="feel_no_pain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\feel_no_pain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inflame" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\inflame.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="limit_break" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\limit_break.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="offering" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\offering.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pommel_strike" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\pommel_strike.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="power_through" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\power_through.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="second_wind" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\second_wind.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shrug_it_off" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\shrug_it_off.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="slimed" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\slimed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="spot_weakness" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\spot_weakness.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="true_grit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\true_grit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="whirlwind" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\whirlwind.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\wound.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_void" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cards\void.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

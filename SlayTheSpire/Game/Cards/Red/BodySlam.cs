@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Cards.Red
 {
-    internal class BodeSlam : AbstractCard
+    internal class BodySlam : AbstractCard
     {
-        static public BodeSlam Instance { get; } = new BodeSlam();
-        public BodeSlam() : base("BodeSlam", 0, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
+        static public BodySlam Instance { get; } = new BodySlam();
+        public BodySlam() : base("BodySlam", 0, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;

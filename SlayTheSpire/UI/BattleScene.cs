@@ -36,16 +36,11 @@ namespace SlayTheSpire.UI
                 default:
                     break;
             }
-
-            List<AbstractCard> cards = CardLibrary.GetRandomCards(1);
-            operationArea.AddCard(new CardButton(cards[0]));
-            operationArea.AddCard(new CardButton(cards[0]));
-            operationArea.AddCard(new CardButton(cards[0]));
-            operationArea.AddCard(new CardButton(cards[0]));
-            operationArea.AddCard(new CardButton(cards[0]));
-            operationArea.AddCard(new CardButton(cards[0]));
-            operationArea.AddCard(new CardButton(cards[0]));
-
+            var task = Task.Run(battle.Enter);
+            task.ContinueWith(t =>
+            {
+                operationArea.ShowHandCards(battle.Player.Hand);
+            });
         }
 
         private Battle Battle;

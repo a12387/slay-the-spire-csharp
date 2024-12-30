@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SlayTheSpire.Game;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,16 +31,16 @@ namespace SlayTheSpire.UI
             //btn.Click += 
             btn.Location = new Point((panelHand.Controls.Count - 1) * (btn.Width + Interval), 0);
         }
-
-        private void pictureBoxWithLabelEndTurn_Load(object sender, EventArgs e)
+        public void ShowHandCards(CardGroup hand)
         {
-            pictureBoxWithLabelEndTurn.labelText = "EndTurn";
-            pictureBoxWithLabelEndTurn.Image = Properties.Resources.endturn1;
+            hand.ForEach(card =>
+            {
+                AddCard(new CardButton(card));
+            });
         }
-
-        private void onCardSelected(object sender, EventArgs e)
+        public void Clear()
         {
-            
+            panelHand.Controls.Clear();
         }
     }
 }
