@@ -19,10 +19,12 @@ namespace SlayTheSpire.UI
         public BattleScene(Battle battle)
         {
             InitializeComponent();
+
             Battle = battle;
             var playerui = new CreatureUI(Battle.Player);
             List<CreatureUI> Mobs = new List<CreatureUI>();
 
+            Battle.Player.EnergyChanged += operationArea.SetEnergyText;
             switch (battle.CurrentFloor)
             {
                 case 1:
@@ -56,12 +58,14 @@ namespace SlayTheSpire.UI
                             if (battle.Player.CanSelectCard(btn.Card))
                             {
                                 battle.Player.UseCard(btn.Card, battle, battle.Player);
+                                selectedCard = null;
                             }
                             break;
                         case CardTarget.AllEnemies:
                             if (battle.Player.CanSelectCard(btn.Card))
                             {
                                 battle.Player.UseCard(btn.Card, battle, battle.Monsters);
+                                selectedCard = null;
                             }
                             break;
                         case CardTarget.Enemy:
@@ -79,10 +83,15 @@ namespace SlayTheSpire.UI
                 {
                     var monster = mob as CreatureUI;
                     var card = selectedCard?.Card;
-                    if (monster != null && card != null && battle.Player.CanSelectCard(card))
+                    if (monster != null && card != null)
                     {
                         battle.Player.UseCard(card, battle, monster.Creature);
                     }
+                    selectedCard = null;
+                };
+                mob.Creature.Die += () =>
+                {
+                    mob.Dispose();
                 };
             }
             operationArea.OnEndTurn += () =>

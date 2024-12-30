@@ -27,7 +27,15 @@ namespace SlayTheSpire.Game.Cards.Red
             int times = user.Energy;
             for (int i = 0; i < times; i++)
             {
-                targets.ForEach(target =>user.Attack(BaseDamage,target));
+                for (int j = 0; j < targets.Count; j++)
+                {
+                    int oldCount = targets.Count;
+                    user.Attack(BaseDamage, targets[j]);
+                    if (targets.Count != oldCount) // Someone died
+                    {
+                        j--;
+                    }
+                }
             }
         }
     }

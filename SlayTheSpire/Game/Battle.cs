@@ -25,8 +25,9 @@ namespace SlayTheSpire.Game
             Player.BeforeBattle();
             for (int i = 0; i < Monsters.Count; i++)
             {
-                Monsters[i].BeforeBattle();
-                Monsters[i].Die += () => Monsters.RemoveAt(i);
+                var monster = Monsters[i];
+                monster.BeforeBattle();
+                monster.Die += () => Monsters.Remove(monster);
             }
             PlayerTurnStart();
 

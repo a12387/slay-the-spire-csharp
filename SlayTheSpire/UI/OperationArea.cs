@@ -50,6 +50,10 @@ namespace SlayTheSpire.UI
                 OnCardSelected?.Invoke(btn);
             }
         }
+        public void SetEnergyText(int energy)
+        {
+            labelEnergy.Text = energy.ToString() + "/4";
+        }
 
         private void buttonEndTurn_Click(object sender, EventArgs e)
         {

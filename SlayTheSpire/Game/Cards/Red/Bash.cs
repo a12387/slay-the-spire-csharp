@@ -26,7 +26,7 @@ namespace SlayTheSpire.Game.Cards.Red
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
-            if (target == null)
+            if (target != null)
             {
                 user.Attack(BaseDamage, target);
                 target.ApplyPower(new Vulnerable(BaseMagicNumber));

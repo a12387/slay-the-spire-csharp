@@ -176,15 +176,17 @@ namespace SlayTheSpire.Game
             {
                 BuffList[index].Amount += power.Amount;
             }
-            BuffList.ForEach(power => power.OnUpdate(this));
+            UpdateBuff();
         }
         public event Action? Die;
         public void UpdateBuff()
         {
+            List<AbstractPower> ToRemove = new List<AbstractPower>();
             BuffList.ForEach(power =>
             {
-                power.OnUpdate(this);
+                power.OnUpdate(this, ToRemove);
             });
+            BuffList.Except(ToRemove);
         }
     }
 }

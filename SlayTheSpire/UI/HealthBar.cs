@@ -75,6 +75,13 @@ namespace SlayTheSpire.UI
             Rectangle r = this.ClientRectangle;
             r.Width = this.ClientRectangle.Width * currentHealth / maxHealth;
             e.Graphics.FillRectangle(brush, r);
+            using (Brush redBrush = new SolidBrush(Color.Red))
+            {
+                Rectangle r = this.ClientRectangle;
+                r.Width = this.ClientRectangle.Width * currentHealth / maxHealth;
+                e.Graphics.FillRectangle(redBrush, r);
+            }
+            base.OnPaint(e);
         }
     }
 }

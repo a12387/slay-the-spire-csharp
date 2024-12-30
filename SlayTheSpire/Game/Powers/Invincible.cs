@@ -28,7 +28,7 @@ namespace SlayTheSpire.Game.Powers
         {
             Amount = 300;
         }
-        public override void OnUpdate(AbstractCreature creature)
+        public override void OnUpdate(AbstractCreature creature, List<AbstractPower> toRemove)
         {
             
         }
