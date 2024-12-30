@@ -79,6 +79,7 @@
             pictureBoxDeck.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxDeck.TabIndex = 1;
             pictureBoxDeck.TabStop = false;
+            pictureBoxDeck.Click += pictureBoxDeck_Click;
             // 
             // healthInfo
             // 

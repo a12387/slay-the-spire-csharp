@@ -103,7 +103,7 @@ namespace SlayTheSpire.Game
                 return;
             }
 
-            if (!DrawPile.Any())
+            if (DrawPile.Count < count)
             {
                 DiscardPile.ForEach(i => DrawPile.Add(i));
                 DiscardPile.Clear();
@@ -123,6 +123,7 @@ namespace SlayTheSpire.Game
         {
             DrawPile.Remove(card);
             Hand.Remove(card);
+            HandChanged?.Invoke(Hand);
             DiscardPile.Remove(card);
             ExhaustPile.Insert(0, card);
             for (int i = 0; i < BuffList.Count; i++)
@@ -157,17 +158,17 @@ namespace SlayTheSpire.Game
         }
         public void UseCard(AbstractCard card, Battle battle, AbstractCreature? target)
         {
-            BeforeUseCard(battle);
+            BeforeUseCard(battle, card);
             card.OnUse(this, target);
             AfterUseCard(card);
         }
         public void UseCard(AbstractCard card, Battle battle, List<AbstractMonster> targets)
         {
-            BeforeUseCard(battle);
+            BeforeUseCard(battle, card);
             card.OnUse(this, targets);
             AfterUseCard(card);
         }
-        private void BeforeUseCard(Battle battle)
+        private void BeforeUseCard(Battle battle, AbstractCard card)
         {
             for (int i = 0; i < BuffList.Count; i++)
             {
@@ -181,9 +182,6 @@ namespace SlayTheSpire.Game
                     buffList[j].OnUseCard(this);
                 }
             }
-        }
-        private void AfterUseCard(AbstractCard card)
-        {
             Hand.Remove(card);
             HandChanged?.Invoke(Hand);
             if (card.IsExhaust)
@@ -194,7 +192,9 @@ namespace SlayTheSpire.Game
             {
                 DiscardPile.Add(card);
             }
-            
+        }
+        private void AfterUseCard(AbstractCard card)
+        {
             if(card.Cost == -1)
             {
                 Energy = 0;

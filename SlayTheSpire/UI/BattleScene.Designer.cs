@@ -49,7 +49,6 @@
             panelLeft.Name = "panelLeft";
             panelLeft.Size = new Size(393, 373);
             panelLeft.TabIndex = 2;
-            panelLeft.Paint += panelMonsterLeft_Paint;
             // 
             // panelRight
             // 

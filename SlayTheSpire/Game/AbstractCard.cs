@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SlayTheSpire.UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,7 +59,22 @@ namespace SlayTheSpire.Game
         public int BaseDraw { get; protected set; }
         public int BaseDiscard { get; protected set; }
 
-
+        public void ChooseCardFromGroup(CardGroup group, int num)
+        {
+            if (group.Count >= num)
+            {
+                List<AbstractCard> cards = new List<AbstractCard>();
+                var pileView = new PileView(group, num, cards, this);
+                Room.Instance.AddPage(pileView);
+            }
+            else
+            {
+                for (int i = 0; i < group.Count; i++)
+                {
+                    Effect(Dungeon.Player, group[i]);
+                }
+            }
+        }
         protected AbstractCard(string name, int cost, CardColor color, CardRarity rarity, CardTarget target, CardType type)
         {
             Name = name;
@@ -67,12 +83,13 @@ namespace SlayTheSpire.Game
             Rarity = rarity;
             Target = target;
             Type = type;
+
         }
         // public abstract void Upgrade();
 
         public virtual void OnUse(AbstractPlayer user, AbstractCreature? target) { }
         public virtual void OnUse(AbstractPlayer user, List<AbstractMonster> targets) { }
-
+        public virtual void Effect(AbstractPlayer user, AbstractCard card) { }
         public virtual void OnDrawn(AbstractPlayer player) { }
         public virtual void OnExhaust() { }
         public virtual void OnTurnEnd(AbstractPlayer player) { }

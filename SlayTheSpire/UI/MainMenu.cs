@@ -26,7 +26,8 @@ namespace SlayTheSpire.UI
 
         private void GameStartUI()
         {
-            var room = new Room();
+            Room.Instance = new Room();
+            var room = Room.Instance;
             var starterRoom = new StarterRoom();
             starterRoom.ShowMap += room.ShowMap;
             room.ChangePage(starterRoom);

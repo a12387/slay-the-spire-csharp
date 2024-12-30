@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,11 +13,13 @@ using SlayTheSpire.Game.Monsters;
 
 namespace SlayTheSpire.UI
 {
-    public partial class Room : UserControl
+    internal partial class Room : UserControl
     {
         private readonly GameMap map;
+        private PileView deck;
         bool mapExists = false;
-
+        bool deckExists = false;
+        public static Room Instance;
         internal Room() : base()
         {
             var player = Dungeon.Player;
@@ -24,14 +27,20 @@ namespace SlayTheSpire.UI
             player.CurrentHealthChanged += this.playerInfo.SetCurrentHealth;
             player.MaxHealthChanged += this.playerInfo.SetMaxHealth;
             playerInfo.MapIconClicked += this.MapIcon_Click;
+            playerInfo.DeckIconClicked += this.DeckIcon_Click;
             map = new GameMap();
             map.RoomChanged += ChangeRoom;
+            
         }
         public void AddPage(Control control, Control parent)
         {
             MainPanel.Controls.Add(control);
             control.Parent = parent;
             control.BringToFront();
+        }
+        public void AddPage(Control control)
+        {
+            AddPage(control, this);
         }
         public void ChangePage(Control control)
         {
@@ -68,6 +77,36 @@ namespace SlayTheSpire.UI
                 ShowMap();
             }
         }
+        public void ShowDeck()
+        {
+            deck = new PileView(Dungeon.Player.MasterDeck);
+            deck.OKClick += (sender, e) =>
+            {
+                CloseDeck();
+            };
+            this.AddPage(deck, MainPanel);
+            playerInfo.BringToFront();
+            deckExists = true;
+        }
+        public void CloseDeck()
+        {
+            if (deckExists)
+            {
+                DeletePage(deck);
+                deckExists = false;
+            }
+        }
+        private void DeckIcon_Click(object? sender, EventArgs e)
+        {
+            if (deckExists)
+            {
+                CloseDeck();
+            }
+            else
+            {
+                ShowDeck();
+            }
+        }
 
         public void ChangeRoom(Object? sender, int floor)
         {
@@ -85,6 +124,12 @@ namespace SlayTheSpire.UI
             }
             CloseMap();
             ChangePage(room);
+        }
+
+        public void ShowCardGroup(CardGroup group)
+        {
+            var pileView = new PileView(group);
+            AddPage(pileView, MainPanel);
         }
     }
 }

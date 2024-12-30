@@ -19,6 +19,9 @@ namespace SlayTheSpire.UI
         public BattleScene(Battle battle)
         {
             InitializeComponent();
+            operationArea.DrawPileClick += ShowDrawPile;
+            operationArea.DiscardPileClick += ShowDiscardPile;
+            operationArea.ExhaustPileClick += ShowExhaustPile;
 
             Battle = battle;
             var playerui = new CreatureUI(Battle.Player);
@@ -108,9 +111,32 @@ namespace SlayTheSpire.UI
 
         private Battle Battle;
 
-        private void panelMonsterLeft_Paint(object sender, PaintEventArgs e)
-        {
 
+        private PileView Pile;
+        public void ShowDrawPile(object? sender, EventArgs e)
+        {
+            Pile = new PileView(Battle.Player.DrawPile);
+            Pile.OKClick += ClosePile;
+            Room.Instance.AddPage(Pile, this);
         }
+        public void ShowDiscardPile(object? sender, EventArgs e)
+        {
+            Pile = new PileView(Battle.Player.DiscardPile);
+            Pile.OKClick += ClosePile;
+            Room.Instance.AddPage(Pile, this);
+        }
+        public void ShowExhaustPile(object? sender, EventArgs e)
+        {
+            Pile = new PileView(Battle.Player.ExhaustPile);
+            Pile.OKClick += ClosePile;
+            Room.Instance.AddPage(Pile, this);
+        }
+
+        public void ClosePile(object? sender, EventArgs e)
+        {
+            Controls.Remove(Pile);
+            Pile.Dispose();
+        }
+        
     }
 }

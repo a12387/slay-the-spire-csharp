@@ -16,6 +16,41 @@ namespace SlayTheSpire.UI
         const int Interval = 10;
         private float ScaleX;
 
+        public event EventHandler DrawPileClick 
+        { 
+            add
+            {
+                pictureBoxDrawPile.Click += value;
+            } 
+            remove
+            {
+                pictureBoxDrawPile.Click -= value;
+            }
+        }
+        public event EventHandler DiscardPileClick
+        {
+            add
+            {
+                pictureBoxDiscardPile.Click += value;
+            }
+            remove
+            {
+                pictureBoxDiscardPile.Click -= value;
+            }
+        }
+        public event EventHandler ExhaustPileClick
+        {
+            add
+            {
+                labelExhaust.Click += value;
+            }
+            remove
+            {
+                labelExhaust.Click -= value;
+            }
+        }
+
+
         public OperationArea()
         {
             InitializeComponent();
@@ -76,6 +111,8 @@ namespace SlayTheSpire.UI
             Clear();
             ShowHandCards(hand);
         }
+
+        
 
         public event Action<CardButton> OnCardSelected;
         public event Action OnEndTurn;

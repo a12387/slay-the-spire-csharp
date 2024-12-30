@@ -18,6 +18,7 @@ namespace SlayTheSpire.UI
         }
 
         public event EventHandler MapIconClicked;
+        public event EventHandler DeckIconClicked;
 
         public void SetCurrentHealth(object? sender, int health)
         {
@@ -32,6 +33,11 @@ namespace SlayTheSpire.UI
         private void pictureBoxMap_Click(object sender, EventArgs e)
         {
             MapIconClicked?.Invoke(this, e);
+        }
+
+        private void pictureBoxDeck_Click(object sender, EventArgs e)
+        {
+            DeckIconClicked?.Invoke(this, e);
         }
     }
 }

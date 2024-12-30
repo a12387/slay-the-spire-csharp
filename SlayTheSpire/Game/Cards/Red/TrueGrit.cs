@@ -25,8 +25,15 @@ namespace SlayTheSpire.Game.Cards.Red
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
-            user.AddBlock(BaseBlock);
+            ChooseCardFromGroup(user.Hand, 1);
+            
             //需要选牌
+
+        }
+        public override void Effect(AbstractPlayer user, AbstractCard card)
+        {
+            user.AddBlock(BaseBlock);
+            user.ExhaustCard(card);
         }
     }
 }

@@ -25,15 +25,20 @@ namespace SlayTheSpire.Game.Cards.Red
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
+            List<AbstractCard> cardsToExhaust = new List<AbstractCard>();
             for(int i = 0; i < user.Hand.Count; i++)
             {
                 var card = user.Hand[i];
                 if (card.Type != CardType.Attack)
                 {
-                    user.ExhaustCard(card);
+                    cardsToExhaust.Add(card);
                     user.AddBlock(BaseBlock);
-                    i--;
+                    
                 }
+            }
+            for(int i = 0; i < cardsToExhaust.Count; i++)
+            {
+                user.ExhaustCard(cardsToExhaust[i]);
             }
         }
     }
