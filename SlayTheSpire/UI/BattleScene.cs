@@ -92,6 +92,7 @@ namespace SlayTheSpire.UI
             };
             battle.Player.TurnStarted += operationArea.OnTurnStart;
             battle.Player.TurnEnded += operationArea.OnTurnEnd;
+            battle.Player.TurnEnded += () => { selectedCard = null; };
             battle.Player.HandChanged += operationArea.OnHandChanged;
             battle.Enter();
         }
