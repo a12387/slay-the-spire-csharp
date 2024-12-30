@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SlayTheSpire.Game.Powers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,23 +65,27 @@ namespace SlayTheSpire.Game.Monsters
             }
             LastMove = moveType;
         }
-        public override void Act(AbstractPlayer player)
+        public override void Act(AbstractPlayer player,List<AbstractMonster> monsters, int round)
         {
             switch (CurrentIntent)
             {
                 case Game.MonsterIntent.Defend:
-                    AddBlock(30);
-                    //矛
+                    monsters.ForEach(monster => monster.AddBlock(30));
                     break;
                 case Game.MonsterIntent.AttackDebuff:
                     Attack(DamageAmount, player);
-                    //玩家力量-1
+                    player.ApplyPower(new Strength(-1));
                     break;
                 case Game.MonsterIntent.AttackDefend:
                     Attack(DamageAmount, player);
                     AddBlock(99);
                     break;
             }
+        }
+        public override void BeforeBattle()
+        {
+            GenerateNewIntent(0);
+            ApplyPower(new Artifact(2));
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SlayTheSpire.Game.Cards.Red;
+using SlayTheSpire.Game.Powers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -64,7 +66,7 @@ namespace SlayTheSpire.Game.Monsters
             }
             LastMove = Intent;
         }
-        public override void Act(AbstractPlayer player)
+        public override void Act(AbstractPlayer player, List<AbstractMonster> monsters, int round)
         {
             switch(CurrentIntent)
             {
@@ -75,16 +77,25 @@ namespace SlayTheSpire.Game.Monsters
                     }
                     break;
                 case MonsterIntent.Buff:
-                    // Add buff
+                    monsters.ForEach(monster =>
+                    { 
+                        monster.ApplyPower(new Strength(2));
+                        //monster.UpdateBuff();
+                    });
                     break;
                 case MonsterIntent.AttackDebuff:
                     for (int i = 0; i < DamageTimes; i++)
                     {
                         Attack(DamageAmount, player);
+                        player.DiscardPile.Add(new Burn());
                     }
-                    // Add debuff
                     break;
             }
+        }
+        public override void BeforeBattle()
+        {
+            GenerateNewIntent(0);
+            ApplyPower(new Artifact(2));
         }
     }
 }

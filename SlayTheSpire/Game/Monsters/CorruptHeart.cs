@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SlayTheSpire.Game.Cards.Red;
+using SlayTheSpire.Game.Powers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -60,7 +62,7 @@ namespace SlayTheSpire.Game.Monsters
                 }
             }
         }
-        public override void Act(AbstractPlayer player)
+        public override void Act(AbstractPlayer player, List<AbstractMonster> monsters, int round)
         {
             switch (CurrentIntent)
             {
@@ -71,10 +73,35 @@ namespace SlayTheSpire.Game.Monsters
                     }
                     break;
                 case MonsterIntent.StrongDebuff:
-                    //debuff
+                    player.ApplyPower(new Powers.Vulnerable(2));
+                    player.ApplyPower(new Powers.Weak(2));
+                    player.ApplyPower(new Powers.Frail(2));
+                    //player.UpdateBuff();
+                    player.DrawPile.Add(new Burn());
+                    player.DrawPile.Add(new Dazed());
+                    player.DrawPile.Add(new Slimed());
+                    player.DrawPile.Add(new VoidCard());
+                    player.DrawPile.Add(new Wound());
+                    player.DrawPile.Shuffle();
                     break;
                 case MonsterIntent.Buff:
-                    //buff
+                    BuffList.ForEach (buff =>
+                    {
+                        if (buff.Name == "Strength" && buff.Amount < 0) { 
+                            BuffList.Remove(buff);
+                        }
+                    }) ;//清空负力量
+                    ApplyPower(new Strength(2));
+                    switch (round / 3)
+                    {
+                        case 1: ApplyPower(new Artifact(2)); break;
+                        case 2: ApplyPower(new BeatOfDeath(1)); break;
+                        //case 3: ApplyPower(new PainfulStabs); break;
+                        case 4: ApplyPower(new Strength(10)); break;
+                        default:
+                            ApplyPower(new Strength(50)); break;
+                    }
+                    UpdateBuff();
                     break;
             }
         }
@@ -93,6 +120,12 @@ namespace SlayTheSpire.Game.Monsters
                 DamageTimes = 12;
                 LastMove = MoveType.Combo;
             }
+        }
+        public override void BeforeBattle()
+        {
+            GenerateNewIntent(0);
+            ApplyPower(new Invincible(300));
+            ApplyPower(new BeatOfDeath(1));
         }
     }
 }

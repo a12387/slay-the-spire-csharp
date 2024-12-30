@@ -19,5 +19,9 @@ namespace SlayTheSpire.Game.Powers
         {
             Amount--;
         }
+        public override void OnTurnStart()
+        {
+            Amount--;
+        }
     }
 }

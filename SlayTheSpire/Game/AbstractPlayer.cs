@@ -56,7 +56,8 @@ namespace SlayTheSpire.Game
             {
                 BuffList[i].OnTurnStart(ref loseBlock,this);
             }
-            if(loseBlock)
+            UpdateBuff();
+            if (loseBlock)
             {
                 CurrentBlock = 0;
             }
@@ -118,7 +119,7 @@ namespace SlayTheSpire.Game
         {
             for (int i = 0; i < BuffList.Count; i++)
             {
-                BuffList[i].OnUseCard(this);
+                target.BuffList[i].OnUseCard(this);//处理律动
             }
         }
         public void LoseEnergy(int cost)

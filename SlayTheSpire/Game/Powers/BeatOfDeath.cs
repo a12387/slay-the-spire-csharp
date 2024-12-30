@@ -13,7 +13,7 @@ namespace SlayTheSpire.Game.Powers
         }
         public override void OnUseCard(AbstractPlayer player)
         {
-            player.Hurt(this.Amount);
+            player.Hurt(Amount);
         }
     }
 }

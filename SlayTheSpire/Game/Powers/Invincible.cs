@@ -24,9 +24,13 @@ namespace SlayTheSpire.Game.Powers
                 Amount = 0;
             }
         }
-        public override void OnTurnStart(ref bool loseblock, AbstractPlayer player)
+        public override void OnTurnStart()
         {
             Amount = 300;
+        }
+        public override void OnUpdate(AbstractCreature creature)
+        {
+            
         }
     }
 }
