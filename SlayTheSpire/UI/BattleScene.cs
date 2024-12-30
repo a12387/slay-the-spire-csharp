@@ -46,22 +46,32 @@ namespace SlayTheSpire.UI
             }
             operationArea.OnCardSelected += (CardButton btn) =>
             {
-                switch (btn.Card.Target)
+                if (battle.Player.CanSelectCard(btn.Card))
                 {
-                    case CardTarget.None:
-                        break;
-                    case CardTarget.Self:
-                        btn.Card.OnUse(Battle.Player, Battle.Player);
-                        btn.Dispose();
-                        // 要放进弃牌堆
-                        break;
-                    case CardTarget.AllEnemies:
-                        btn.Card.OnUse(Battle.Player, Battle.Monsters);
-                        break;
-                    case CardTarget.Enemy:
-                        selectedCard = btn;
-                        break;
-                }       
+                    switch (btn.Card.Target)
+                    {
+                        case CardTarget.None:
+                            break;
+                        case CardTarget.Self:
+                            if (battle.Player.CanSelectCard(btn.Card))
+                            {
+                                battle.Player.UseCard(btn.Card, battle, battle.Player);
+                            }
+                            break;
+                        case CardTarget.AllEnemies:
+                            if (battle.Player.CanSelectCard(btn.Card))
+                            {
+                                battle.Player.UseCard(btn.Card, battle, battle.Monsters);
+                            }
+                            break;
+                        case CardTarget.Enemy:
+                            if (battle.Player.CanSelectCard(btn.Card))
+                            {
+                                selectedCard = btn;
+                            }
+                            break;
+                    }
+                }
             };
             foreach (var mob in Mobs)
             {
@@ -69,18 +79,21 @@ namespace SlayTheSpire.UI
                 {
                     var monster = mob as CreatureUI;
                     var card = selectedCard?.Card;
-                    if (monster != null && card != null)
+                    if (monster != null && card != null && battle.Player.CanSelectCard(card))
                     {
-                        card.OnUse(Battle.Player, mob.Creature);
-                        selectedCard?.Dispose();
+                        battle.Player.UseCard(card, battle, monster.Creature);
                     }
                 };
             }
-            var task = Task.Run(battle.Enter);
-            task.ContinueWith(t =>
+            operationArea.OnEndTurn += () =>
             {
-                operationArea.ShowHandCards(battle.Player.Hand);
-            });
+                battle.Player.TurnEnd();
+                battle.MonstersTurnStart();
+            };
+            battle.Player.TurnStarted += operationArea.OnTurnStart;
+            battle.Player.TurnEnded += operationArea.OnTurnEnd;
+            battle.Player.HandChanged += operationArea.OnHandChanged;
+            battle.Enter();
         }
 
         private Battle Battle;

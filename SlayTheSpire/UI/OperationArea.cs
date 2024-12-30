@@ -51,6 +51,29 @@ namespace SlayTheSpire.UI
             }
         }
 
+        private void buttonEndTurn_Click(object sender, EventArgs e)
+        {
+            OnEndTurn?.Invoke();
+        }
+
+        public void OnTurnEnd()
+        {
+            buttonEndTurn.Enabled = false;
+        }
+
+        public void OnTurnStart(CardGroup hand)
+        {
+            OnHandChanged(hand);
+            buttonEndTurn.Enabled = true;
+        }
+
+        public void OnHandChanged(CardGroup hand)
+        {
+            Clear();
+            ShowHandCards(hand);
+        }
+
         public event Action<CardButton> OnCardSelected;
+        public event Action OnEndTurn;
     }
 }

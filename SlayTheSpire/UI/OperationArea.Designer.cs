@@ -90,6 +90,7 @@
             buttonEndTurn.BackColor = Color.Transparent;
             buttonEndTurn.BackgroundImage = Properties.Resources.endturn1;
             buttonEndTurn.BackgroundImageLayout = ImageLayout.Zoom;
+            buttonEndTurn.Enabled = false;
             buttonEndTurn.FlatAppearance.BorderSize = 0;
             buttonEndTurn.FlatAppearance.MouseDownBackColor = Color.Transparent;
             buttonEndTurn.FlatAppearance.MouseOverBackColor = Color.Transparent;
@@ -100,6 +101,7 @@
             buttonEndTurn.TabIndex = 5;
             buttonEndTurn.Text = "EndTurn";
             buttonEndTurn.UseVisualStyleBackColor = false;
+            buttonEndTurn.Click += buttonEndTurn_Click;
             // 
             // OperationArea
             // 

@@ -25,6 +25,11 @@ namespace SlayTheSpire.Game
         public const int MaxEnergy = 5;
         public const int MaxHandCards = 10;
         public const int NumDrawCardsEachTurn = 5;
+        public event Action <PlayerFacing>? PlayerFacingChanged;
+        public event Action<CardGroup>? TurnStarted;
+        public event Action? TurnEnded;
+        public event Action<CardGroup>? HandChanged;
+        public event Action<int>? EnergyChanged;
 
         protected AbstractPlayer(string name, int maxHealth) : base(true, name, maxHealth)
         {
@@ -61,6 +66,7 @@ namespace SlayTheSpire.Game
                 CurrentBlock = 0;
             }
             DrawCard(NumDrawCardsEachTurn);
+            TurnStarted?.Invoke(Hand);
         }
         public void TurnEnd()
         {
@@ -75,6 +81,8 @@ namespace SlayTheSpire.Game
                     DiscardPile.Add(card);
                 }
             });
+            Hand.Clear();
+            TurnEnded?.Invoke();
         }
         public void DrawCard(int count)
         {
@@ -101,6 +109,7 @@ namespace SlayTheSpire.Game
                 card.OnDrawn(this);
                 DrawPile.RemoveAt(0);
             }
+            HandChanged?.Invoke(Hand);
         }
         public void ExhaustCard(AbstractCard card)
         {
@@ -113,13 +122,7 @@ namespace SlayTheSpire.Game
                 BuffList[i].OnExhaustCard(this);
             }
             card.OnExhaust();
-        }
-        public void UseCard(AbstractCard card, AbstractCreature target)
-        {
-            for (int i = 0; i < BuffList.Count; i++)
-            {
-                BuffList[i].OnUseCard(this);
-            }
+            HandChanged?.Invoke(Hand);
         }
         public void LoseEnergy(int cost)
         {
@@ -127,6 +130,7 @@ namespace SlayTheSpire.Game
             {
                 Energy -= cost;
             }
+            EnergyChanged?.Invoke(Energy);
         }
         public bool CanSelectCard(AbstractCard card)
         {
@@ -136,7 +140,7 @@ namespace SlayTheSpire.Game
             }
             else return false;
         }
-        public void UseCard(AbstractCard card, Battle battle, AbstractMonster? target)
+        public void UseCard(AbstractCard card, Battle battle, AbstractCreature? target)
         {
             BeforeUseCard(battle);
             card.OnUse(this, target);
@@ -166,6 +170,7 @@ namespace SlayTheSpire.Game
         private void AfterUseCard(AbstractCard card)
         {
             Hand.Remove(card);
+            HandChanged?.Invoke(Hand);
             if (card.IsExhaust)
             {
                 ExhaustCard(card);

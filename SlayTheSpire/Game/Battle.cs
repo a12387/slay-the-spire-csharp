@@ -11,6 +11,7 @@ namespace SlayTheSpire.Game
         public AbstractPlayer Player { get; }
         public List<AbstractMonster> Monsters { get; }
         public int CurrentFloor { get; }
+        private int turn = 1;
 
         public Battle(AbstractPlayer player, List<AbstractMonster> monsters, int currentFloor)
         {
@@ -40,8 +41,7 @@ namespace SlayTheSpire.Game
             for(int i = 0; i < Monsters.Count; i++)
             {
                 Monsters[i].Act(Player);
-                // 不知道是第几轮
-                // Monsters[i].GenerateNewIntent();
+                Monsters[i].GenerateNewIntent(++turn);
             }
             PlayerTurnStart();
         }

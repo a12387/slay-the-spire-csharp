@@ -51,7 +51,7 @@
             healthBar.Location = new Point(21, 210);
             healthBar.MaxHealth = 80;
             healthBar.Name = "healthBar";
-            healthBar.Size = new Size(250, 29);
+            healthBar.Size = new Size(250, 18);
             healthBar.TabIndex = 1;
             // 
             // statusBar
