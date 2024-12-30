@@ -23,7 +23,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 消耗一张手牌。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.AddBlock(BaseBlock);
             //需要选牌

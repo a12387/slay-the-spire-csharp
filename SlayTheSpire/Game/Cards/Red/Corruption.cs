@@ -22,7 +22,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 所有技能牌在被打出时被消耗。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.ApplyPower(new CorruptionPower());
             user.DrawPile.ForEach(card =>

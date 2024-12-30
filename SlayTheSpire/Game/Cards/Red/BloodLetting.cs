@@ -22,7 +22,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 失去3点生命。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.LoseHealth(3);
             user.Energy += 3;

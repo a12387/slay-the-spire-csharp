@@ -23,7 +23,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 获得4点格挡。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.ApplyPower(new FeelNoPainPower(BaseMagicNumber));
         }

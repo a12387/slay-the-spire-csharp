@@ -59,7 +59,7 @@ namespace SlayTheSpire
         private void SetBackground(PaintEventArgs e)
         {
             CardColor color = Card.Color;
-            CardType type  = Card.Type;
+            CardType type = Card.Type;
             Image img;
             if (color == CardColor.Colorless)
             {
@@ -82,7 +82,7 @@ namespace SlayTheSpire
                         throw new ArgumentException("Status must be colorless!");
                 }
             }
-            e.Graphics.DrawImage(img, 0, 0, Width, Height);   
+            e.Graphics.DrawImage(img, 0, 0, Width, Height);
         }
         private void SetImage(PaintEventArgs e)
         {
@@ -123,7 +123,7 @@ namespace SlayTheSpire
         }
         private void SetCost(PaintEventArgs e)
         {
-            if(Card.Rarity == CardRarity.Special)
+            if (Card.Rarity == CardRarity.Special)
             {
                 return;
             }
@@ -131,7 +131,7 @@ namespace SlayTheSpire
             Font stringFont = new Font("Arial", 16);
             StringFormat stringFormat = new StringFormat();
             stringFormat.Alignment = StringAlignment.Center;
-            if(Card.Cost != -1)
+            if (Card.Cost != -1)
             {
                 e.Graphics.DrawString(Card.Cost.ToString(), stringFont, Brushes.Black, new RectangleF(0, 0, 48 * ScaleX, 48 * ScaleY), stringFormat);
             }

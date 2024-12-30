@@ -14,37 +14,41 @@ namespace SlayTheSpire.UI
 {
     public partial class CreatureUI : UserControl
     {
+        private AbstractCreature creature;
+        public PictureBox CreatruePictureBox { get { return pictureBoxCreature; } }
+        internal AbstractCreature Creature { get { return creature; } }
         internal CreatureUI(AbstractCreature abstractCreature)
         {
             InitializeComponent();
-            healthBar1.CurrentHealth = abstractCreature.CurrentHealth;
-            healthBar1.MaxHealth = abstractCreature.MaxHealth;
+            creature = abstractCreature;
+            healthBar.CurrentHealth = abstractCreature.CurrentHealth;
+            healthBar.MaxHealth = abstractCreature.MaxHealth;
             abstractCreature.CurrentHealthChanged += SetCurrentHealth;
             abstractCreature.MaxHealthChanged += SetMaxHealth;
             switch (abstractCreature.Name)
             {
                 case "Ironclad":
-                    pictureBox1.Image = Properties.Resources.ironclad;
+                    pictureBoxCreature.Image = Properties.Resources.ironclad;
                     break;
                 case "Corrupt Heart":
-                    pictureBox1.Image = Properties.Resources.CorruptHeart;
+                    pictureBoxCreature.Image = Properties.Resources.CorruptHeart;
                     break;
                 case "Spire Shield":
-                    pictureBox1.Image = Properties.Resources.shield;
+                    pictureBoxCreature.Image = Properties.Resources.shield;
                     break;
                 case "Spire Spear":
-                    pictureBox1.Image = Properties.Resources.spear;
+                    pictureBoxCreature.Image = Properties.Resources.spear;
                     break;
             }
         }
         public void SetCurrentHealth(object? sender, int health)
         {
-            healthBar1.CurrentHealth = health;
+            healthBar.CurrentHealth = health;
         }
 
         public void SetMaxHealth(object? sender, int health)
         {
-            healthBar1.MaxHealth = health;
+            healthBar.MaxHealth = health;
         }
     }
 }

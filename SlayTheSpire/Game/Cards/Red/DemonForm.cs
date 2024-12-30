@@ -22,7 +22,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 在每回合开始时获得3点力量。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.ApplyPower(new DemonFormPower(BaseMagicNumber));
         }

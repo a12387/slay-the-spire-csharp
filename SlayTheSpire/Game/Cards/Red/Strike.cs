@@ -21,9 +21,12 @@ namespace SlayTheSpire.Game.Cards.Red
                 造成9点伤害。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
-            user.Attack(BaseDamage, target);
+            if (target != null)
+            {
+                user.Attack(BaseDamage, target);
+            }
         }
     }
 }

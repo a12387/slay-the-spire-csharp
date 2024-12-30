@@ -22,11 +22,11 @@ namespace SlayTheSpire.Game.Cards.Red
                 如果一名敌人的意图是攻击，你获得4点力量。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             if (target != null)
             {
-                AbstractMonster monster = target as AbstractMonster;
+                AbstractMonster? monster = target as AbstractMonster;
                 if (monster != null)
                 {
                     if(monster.CurrentIntent==MonsterIntent.Attack||monster.CurrentIntent==MonsterIntent.AttackBuff

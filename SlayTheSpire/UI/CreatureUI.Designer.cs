@@ -28,55 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            healthBar1 = new HealthBar();
-            statusBar1 = new StatusBar();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            pictureBoxCreature = new PictureBox();
+            healthBar = new HealthBar();
+            statusBar = new StatusBar();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCreature).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxCreature
             // 
-            pictureBox1.Location = new Point(21, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(250, 213);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBoxCreature.Location = new Point(21, 3);
+            pictureBoxCreature.Name = "pictureBoxCreature";
+            pictureBoxCreature.Size = new Size(250, 213);
+            pictureBoxCreature.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBoxCreature.TabIndex = 0;
+            pictureBoxCreature.TabStop = false;
             // 
-            // healthBar1
+            // healthBar
             // 
-            healthBar1.BackColor = Color.Transparent;
-            healthBar1.Location = new Point(21, 210);
-            healthBar1.Name = "healthBar1";
-            healthBar1.Size = new Size(250, 50);
-            healthBar1.TabIndex = 1;
+            healthBar.BackColor = Color.Transparent;
+            healthBar.Block = 0;
+            healthBar.CurrentHealth = 80;
+            healthBar.Location = new Point(21, 210);
+            healthBar.MaxHealth = 80;
+            healthBar.Name = "healthBar";
+            healthBar.Size = new Size(250, 29);
+            healthBar.TabIndex = 1;
             // 
-            // statusBar1
+            // statusBar
             // 
-            statusBar1.BackColor = Color.Transparent;
-            statusBar1.Location = new Point(21, 266);
-            statusBar1.Name = "statusBar1";
-            statusBar1.Size = new Size(250, 30);
-            statusBar1.TabIndex = 2;
+            statusBar.BackColor = Color.Transparent;
+            statusBar.Location = new Point(21, 245);
+            statusBar.Name = "statusBar";
+            statusBar.Size = new Size(250, 24);
+            statusBar.TabIndex = 2;
             // 
             // CreatureUI
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
-            Controls.Add(statusBar1);
-            Controls.Add(healthBar1);
-            Controls.Add(pictureBox1);
+            Controls.Add(statusBar);
+            Controls.Add(healthBar);
+            Controls.Add(pictureBoxCreature);
             Name = "CreatureUI";
             Size = new Size(300, 300);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCreature).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private HealthBar healthBar1;
-        private StatusBar statusBar1;
+        private PictureBox pictureBoxCreature;
+        private HealthBar healthBar;
+        private StatusBar statusBar;
     }
 }

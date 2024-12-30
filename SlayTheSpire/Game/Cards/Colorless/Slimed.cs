@@ -21,7 +21,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 消耗。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.ExhaustCard(this);
         }

@@ -21,7 +21,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 格挡不再在你的回合开始时消失。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.ApplyPower(new BarricadePower());
         }

@@ -23,7 +23,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 获得20点格挡。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.AddBlock(BaseBlock);
             for (int i = 0; i < 2; i++)

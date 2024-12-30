@@ -22,7 +22,7 @@ namespace SlayTheSpire.Game.Cards.Red
                 抽3张牌。
                 """;
         }
-        public override void OnUse(AbstractPlayer user, AbstractCreature target)
+        public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.DrawCard(BaseDraw);
             //等待选牌操作
