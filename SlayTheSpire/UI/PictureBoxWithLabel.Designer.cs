@@ -48,6 +48,7 @@
             // 
             label.BackColor = Color.Transparent;
             label.Dock = DockStyle.Fill;
+            label.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             label.Location = new Point(0, 0);
             label.Name = "label";
             label.Size = new Size(150, 150);
@@ -58,6 +59,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Transparent;
             Controls.Add(label);
             Controls.Add(pictureBox);
             Name = "PictureBoxWithLabel";

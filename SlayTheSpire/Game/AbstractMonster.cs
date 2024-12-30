@@ -42,7 +42,10 @@ namespace SlayTheSpire.Game
         public void TurnStart()
         {
             CurrentBlock = 0;
-            BuffList.ForEach(buff => buff.OnTurnStart());
+            for(int i = 0; i < BuffList.Count; i++)
+            {
+                BuffList[i].OnTurnStart();
+            }
         }
     }
 }

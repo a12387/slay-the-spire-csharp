@@ -21,10 +21,12 @@ namespace SlayTheSpire.UI
         {
             InitializeComponent();
             creature = abstractCreature;
-            healthBar.CurrentHealth = abstractCreature.CurrentHealth;
-            healthBar.MaxHealth = abstractCreature.MaxHealth;
             abstractCreature.CurrentHealthChanged += SetCurrentHealth;
             abstractCreature.MaxHealthChanged += SetMaxHealth;
+            abstractCreature.CurrentBlockChanged += SetCurrentBlock;
+            SetMaxHealth(abstractCreature.MaxHealth);
+            SetCurrentHealth(abstractCreature.CurrentHealth);
+            SetCurrentBlock(abstractCreature.CurrentBlock);
             switch (abstractCreature.Name)
             {
                 case "Ironclad":
@@ -41,14 +43,28 @@ namespace SlayTheSpire.UI
                     break;
             }
         }
-        public void SetCurrentHealth(object? sender, int health)
+        public void SetCurrentHealth(int health)
         {
             healthBar.CurrentHealth = health;
         }
 
-        public void SetMaxHealth(object? sender, int health)
+        public void SetMaxHealth(int health)
         {
             healthBar.MaxHealth = health;
+        }
+
+        public void SetCurrentBlock(int block)
+        {
+            healthBar.CurrentBlock = block;
+            if (block == 0)
+            {
+                pictureBoxWithLabel1.Hide();
+            }
+            else
+            {
+                pictureBoxWithLabel1.labelText = block.ToString();
+                pictureBoxWithLabel1.Show();
+            }
         }
     }
 }

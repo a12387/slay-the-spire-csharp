@@ -19,7 +19,7 @@ namespace SlayTheSpire.Game
                 if (currentHealth != value)
                 {
                     currentHealth = value;
-                    CurrentHealthChanged?.Invoke(this, currentHealth);
+                    CurrentHealthChanged?.Invoke(currentHealth);
                 }
             }
         }
@@ -30,14 +30,27 @@ namespace SlayTheSpire.Game
             protected set
             {
                 maxHealth = value;
-                MaxHealthChanged?.Invoke(this, maxHealth);
+                MaxHealthChanged?.Invoke(maxHealth);
             }
         }
-        public int CurrentBlock { get; set; }
+        public int currentBlock;
+        public int CurrentBlock 
+        { 
+            get { return currentBlock; }
+            set 
+            {
+                if (currentBlock != value)
+                {
+                    currentBlock = value;
+                    CurrentBlockChanged?.Invoke(currentBlock);
+                }
+            } 
+        }
         public int Money { get; protected set; }
         public List<AbstractPower> BuffList { get; protected set; }
-        public event EventHandler<int> CurrentHealthChanged;
-        public event EventHandler<int> MaxHealthChanged;
+        public event Action<int>? CurrentHealthChanged;
+        public event Action<int>? MaxHealthChanged;
+        public event Action<int>? CurrentBlockChanged;
 
         protected AbstractCreature(bool isPlayer, string name, int maxHealth)
         {
@@ -84,15 +97,11 @@ namespace SlayTheSpire.Game
                 }
                 else
                 {
-                    amount = 0;
                     LoseBlock(amount);
+                    amount = 0;
                 }
             }
-            CurrentHealth -= amount;
-            if (CurrentHealth <= 0 && Die != null)
-            {
-                Die();
-            }
+            LoseHealth(amount);
         }
         public void LoseHealth(int amount)
         {
@@ -182,10 +191,10 @@ namespace SlayTheSpire.Game
         public void UpdateBuff()
         {
             List<AbstractPower> ToRemove = new List<AbstractPower>();
-            BuffList.ForEach(power =>
+            for (int i = 0; i < BuffList.Count; i++)
             {
-                power.OnUpdate(this, ToRemove);
-            });
+                BuffList[i].OnUpdate(this, ToRemove);
+            }
             BuffList.Except(ToRemove);
         }
     }

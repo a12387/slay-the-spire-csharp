@@ -45,30 +45,34 @@ namespace SlayTheSpire.UI
                 }
             }
         }
-        private int block;
-        public int Block
+        private int currentBlock;
+        public int CurrentBlock
         {
-            get { return block; }
+            get { return currentBlock; }
             set
             {
-                if (block != value)
+                if (currentBlock != value)
                 {
-                    block = value;
+                    currentBlock = value;
+                    Refresh();
                 }
             }
         }
+        
         protected override void OnPaint(PaintEventArgs e)
         {
-            using (Brush semiTransparentBrush = new SolidBrush(Color.FromArgb(200, 0, 0, 0)))  // 半透明黑色
+            Brush brush;
+            if (CurrentBlock > 0)
             {
-                e.Graphics.FillRectangle(semiTransparentBrush, this.ClientRectangle);  // 用半透明颜色填充背景
+                brush = new SolidBrush(Color.Blue);
             }
-            using (Brush redBrush = new SolidBrush(Color.Red))
+            else
             {
-                Rectangle r = this.ClientRectangle;
-                r.Width = this.ClientRectangle.Width * currentHealth / maxHealth;
-                e.Graphics.FillRectangle(redBrush, r);
+                brush = new SolidBrush(Color.Red);
             }
+            Rectangle r = this.ClientRectangle;
+            r.Width = this.ClientRectangle.Width * currentHealth / maxHealth;
+            e.Graphics.FillRectangle(brush, r);
             base.OnPaint(e);
         }
     }

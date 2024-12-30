@@ -34,11 +34,14 @@
             // labelHealth
             // 
             labelHealth.BackColor = Color.Transparent;
+            labelHealth.BorderStyle = BorderStyle.FixedSingle;
             labelHealth.Dock = DockStyle.Fill;
-            labelHealth.ForeColor = Color.White;
+            labelHealth.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            labelHealth.ForeColor = Color.Transparent;
             labelHealth.Location = new Point(0, 0);
+            labelHealth.Margin = new Padding(0);
             labelHealth.Name = "labelHealth";
-            labelHealth.Size = new Size(250, 18);
+            labelHealth.Size = new Size(273, 38);
             labelHealth.TabIndex = 1;
             labelHealth.Text = "80/80";
             labelHealth.TextAlign = ContentAlignment.MiddleCenter;
@@ -50,7 +53,7 @@
             BackColor = Color.Transparent;
             Controls.Add(labelHealth);
             Name = "HealthBar";
-            Size = new Size(250, 18);
+            Size = new Size(273, 38);
             ResumeLayout(false);
         }
 

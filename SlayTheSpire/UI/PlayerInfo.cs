@@ -20,12 +20,12 @@ namespace SlayTheSpire.UI
         public event EventHandler MapIconClicked;
         public event EventHandler DeckIconClicked;
 
-        public void SetCurrentHealth(object? sender, int health)
+        public void SetCurrentHealth(int health)
         {
             healthInfo.CurrentHealth = health;
         }
 
-        public void SetMaxHealth(object? sender, int health)
+        public void SetMaxHealth(int health)
         {
             healthInfo.MaxHealth = health;
         }

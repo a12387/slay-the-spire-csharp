@@ -85,12 +85,13 @@ namespace SlayTheSpire.Game.Monsters
                     player.DrawPile.Shuffle();
                     break;
                 case MonsterIntent.Buff:
-                    BuffList.ForEach (buff =>
+                    for(int i=0;i<BuffList.Count; i++)
                     {
-                        if (buff.Name == "Strength" && buff.Amount < 0) { 
-                            BuffList.Remove(buff);
+                        if(BuffList[i].Name == "Strength" && BuffList[1].Amount < 0)
+                        {
+                            BuffList[i].Amount = 0;
                         }
-                    }) ;//清空负力量
+                    }//清空负力量
                     ApplyPower(new Strength(2));
                     switch (round / 3)
                     {
