@@ -25,14 +25,16 @@ namespace SlayTheSpire.Game.Cards.Red
         }
         public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
-            user.Hand.ForEach(card =>
+            for(int i = 0; i < user.Hand.Count; i++)
             {
-                if (card.Type != CardType.Skill)
+                var card = user.Hand[i];
+                if (card.Type != CardType.Attack)
                 {
                     user.ExhaustCard(card);
                     user.AddBlock(BaseBlock);
+                    i--;
                 }
-            });
+            }
         }
     }
 }

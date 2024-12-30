@@ -35,11 +35,11 @@ namespace SlayTheSpire.Game
         public virtual void OnAppliedDebuff(ref int amount) { }
         public virtual void OnUseCard(AbstractPlayer player) { }
         public virtual void OnLimitBreak() { }
-        public virtual void OnUpdate(AbstractCreature creature)
+        public virtual void OnUpdate(AbstractCreature creature, List<AbstractPower> toRemove)
         {
             if (Amount == 0)
             {
-                creature.BuffList.Remove(this);
+                toRemove.Add(this);
             }
         }
     }

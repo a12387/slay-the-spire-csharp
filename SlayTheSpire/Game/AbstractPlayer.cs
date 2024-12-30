@@ -22,7 +22,7 @@ namespace SlayTheSpire.Game
         public CardGroup ExhaustPile { get; set; }
         public PlayerFacing Facing { get; set; }
         public int Energy { get; set; }
-        public const int MaxEnergy = 5;
+        public const int MaxEnergy = 4;
         public const int MaxHandCards = 10;
         public const int NumDrawCardsEachTurn = 5;
         public event Action <PlayerFacing>? PlayerFacingChanged;
@@ -40,6 +40,10 @@ namespace SlayTheSpire.Game
             ExhaustPile = new CardGroup(CardGroupType.ExhaustPile);
             Facing = PlayerFacing.Right;
             Energy = MaxEnergy;
+            Die += () =>
+            {
+                MessageBox.Show("U Died");
+            };
         }
         public void BeforeBattle()
         {
@@ -56,6 +60,9 @@ namespace SlayTheSpire.Game
         }
         public void TurnStart()
         {
+            Energy = MaxEnergy;
+            EnergyChanged?.Invoke(Energy);
+
             bool loseBlock = true;
             for (int i = 0; i < BuffList.Count; i++)
             {
@@ -183,7 +190,7 @@ namespace SlayTheSpire.Game
             {
                 ExhaustCard(card);
             }
-            else
+            else if (card.Type != CardType.Power)
             {
                 DiscardPile.Add(card);
             }
@@ -196,6 +203,7 @@ namespace SlayTheSpire.Game
             {
                 Energy -= card.Cost;
             }
+            EnergyChanged?.Invoke(Energy);
         }
     }
 }

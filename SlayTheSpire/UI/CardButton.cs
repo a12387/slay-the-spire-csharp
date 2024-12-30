@@ -107,6 +107,7 @@ namespace SlayTheSpire
             switch (Card.Rarity)
             {
                 case CardRarity.Basic:
+                case CardRarity.Special:
                 case CardRarity.Common:
                     img = Properties.Resources.banner_common;
                     break;

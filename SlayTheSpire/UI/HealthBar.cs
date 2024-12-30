@@ -69,6 +69,7 @@ namespace SlayTheSpire.UI
                 r.Width = this.ClientRectangle.Width * currentHealth / maxHealth;
                 e.Graphics.FillRectangle(redBrush, r);
             }
+            base.OnPaint(e);
         }
     }
 }

@@ -23,7 +23,15 @@ namespace SlayTheSpire.Game.Cards.Red
         }
         public override void OnUse(AbstractPlayer user, List<AbstractMonster> targets)
         {
-            targets.ForEach(target => user.Attack(BaseDamage, target));
+            for (int i = 0; i < targets.Count; i++)
+            {
+                int oldCount = targets.Count;
+                user.Attack(BaseDamage, targets[i]);
+                if(targets.Count != oldCount) // Someone died
+                {
+                    i--;
+                }
+            }
         }
     }
 }
