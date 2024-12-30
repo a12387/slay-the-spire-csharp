@@ -195,10 +195,10 @@ namespace SlayTheSpire.Game
         public void UpdateBuff()
         {
             List<AbstractPower> ToRemove = new List<AbstractPower>();
-            BuffList.ForEach(power =>
+            for (int i = 0; i < BuffList.Count; i++)
             {
-                power.OnUpdate(this, ToRemove);
-            });
+                BuffList[i].OnUpdate(this, ToRemove);
+            }
             BuffList.Except(ToRemove);
         }
     }
