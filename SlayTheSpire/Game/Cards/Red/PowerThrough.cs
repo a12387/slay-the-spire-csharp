@@ -26,7 +26,17 @@ namespace SlayTheSpire.Game.Cards.Red
         public override void OnUse(AbstractPlayer user, AbstractCreature? target)
         {
             user.AddBlock(BaseBlock);
-            //伤口
+            for (int i = 0; i < 2; i++)
+            {
+                if (user.Hand.Count < 10)
+                {
+                    user.Hand.Add(new Wound());
+                }
+                else
+                {
+                    user.DiscardPile.Add(new Wound());
+                }
+            }
         }
     }
 }

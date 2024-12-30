@@ -32,14 +32,17 @@ namespace SlayTheSpire.Game
         {
 
         }
-        public abstract void Act(AbstractPlayer player);
+        public abstract void Act(AbstractPlayer player, List<AbstractMonster> monsters, int round);
         public abstract void GenerateNewIntent(int round);
         //protected abstract void SetIntent(MonsterIntent intent);
         public virtual void BeforeBattle()
         {
-            GenerateNewIntent(0);
-            // Add buff or others
+            
         }
-        
+        public void TurnStart()
+        {
+            CurrentBlock = 0;
+            BuffList.ForEach(buff => buff.OnTurnStart());
+        }
     }
 }

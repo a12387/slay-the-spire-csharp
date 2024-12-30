@@ -15,12 +15,12 @@ namespace SlayTheSpire.Game
     {
         public string Name { get; }
         public int Amount { get; set; }
-        public PowerType Type { get; }
+        public PowerType Type { get; protected set; }
 
         protected AbstractPower(string name, int amount, PowerType type)
         {
             Name = name;
-            Amount = amount;    
+            Amount = amount;
             Type = type;
         }
         public virtual void OnAttack(ref int amount, int order) { }
@@ -31,8 +31,16 @@ namespace SlayTheSpire.Game
         public virtual void OnDrawCard(ref int amount) { }
         public virtual void OnExhaustCard(AbstractPlayer player) { }
         public virtual void OnTurnStart(ref bool loseblock, AbstractPlayer player) { }
+        public virtual void OnTurnStart() { }
         public virtual void OnAppliedDebuff(ref int amount) { }
         public virtual void OnUseCard(AbstractPlayer player) { }
         public virtual void OnLimitBreak() { }
+        public virtual void OnUpdate(AbstractCreature creature)
+        {
+            if (Amount == 0)
+            {
+                creature.BuffList.Remove(this);
+            }
+        }
     }
 }

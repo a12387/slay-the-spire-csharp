@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Powers
     {
         public Strength(int amount) : base("Strength", amount, PowerType.Buff)
         {
-
+            if(amount < 0) Type = PowerType.Debuff;
         }
         public override void OnAttack(ref int amount, int order)
         {
