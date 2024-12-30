@@ -1,6 +1,6 @@
 ﻿namespace SlayTheSpire.UI
 {
-    partial class HealthBar
+    partial class Deck
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -28,34 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            labelHealth = new Label();
             SuspendLayout();
             // 
-            // labelHealth
-            // 
-            labelHealth.BackColor = Color.Transparent;
-            labelHealth.Dock = DockStyle.Fill;
-            labelHealth.ForeColor = Color.White;
-            labelHealth.Location = new Point(0, 0);
-            labelHealth.Name = "labelHealth";
-            labelHealth.Size = new Size(250, 18);
-            labelHealth.TabIndex = 1;
-            labelHealth.Text = "80/80";
-            labelHealth.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // HealthBar
+            // Deck
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
-            Controls.Add(labelHealth);
-            Name = "HealthBar";
-            Size = new Size(250, 18);
+            Name = "Deck";
+            Size = new Size(1280, 720);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Label labelHealth;
     }
 }

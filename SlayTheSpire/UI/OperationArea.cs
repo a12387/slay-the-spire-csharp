@@ -14,6 +14,7 @@ namespace SlayTheSpire.UI
     {
         const int Interval = 10;
         private float ScaleX;
+
         public OperationArea()
         {
             InitializeComponent();
@@ -26,7 +27,19 @@ namespace SlayTheSpire.UI
         public void AddCard(CardButton btn)
         {
             panelHand.Controls.Add(btn);
+            //btn.Click += 
             btn.Location = new Point((panelHand.Controls.Count - 1) * (btn.Width + Interval), 0);
+        }
+
+        private void pictureBoxWithLabelEndTurn_Load(object sender, EventArgs e)
+        {
+            pictureBoxWithLabelEndTurn.labelText = "EndTurn";
+            pictureBoxWithLabelEndTurn.Image = Properties.Resources.endturn1;
+        }
+
+        private void onCardSelected(object sender, EventArgs e)
+        {
+            
         }
     }
 }

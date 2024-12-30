@@ -28,35 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            pictureBoxDrawPile = new PictureBox();
+            pictureBoxDiscardPile = new PictureBox();
             labelEnergy = new Label();
             labelExhaust = new Label();
             panelHand = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            pictureBoxWithLabelEndTurn = new PictureBoxWithLabel();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDrawPile).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDiscardPile).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureBoxDrawPile
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = Properties.Resources.deck1;
-            pictureBox1.Location = new Point(0, 150);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(120, 120);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pictureBoxDrawPile.BackColor = Color.Transparent;
+            pictureBoxDrawPile.Image = Properties.Resources.deck1;
+            pictureBoxDrawPile.Location = new Point(0, 150);
+            pictureBoxDrawPile.Name = "pictureBoxDrawPile";
+            pictureBoxDrawPile.Size = new Size(120, 120);
+            pictureBoxDrawPile.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDrawPile.TabIndex = 0;
+            pictureBoxDrawPile.TabStop = false;
             // 
-            // pictureBox2
+            // pictureBoxDiscardPile
             // 
-            pictureBox2.Image = Properties.Resources.discard;
-            pictureBox2.Location = new Point(1160, 150);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(120, 120);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            pictureBoxDiscardPile.Image = Properties.Resources.discard;
+            pictureBoxDiscardPile.Location = new Point(1160, 160);
+            pictureBoxDiscardPile.Name = "pictureBoxDiscardPile";
+            pictureBoxDiscardPile.Size = new Size(120, 110);
+            pictureBoxDiscardPile.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDiscardPile.TabIndex = 1;
+            pictureBoxDiscardPile.TabStop = false;
             // 
             // labelEnergy
             // 
@@ -69,9 +70,9 @@
             // 
             // labelExhaust
             // 
-            labelExhaust.Location = new Point(1160, 30);
+            labelExhaust.Location = new Point(1160, 48);
             labelExhaust.Name = "labelExhaust";
-            labelExhaust.Size = new Size(120, 120);
+            labelExhaust.Size = new Size(120, 109);
             labelExhaust.TabIndex = 3;
             labelExhaust.Text = "0";
             labelExhaust.TextAlign = ContentAlignment.MiddleCenter;
@@ -84,29 +85,41 @@
             panelHand.Size = new Size(1040, 270);
             panelHand.TabIndex = 4;
             // 
+            // pictureBoxWithLabelEndTurn
+            // 
+            pictureBoxWithLabelEndTurn.Image = null;
+            pictureBoxWithLabelEndTurn.labelText = null;
+            pictureBoxWithLabelEndTurn.Location = new Point(1160, 0);
+            pictureBoxWithLabelEndTurn.Name = "pictureBoxWithLabelEndTurn";
+            pictureBoxWithLabelEndTurn.Size = new Size(120, 45);
+            pictureBoxWithLabelEndTurn.TabIndex = 0;
+            pictureBoxWithLabelEndTurn.Load += pictureBoxWithLabelEndTurn_Load;
+            // 
             // OperationArea
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
+            Controls.Add(pictureBoxWithLabelEndTurn);
             Controls.Add(panelHand);
             Controls.Add(labelExhaust);
             Controls.Add(labelEnergy);
-            Controls.Add(pictureBox2);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxDiscardPile);
+            Controls.Add(pictureBoxDrawPile);
             Name = "OperationArea";
             Size = new Size(1280, 270);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDrawPile).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDiscardPile).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox pictureBoxDrawPile;
+        private PictureBox pictureBoxDiscardPile;
         private Label labelEnergy;
         private Label labelExhaust;
         private Panel panelHand;
+        private PictureBoxWithLabel pictureBoxWithLabelEndTurn;
     }
 }

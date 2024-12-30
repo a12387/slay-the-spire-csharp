@@ -84,7 +84,7 @@ namespace SlayTheSpire.Game
                 var card = DrawPile.First();
 
                 Hand.Add(card);
-                card.OnDrawn();
+                card.OnDrawn(this);
                 DrawPile.RemoveAt(0);
             }
         }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             operationArea = new OperationArea();
-            this.panelLeft = new Panel();
+            panelLeft = new Panel();
             panelRight = new Panel();
             panelMiddle = new Panel();
             SuspendLayout();
@@ -44,12 +44,12 @@
             // 
             // panelLeft
             // 
-            this.panelLeft.BackColor = Color.Transparent;
-            this.panelLeft.Location = new Point(70, 71);
-            this.panelLeft.Name = "panelLeft";
-            this.panelLeft.Size = new Size(393, 373);
-            this.panelLeft.TabIndex = 2;
-            this.panelLeft.Paint += this.panelMonsterLeft_Paint;
+            panelLeft.BackColor = Color.Transparent;
+            panelLeft.Location = new Point(70, 71);
+            panelLeft.Name = "panelLeft";
+            panelLeft.Size = new Size(393, 373);
+            panelLeft.TabIndex = 2;
+            panelLeft.Paint += panelMonsterLeft_Paint;
             // 
             // panelRight
             // 
@@ -73,10 +73,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.scene;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(operationArea);
             Controls.Add(panelMiddle);
             Controls.Add(panelRight);
-            Controls.Add(this.panelLeft);
-            Controls.Add(operationArea);
+            Controls.Add(panelLeft);
             Name = "BattleScene";
             Size = new Size(1280, 720);
             ResumeLayout(false);
