@@ -85,19 +85,19 @@ namespace SlayTheSpire.Game.Monsters
                     player.DrawPile.Shuffle();
                     break;
                 case MonsterIntent.Buff:
-                    for(int i=0;i<BuffList.Count; i++)
+                    for(int i = 0; i < BuffList.Count; i++)
                     {
                         if(BuffList[i].Name == "Strength" && BuffList[1].Amount < 0)
                         {
                             BuffList[i].Amount = 0;
                         }
-                    }//清空负力量
+                    } //清空负力量
                     ApplyPower(new Strength(2));
                     switch (round / 3)
                     {
                         case 1: ApplyPower(new Artifact(2)); break;
                         case 2: ApplyPower(new BeatOfDeath(1)); break;
-                        //case 3: ApplyPower(new PainfulStabs); break;
+                        case 3: ApplyPower(new PainfulStabs()); break;
                         case 4: ApplyPower(new Strength(10)); break;
                         default:
                             ApplyPower(new Strength(50)); break;
@@ -108,7 +108,6 @@ namespace SlayTheSpire.Game.Monsters
         }
         private void SetAttackIntent(MoveType move)
         {
-            CurrentIntent = MonsterIntent.Attack;
             if (move == MoveType.Bash)
             {
                 DamageAmount = 40;
@@ -121,9 +120,15 @@ namespace SlayTheSpire.Game.Monsters
                 DamageTimes = 12;
                 LastMove = MoveType.Combo;
             }
+            else
+            {
+                DamageTimes = 0;
+            }
+            CurrentIntent = MonsterIntent.Attack;
         }
         public override void BeforeBattle()
         {
+            base.BeforeBattle();
             GenerateNewIntent(0);
             ApplyPower(new Invincible(300));
             ApplyPower(new BeatOfDeath(1));

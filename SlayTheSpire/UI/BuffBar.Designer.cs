@@ -1,6 +1,6 @@
 ﻿namespace SlayTheSpire.UI
 {
-    partial class StatusBar
+    partial class BuffBar
     {
         /// <summary> 
         /// 必需的设计器变量。

@@ -45,8 +45,9 @@ namespace SlayTheSpire.Game
                 MessageBox.Show("U Died");
             };
         }
-        public void BeforeBattle()
+        public override void BeforeBattle()
         {
+            base.BeforeBattle();
             DrawPile.Clear();
             Hand.Clear();
             DiscardPile.Clear();

@@ -47,10 +47,20 @@ namespace SlayTheSpire.Game
             } 
         }
         public int Money { get; protected set; }
-        public List<AbstractPower> BuffList { get; protected set; }
+        public List<AbstractPower> buffList;
+        public List<AbstractPower> BuffList 
+        { 
+            get { return buffList; }
+            protected set
+            {
+                buffList = value;
+                BuffListChanged?.Invoke(buffList);
+            }
+        }
         public event Action<int>? CurrentHealthChanged;
         public event Action<int>? MaxHealthChanged;
         public event Action<int>? CurrentBlockChanged;
+        public event Action<List<AbstractPower>>? BuffListChanged;
 
         protected AbstractCreature(bool isPlayer, string name, int maxHealth)
         {
@@ -196,6 +206,14 @@ namespace SlayTheSpire.Game
                 BuffList[i].OnUpdate(this, ToRemove);
             }
             BuffList.Except(ToRemove);
+            BuffListChanged?.Invoke(buffList);
+        }
+        public virtual void BeforeBattle()
+        {
+            CurrentHealthChanged?.Invoke(currentHealth);
+            CurrentBlockChanged?.Invoke(currentBlock);
+            MaxHealthChanged?.Invoke(maxHealth);
+            BuffListChanged?.Invoke(buffList);
         }
     }
 }

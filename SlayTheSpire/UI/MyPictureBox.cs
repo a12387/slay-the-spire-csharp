@@ -14,11 +14,14 @@ namespace SlayTheSpire.UI
         {
             SetStyle(ControlStyles.Opaque, true);  // 透明
             DoubleBuffered = false;
+            BackGroundA = 200;
         }
+
+        public int BackGroundA { get; set; }
 
         protected override void OnPaint(PaintEventArgs e)
         {
-            using (Brush semiTransparentBrush = new SolidBrush(Color.FromArgb(200, 0, 0, 0)))  // 半透明黑色
+            using (Brush semiTransparentBrush = new SolidBrush(Color.FromArgb(BackGroundA, 0, 0, 0)))  // 半透明黑色
             {
                 e.Graphics.FillRectangle(semiTransparentBrush, this.ClientRectangle);  // 用半透明颜色填充背景
             }

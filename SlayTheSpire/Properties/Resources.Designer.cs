@@ -83,6 +83,66 @@ namespace SlayTheSpire.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Artifact {
+            get {
+                object obj = ResourceManager.GetObject("Artifact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap attack {
+            get {
+                object obj = ResourceManager.GetObject("attack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap attackDebuff {
+            get {
+                object obj = ResourceManager.GetObject("attackDebuff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap attackDefend {
+            get {
+                object obj = ResourceManager.GetObject("attackDefend", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap BackAttackLeft {
+            get {
+                object obj = ResourceManager.GetObject("BackAttackLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap BackAttackRight {
+            get {
+                object obj = ResourceManager.GetObject("BackAttackRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap banner_common {
             get {
                 object obj = ResourceManager.GetObject("banner_common", resourceCulture);
@@ -136,6 +196,16 @@ namespace SlayTheSpire.Properties {
         internal static System.Drawing.Bitmap battle_trance {
             get {
                 object obj = ResourceManager.GetObject("battle_trance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap BeatOfDeath {
+            get {
+                object obj = ResourceManager.GetObject("BeatOfDeath", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -243,6 +313,16 @@ namespace SlayTheSpire.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap buff {
+            get {
+                object obj = ResourceManager.GetObject("buff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap burn {
             get {
                 object obj = ResourceManager.GetObject("burn", resourceCulture);
@@ -343,6 +423,16 @@ namespace SlayTheSpire.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap debuff {
+            get {
+                object obj = ResourceManager.GetObject("debuff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap deck {
             get {
                 object obj = ResourceManager.GetObject("deck", resourceCulture);
@@ -366,6 +456,16 @@ namespace SlayTheSpire.Properties {
         internal static System.Drawing.Bitmap defend {
             get {
                 object obj = ResourceManager.GetObject("defend", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap defend1 {
+            get {
+                object obj = ResourceManager.GetObject("defend1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -493,6 +593,16 @@ namespace SlayTheSpire.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Frail {
+            get {
+                object obj = ResourceManager.GetObject("Frail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap frame_attack_common {
             get {
                 object obj = ResourceManager.GetObject("frame_attack_common", resourceCulture);
@@ -603,6 +713,16 @@ namespace SlayTheSpire.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Invincible {
+            get {
+                object obj = ResourceManager.GetObject("Invincible", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap ironclad {
             get {
                 object obj = ResourceManager.GetObject("ironclad", resourceCulture);
@@ -663,9 +783,29 @@ namespace SlayTheSpire.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap NoDraw {
+            get {
+                object obj = ResourceManager.GetObject("NoDraw", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap offering {
             get {
                 object obj = ResourceManager.GetObject("offering", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap PainfulStab {
+            get {
+                object obj = ResourceManager.GetObject("PainfulStab", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -706,6 +846,56 @@ namespace SlayTheSpire.Properties {
         internal static System.Drawing.Bitmap power_through {
             get {
                 object obj = ResourceManager.GetObject("power_through", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap PowerBarricade {
+            get {
+                object obj = ResourceManager.GetObject("PowerBarricade", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap PowerCorruption {
+            get {
+                object obj = ResourceManager.GetObject("PowerCorruption", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap PowerDarkEmbrace {
+            get {
+                object obj = ResourceManager.GetObject("PowerDarkEmbrace", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap PowerDemonForm {
+            get {
+                object obj = ResourceManager.GetObject("PowerDemonForm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap PowerFeelNoPain {
+            get {
+                object obj = ResourceManager.GetObject("PowerFeelNoPain", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -813,6 +1003,16 @@ namespace SlayTheSpire.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Strength {
+            get {
+                object obj = ResourceManager.GetObject("Strength", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap strike {
             get {
                 object obj = ResourceManager.GetObject("strike", resourceCulture);
@@ -823,9 +1023,39 @@ namespace SlayTheSpire.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Surrounded {
+            get {
+                object obj = ResourceManager.GetObject("Surrounded", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap true_grit {
             get {
                 object obj = ResourceManager.GetObject("true_grit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Vulnerable {
+            get {
+                object obj = ResourceManager.GetObject("Vulnerable", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Weak {
+            get {
+                object obj = ResourceManager.GetObject("Weak", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -45,25 +45,25 @@
             // panelLeft
             // 
             panelLeft.BackColor = Color.Transparent;
-            panelLeft.Location = new Point(102, 144);
+            panelLeft.Location = new Point(102, 134);
             panelLeft.Name = "panelLeft";
-            panelLeft.Size = new Size(300, 300);
+            panelLeft.Size = new Size(250, 310);
             panelLeft.TabIndex = 2;
             // 
             // panelRight
             // 
             panelRight.BackColor = Color.Transparent;
-            panelRight.Location = new Point(877, 144);
+            panelRight.Location = new Point(884, 134);
             panelRight.Name = "panelRight";
-            panelRight.Size = new Size(300, 300);
+            panelRight.Size = new Size(250, 310);
             panelRight.TabIndex = 2;
             // 
             // panelMiddle
             // 
             panelMiddle.BackColor = Color.Transparent;
-            panelMiddle.Location = new Point(504, 144);
+            panelMiddle.Location = new Point(501, 134);
             panelMiddle.Name = "panelMiddle";
-            panelMiddle.Size = new Size(300, 300);
+            panelMiddle.Size = new Size(250, 310);
             panelMiddle.TabIndex = 3;
             // 
             // BattleScene

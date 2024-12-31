@@ -23,7 +23,18 @@ namespace SlayTheSpire.Game
     };
     internal abstract class AbstractMonster : AbstractCreature
     {
-        public MonsterIntent CurrentIntent { get; protected set; }
+        public event Action<MonsterIntent, int, int>? MonsterIntentChanged;
+        private MonsterIntent currentIntent;
+        public MonsterIntent CurrentIntent 
+        { 
+            get {  return currentIntent; }
+            protected set
+            {
+                currentIntent = value;
+                MonsterIntentChanged?.Invoke(currentIntent, DamageAmount, DamageTimes);
+            }
+        }
+
         public int DamageAmount { get; protected set; }
         public int DamageTimes { get; protected set; }
         //protected MonsterIntent LastMove { get; set; }
@@ -35,9 +46,10 @@ namespace SlayTheSpire.Game
         public abstract void Act(AbstractPlayer player, List<AbstractMonster> monsters, int round);
         public abstract void GenerateNewIntent(int round);
         //protected abstract void SetIntent(MonsterIntent intent);
-        public virtual void BeforeBattle()
+        public override void BeforeBattle()
         {
-            
+            base.BeforeBattle();
+            MonsterIntentChanged?.Invoke(CurrentIntent, DamageAmount, DamageTimes);
         }
         public void TurnStart()
         {

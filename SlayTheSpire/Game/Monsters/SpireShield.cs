@@ -48,9 +48,9 @@ namespace SlayTheSpire.Game.Monsters
             switch (moveType)
             {
                 case MonsterIntent.AttackDebuff:
-                    CurrentIntent = Game.MonsterIntent.AttackDebuff;
                     DamageAmount = 12;
                     DamageTimes = 1;
+                    CurrentIntent = Game.MonsterIntent.AttackDebuff;
                     break;
                 case MonsterIntent.AttackDefend:
                     DamageAmount = 34;
@@ -58,9 +58,9 @@ namespace SlayTheSpire.Game.Monsters
                     CurrentIntent = Game.MonsterIntent.AttackDefend;
                     break;
                 case MonsterIntent.Defend:
-                    CurrentIntent = Game.MonsterIntent.Defend;
                     DamageAmount = 0;
                     DamageTimes = 0;
+                    CurrentIntent = Game.MonsterIntent.Defend;
                     break;
             }
             LastMove = moveType;
@@ -87,6 +87,7 @@ namespace SlayTheSpire.Game.Monsters
         }
         public override void BeforeBattle()
         {
+            base.BeforeBattle();
             GenerateNewIntent(0);
             ApplyPower(new Artifact(2));
         }

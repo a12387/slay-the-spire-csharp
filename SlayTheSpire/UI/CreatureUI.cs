@@ -24,9 +24,12 @@ namespace SlayTheSpire.UI
             abstractCreature.CurrentHealthChanged += SetCurrentHealth;
             abstractCreature.MaxHealthChanged += SetMaxHealth;
             abstractCreature.CurrentBlockChanged += SetCurrentBlock;
-            SetMaxHealth(abstractCreature.MaxHealth);
-            SetCurrentHealth(abstractCreature.CurrentHealth);
-            SetCurrentBlock(abstractCreature.CurrentBlock);
+            abstractCreature.BuffListChanged += buffBar.PaintBuffs;
+            var monster = creature as AbstractMonster;
+            if (monster != null)
+            {
+                monster.MonsterIntentChanged += intentui1.PaintIndent;
+            }
             switch (abstractCreature.Name)
             {
                 case "Ironclad":

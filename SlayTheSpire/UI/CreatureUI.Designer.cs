@@ -30,17 +30,18 @@
         {
             pictureBoxCreature = new PictureBox();
             healthBar = new HealthBar();
-            statusBar = new StatusBar();
+            buffBar = new BuffBar();
             pictureBoxWithLabel1 = new PictureBoxWithLabel();
+            intentui1 = new IntentUI();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCreature).BeginInit();
             SuspendLayout();
             // 
             // pictureBoxCreature
             // 
-            pictureBoxCreature.Location = new Point(21, 3);
+            pictureBoxCreature.Location = new Point(0, 40);
             pictureBoxCreature.Margin = new Padding(0);
             pictureBoxCreature.Name = "pictureBoxCreature";
-            pictureBoxCreature.Size = new Size(250, 213);
+            pictureBoxCreature.Size = new Size(250, 200);
             pictureBoxCreature.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxCreature.TabIndex = 0;
             pictureBoxCreature.TabStop = false;
@@ -50,21 +51,21 @@
             healthBar.BackColor = Color.Transparent;
             healthBar.CurrentBlock = 23;
             healthBar.CurrentHealth = 40;
-            healthBar.Location = new Point(58, 216);
+            healthBar.Location = new Point(40, 250);
             healthBar.Margin = new Padding(0);
             healthBar.MaxHealth = 80;
             healthBar.Name = "healthBar";
-            healthBar.Size = new Size(213, 29);
+            healthBar.Size = new Size(210, 20);
             healthBar.TabIndex = 1;
             // 
-            // statusBar
+            // buffBar
             // 
-            statusBar.BackColor = Color.Transparent;
-            statusBar.Location = new Point(21, 245);
-            statusBar.Margin = new Padding(0);
-            statusBar.Name = "statusBar";
-            statusBar.Size = new Size(250, 24);
-            statusBar.TabIndex = 2;
+            buffBar.BackColor = Color.Transparent;
+            buffBar.Location = new Point(40, 280);
+            buffBar.Margin = new Padding(0);
+            buffBar.Name = "buffBar";
+            buffBar.Size = new Size(210, 30);
+            buffBar.TabIndex = 2;
             // 
             // pictureBoxWithLabel1
             // 
@@ -72,24 +73,34 @@
             pictureBoxWithLabel1.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 134);
             pictureBoxWithLabel1.Image = Properties.Resources.block;
             pictureBoxWithLabel1.labelText = "0";
-            pictureBoxWithLabel1.Location = new Point(21, 216);
+            pictureBoxWithLabel1.Location = new Point(0, 240);
             pictureBoxWithLabel1.Margin = new Padding(0);
             pictureBoxWithLabel1.Name = "pictureBoxWithLabel1";
-            pictureBoxWithLabel1.Size = new Size(37, 29);
+            pictureBoxWithLabel1.Size = new Size(40, 40);
             pictureBoxWithLabel1.TabIndex = 3;
             pictureBoxWithLabel1.Visible = false;
+            // 
+            // intentui1
+            // 
+            intentui1.Location = new Point(0, 0);
+            intentui1.Margin = new Padding(0);
+            intentui1.Name = "intentui1";
+            intentui1.Size = new Size(250, 40);
+            intentui1.TabIndex = 4;
             // 
             // CreatureUI
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
+            Controls.Add(intentui1);
             Controls.Add(pictureBoxWithLabel1);
-            Controls.Add(statusBar);
+            Controls.Add(buffBar);
             Controls.Add(healthBar);
             Controls.Add(pictureBoxCreature);
+            Margin = new Padding(0);
             Name = "CreatureUI";
-            Size = new Size(300, 300);
+            Size = new Size(250, 310);
             ((System.ComponentModel.ISupportInitialize)pictureBoxCreature).EndInit();
             ResumeLayout(false);
         }
@@ -98,7 +109,8 @@
 
         private PictureBox pictureBoxCreature;
         private HealthBar healthBar;
-        private StatusBar statusBar;
+        private BuffBar buffBar;
         private PictureBoxWithLabel pictureBoxWithLabel1;
+        private IntentUI intentui1;
     }
 }
