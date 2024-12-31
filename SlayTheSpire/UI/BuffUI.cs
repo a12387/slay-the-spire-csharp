@@ -12,13 +12,13 @@ using SlayTheSpire.Game.Powers;
 
 namespace SlayTheSpire.UI
 {
+    // BuffUI 是用于显示单个Buff的UI类
     public partial class BuffUI : UserControl
     {
         public BuffUI()
         {
             InitializeComponent();
             panelBuffUI.Parent = myPictureBox1;
-            //label1.Parent = myPictureBox1;
         }
 
         internal void PaintBuff(AbstractPower power)

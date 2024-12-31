@@ -13,7 +13,8 @@ namespace SlayTheSpire.UI
 {
     public partial class CardSelection : UserControl
     {
-        CardButton Option1, Option2, Option3;
+        // 三选一的卡牌选择界面
+        CardButton? Option1, Option2, Option3;
         int Rounds;
         public CardSelection(int rounds)
         {

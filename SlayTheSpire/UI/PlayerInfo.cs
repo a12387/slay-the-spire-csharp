@@ -12,13 +12,15 @@ namespace SlayTheSpire.UI
 {
     public partial class PlayerInfo : UserControl
     {
+        // PlayerInfo 是用于显示玩家信息的控件（也就是界面上方的栏）
+        // 包括当前生命值、最大生命值、地图图标、卡组图标
         public PlayerInfo()
         {
             InitializeComponent();
         }
 
-        public event EventHandler MapIconClicked;
-        public event EventHandler DeckIconClicked;
+        public event EventHandler? MapIconClicked;
+        public event EventHandler? DeckIconClicked;
 
         public void SetCurrentHealth(int health)
         {

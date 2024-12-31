@@ -13,6 +13,9 @@ namespace SlayTheSpire.UI
 {
     internal partial class PileView: UserControl
     {
+        // PileView 是用于显示一组卡牌的控件
+        // 借鉴了GameMap的绘制逻辑
+        // 点一次卡牌，选中；再点一次，取消选中
         public event EventHandler OKClick
         {
             add
@@ -71,8 +74,5 @@ namespace SlayTheSpire.UI
                 }
             };
         }
-
-
-        
     }
 }

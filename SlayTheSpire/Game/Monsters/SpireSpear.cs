@@ -8,6 +8,12 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Monsters
 {
+    // 尖塔之矛
+    // 160生命值
+    // 首回合必定使用灼伤攻击
+    // 之后每三回合为一个周期
+    // 周期中，第一回合必定为连击（10*3）
+    // 第二、三回合有一个是强化（给所有敌人增加2力量），另一个则使用灼伤攻击
     internal class SpireSpear : AbstractMonster
     {
         MonsterIntent LastMove;

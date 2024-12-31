@@ -12,6 +12,8 @@ using System.Windows.Forms;
 
 namespace SlayTheSpire
 {
+    // CardButton 是用于显示卡牌的UI类
+    // 由于对各种要素的叠加涉及很多细节，所以这里没有使用继承，而是直接在CardButton中实现了绘制
     internal partial class CardButton : UserControl
     {
         const int OriginX = 180;

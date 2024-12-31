@@ -12,6 +12,11 @@ using SlayTheSpire.Game.Cards;
 
 namespace SlayTheSpire.UI
 {
+    // BattleScene 是战斗场景的UI类，其中有三个Panel用于放置玩家和敌人的UI，一个OperationArea用于放置玩家的手牌和操作区域
+    // 通过Battle类来控制战斗的进行，通过为Battle类的事件绑定UI的事件来实现UI的更新
+    // 通过Map类显示地图，通过EndScene类显示胜利或失败的场景
+    // 通过PileView类来显示玩家的牌堆
+    // 通过CreatureUI类来显示玩家和敌人的生命值和状态
     internal partial class BattleScene : UserControl
     {
         CardButton? selectedCard;
@@ -116,8 +121,7 @@ namespace SlayTheSpire.UI
 
         private Battle Battle;
 
-
-        private PileView Pile;
+        private PileView? Pile;
         public void ShowDrawPile(object? sender, EventArgs e)
         {
             Pile = new PileView(Battle.Player.DrawPile);
@@ -140,7 +144,7 @@ namespace SlayTheSpire.UI
         public void ClosePile(object? sender, EventArgs e)
         {
             Controls.Remove(Pile);
-            Pile.Dispose();
+            Pile?.Dispose();
         }
 
         public void BattleFinish()

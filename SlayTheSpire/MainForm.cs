@@ -3,6 +3,8 @@ namespace SlayTheSpire
 {
     public partial class MainForm : Form
     {
+        // MainForm 是游戏的主界面
+        // 在这里实现了光标的重绘
         public MainForm()
         {
             InitializeComponent();

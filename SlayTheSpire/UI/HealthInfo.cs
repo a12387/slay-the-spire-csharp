@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace SlayTheSpire.UI
 {
+    // PlayerInfo（也就是游戏上方的状态条）是用于显示玩家的生命值的ui
+    // 当鼠标移入时，生命值图标会放大
+    // 用CurrentHealth和MaxHealth来设置生命值
     public partial class HealthInfo : UserControl
     {
         public HealthInfo()

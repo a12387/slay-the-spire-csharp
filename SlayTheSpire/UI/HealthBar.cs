@@ -12,6 +12,10 @@ using System.Windows.Forms;
 
 namespace SlayTheSpire.UI
 {
+    // HealthBar 是用于显示生命值的UI类
+    // 当没有格挡时，生命值条为红色，有格挡时为蓝色
+    // 有格挡时，血条左侧添加一个显示数字的小盾图标
+    // 用重写Onpaint的方法来实现非满血情况下的显示
     public partial class HealthBar : UserControl
     {
         public HealthBar()

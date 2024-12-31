@@ -11,6 +11,12 @@ using System.Windows.Forms;
 
 namespace SlayTheSpire.UI
 {
+    // OperationArea 是用于显示玩家操作区域的ui
+    // 包括手牌，抽牌堆，弃牌堆，消耗牌堆，能量等，还有一个结束回合的按钮
+    // 通过事件 OnCardSelected，OnEndTurn 来通知外部发生了相应的操作
+    // 通过事件 DrawPileClick，DiscardPileClick，ExhaustPileClick 来通知外部点击了相应的牌堆
+    // 通过事件 OnHandChanged 来通知外部手牌发生了变化
+    // 通过方法 SetEnergyText 来设置能量显示（这里其实应该同时传入maxEnergy，不过我们默认只有4费了）
     internal partial class OperationArea : UserControl
     {
         const int Interval = 10;
@@ -114,7 +120,7 @@ namespace SlayTheSpire.UI
 
         
 
-        public event Action<CardButton> OnCardSelected;
-        public event Action OnEndTurn;
+        public event Action<CardButton>? OnCardSelected;
+        public event Action? OnEndTurn;
     }
 }

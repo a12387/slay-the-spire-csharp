@@ -14,13 +14,16 @@ namespace SlayTheSpire
 {
     public partial class StarterRoom : UserControl
     {
+        // StarterRoom 是游戏开始的界面
+        // 这里的三个按钮其实可以用一个按钮来实现
+        // 只需要改为事件的 += 和 -=，同时更改Text即可
         const int NumCardsToGet = 15;
         public StarterRoom()
         {
             InitializeComponent();
         }
 
-        public event Action ShowMap;
+        public event Action? ShowMap;
 
         private void StartJourney(object sender, EventArgs e)
         {

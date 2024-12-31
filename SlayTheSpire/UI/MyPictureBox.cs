@@ -8,6 +8,9 @@ using System.Xml.Schema;
 
 namespace SlayTheSpire.UI
 {
+    // MyPictureBox 是一个自定义的PictureBox
+    // 用于显示半透明背景
+    // 通过BackGroundA属性来设置背景的透明度
     internal class MyPictureBox : PictureBox
     {
         public MyPictureBox() : base()

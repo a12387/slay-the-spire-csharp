@@ -11,6 +11,8 @@ using System.Windows.Forms;
 
 namespace SlayTheSpire.UI
 {
+    // BuffBar 是用于显示玩家或敌人的Buff条的UI类
+    // 通过PaintBuffs方法来显示Buff
     public partial class BuffBar : UserControl
     {
         public BuffBar()

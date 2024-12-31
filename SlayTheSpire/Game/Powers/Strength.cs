@@ -14,7 +14,7 @@ namespace SlayTheSpire.Game.Powers
         }
         public override void OnAttack(ref int amount, int order)
         {
-            if(order==1)amount += Amount;
+            if(order == 1) amount += Amount;
         }
     }
 }

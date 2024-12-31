@@ -9,6 +9,16 @@ using System.Xml.Serialization;
 
 namespace SlayTheSpire.Game.Monsters
 {
+    // 腐化之心
+    // 800生命值
+    // 其行为规律是：每三轮为一个周期，进行强化、攻击、攻击
+    // 每个周期中的第二、三轮中，有一个是重击，另一个则是连击
+    // 心脏的第一次强化是强力debuff（上虚弱、脆弱、易伤，并塞五张状态牌）
+    // 第二次强化加两层人工制品
+    // 第三次强化加一层律动
+    // 第四次强化加疼痛戳刺
+    // 第五次强化加10力量
+    // 以后的强化都是加50力量
     internal class CorruptHeart : AbstractMonster
     {
         enum MoveType

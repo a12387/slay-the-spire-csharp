@@ -10,6 +10,10 @@ using System.Windows.Forms;
 
 namespace SlayTheSpire.UI
 {
+    // GameMap 是用于显示地图的UI类
+    // 为了实现对后方界面的透明效果，我们使用了重写的myPictureBox
+    // 需要注意的是控件的叠加顺序： UI -> panel -> myPictureBox -> pictureBox
+    // 在显示BuffUI、IntentUI的时候也借鉴了这里的解决方式
     public partial class GameMap : UserControl
     {
         public GameMap()

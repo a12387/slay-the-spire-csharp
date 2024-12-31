@@ -12,6 +12,13 @@ using SlayTheSpire.Game.Cards.Red;
 
 namespace SlayTheSpire.UI
 {
+    // IntentUI 是用于显示怪物意图的UI类
+    // 通过PaintIntent方法来显示怪物意图
+    // 通过MonsterIntent枚举来确定显示的图片
+    // 通过damageAmount和damageTimes来确定显示的伤害数值
+    // damageTimes = 0时不显示伤害数值
+    // damageTimes = 1时显示damageAmount
+    // damageTimes > 1时显示damageAmount * damageTimes （也就是多段伤害，比如6*2）
     public partial class IntentUI : UserControl
     {
         public IntentUI()

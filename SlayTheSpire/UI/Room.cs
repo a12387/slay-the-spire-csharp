@@ -13,13 +13,15 @@ using SlayTheSpire.Game.Monsters;
 
 namespace SlayTheSpire.UI
 {
+    // Room 是游戏的主界面，BattleScene, StarterRoom, EndScene 都依附于它而存在
+    // 包含了 PlayerInfo, GameMap, PileView， 还有一个panel作为容器
     internal partial class Room : UserControl
     {
         private readonly GameMap map;
         private PileView deck;
         bool mapExists = false;
         bool deckExists = false;
-        public static Room Instance;
+        public static Room? Instance;
         internal Room() : base()
         {
             var player = Dungeon.Player;
@@ -34,8 +36,7 @@ namespace SlayTheSpire.UI
             playerInfo.MapIconClicked += this.MapIcon_Click;
             playerInfo.DeckIconClicked += this.DeckIcon_Click;
             map = new GameMap();
-            map.RoomChanged += ChangeRoom;
-            
+            map.RoomChanged += ChangeRoom;    
         }
         public void AddPage(Control control, Control parent)
         {

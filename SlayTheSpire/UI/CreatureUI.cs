@@ -14,7 +14,8 @@ namespace SlayTheSpire.UI
 {
     public partial class CreatureUI : UserControl
     {
-        private AbstractCreature creature;
+        // CreatureUI 是用于显示Creaure的UI类
+        private readonly AbstractCreature creature;
         public PictureBox CreatruePictureBox { get { return pictureBoxCreature; } }
         internal AbstractCreature Creature { get { return creature; } }
         internal CreatureUI(AbstractCreature abstractCreature)

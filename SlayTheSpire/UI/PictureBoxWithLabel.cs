@@ -22,8 +22,8 @@ namespace SlayTheSpire.UI
             label.Parent = pictureBox;
         }
 
-        private string labeltext;
-        public String labelText
+        private string? labeltext;
+        public String? labelText
         {
             get { return labeltext; }
             set
@@ -32,9 +32,9 @@ namespace SlayTheSpire.UI
                 label.Text = labeltext;
             }
         }
-        private Image image;
+        private Image? image;
 
-        public Image Image
+        public Image? Image
         {
             get { return image; }
             set

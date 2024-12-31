@@ -7,6 +7,11 @@ using System.Threading.Tasks;
 
 namespace SlayTheSpire.Game.Monsters
 {
+    // 尖塔之盾
+    // 110生命值
+    // 其行为规律是：每三轮为一个周期
+    // 周期中，第一、二轮一个是痛击（12伤，-1力），另一个是加固（给所有敌人30点格挡）
+    // 第三轮必定使用粉碎：造成34伤害并获得99格挡
     internal class SpireShield : AbstractMonster
     {
         MonsterIntent LastMove { get; set; }
