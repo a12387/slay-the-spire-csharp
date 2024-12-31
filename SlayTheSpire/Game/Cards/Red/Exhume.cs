@@ -29,7 +29,7 @@ namespace SlayTheSpire.Game.Cards.Red
         public override void Effect(AbstractPlayer user, AbstractCard card)
         {
             user.ExhaustPile.Remove(card);
-            user.Hand.Add(card);
+            user.AddCardToHand(card);
         }
     }
 }

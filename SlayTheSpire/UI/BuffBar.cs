@@ -19,6 +19,7 @@ namespace SlayTheSpire.UI
         }
         internal void PaintBuffs(List<AbstractPower> abstractPowers)
         {
+            Controls.Clear();
             int currentX = 0;
             foreach (AbstractPower power in abstractPowers)
             {

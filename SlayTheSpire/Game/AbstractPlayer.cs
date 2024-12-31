@@ -40,10 +40,6 @@ namespace SlayTheSpire.Game
             ExhaustPile = new CardGroup(CardGroupType.ExhaustPile);
             Facing = PlayerFacing.Right;
             Energy = MaxEnergy;
-            Die += () =>
-            {
-                MessageBox.Show("U Died");
-            };
         }
         public override void BeforeBattle()
         {
@@ -119,6 +115,33 @@ namespace SlayTheSpire.Game
             }
             HandChanged?.Invoke(Hand);
         }
+        public void AddCardsToHand(List<AbstractCard> cards)
+        {
+            for(int i = 0; i < cards.Count; i++)
+            {
+                if(Hand.Count < MaxHandCards)
+                {
+                    Hand.Add(cards[i]);
+                }
+                else
+                {
+                    DiscardPile.Add(cards[i]);
+                }
+            }
+            HandChanged?.Invoke(Hand);
+        }
+        public void AddCardToHand(AbstractCard card)
+        {
+            if (Hand.Count < MaxHandCards)
+            {
+                Hand.Add(card);
+            }
+            else
+            {
+                DiscardPile.Add(card);
+            }
+            HandChanged?.Invoke(Hand);
+        }
         public void ExhaustCard(AbstractCard card)
         {
             DrawPile.Remove(card);
@@ -184,18 +207,19 @@ namespace SlayTheSpire.Game
             }
             Hand.Remove(card);
             HandChanged?.Invoke(Hand);
-            if (card.IsExhaust)
-            {
-                ExhaustCard(card);
-            }
-            else if (card.Type != CardType.Power)
+            
+            if (card.Type != CardType.Power && !card.IsExhaust)
             {
                 DiscardPile.Add(card);
             }
         }
         private void AfterUseCard(AbstractCard card)
         {
-            if(card.Cost == -1)
+            if (card.IsExhaust)
+            {
+                ExhaustCard(card);
+            }
+            if (card.Cost == -1)
             {
                 Energy = 0;
             }

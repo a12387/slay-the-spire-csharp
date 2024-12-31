@@ -26,6 +26,11 @@ namespace SlayTheSpire.UI
             InitializeComponent();
             player.CurrentHealthChanged += this.playerInfo.SetCurrentHealth;
             player.MaxHealthChanged += this.playerInfo.SetMaxHealth;
+            player.Die += () =>
+            {
+                var deathScene = new DeathScene();
+                ChangePage(deathScene);
+            };
             playerInfo.MapIconClicked += this.MapIcon_Click;
             playerInfo.DeckIconClicked += this.DeckIcon_Click;
             map = new GameMap();

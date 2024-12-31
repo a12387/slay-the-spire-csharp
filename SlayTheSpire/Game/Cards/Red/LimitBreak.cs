@@ -25,7 +25,11 @@ namespace SlayTheSpire.Game.Cards.Red
         {
             for(int i=0;i<user.BuffList.Count; i++)
             {
-                user.BuffList[i].OnLimitBreak();
+                var buff = user.BuffList[i];
+                if(buff.Name == "Strength")
+                {
+                    user.ApplyPower(buff);
+                }
             }
         }
     }
