@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Dazed : AbstractCard
     {
         static public Dazed Instance { get; } = new Dazed();
-        public Dazed() : base("Dazed", 1000, CardColor.Colorless, CardRarity.Special, CardTarget.None, CardType.Status)
+        public Dazed() : base("晕眩", "Dazed", 1000, CardColor.Colorless, CardRarity.Special, CardTarget.None, CardType.Status)
         {
             IsRetain = false;
             IsInnate = false;

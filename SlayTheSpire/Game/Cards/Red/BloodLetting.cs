@@ -9,7 +9,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class BloodLetting : AbstractCard
     {
         static public BloodLetting Instance { get; } = new BloodLetting();
-        public BloodLetting() : base("BloodLetting", 0, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        public BloodLetting() : base("放血", "BloodLetting", 0, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

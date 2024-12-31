@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Exhume : AbstractCard
     {
         static public Exhume Instance { get; } = new Exhume();
-        public Exhume() : base("Exhume", 0, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Skill)
+        public Exhume() : base("发掘", "Exhume", 0, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

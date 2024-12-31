@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class SecondWind : AbstractCard
     {
         static public SecondWind Instance { get; } = new SecondWind();
-        public SecondWind() : base("SecondWind", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        public SecondWind() : base("重振精神", "SecondWind", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

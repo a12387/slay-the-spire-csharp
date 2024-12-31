@@ -40,6 +40,7 @@ namespace SlayTheSpire.Game
     internal abstract class AbstractCard
     {
         public string Name { get; }
+        public string Id { get; }
         public int Cost { set; get; }
         public CardColor Color { get; }
         public CardRarity Rarity { get; }
@@ -75,9 +76,10 @@ namespace SlayTheSpire.Game
                 }
             }
         }
-        protected AbstractCard(string name, int cost, CardColor color, CardRarity rarity, CardTarget target, CardType type)
+        protected AbstractCard(string name, string id, int cost, CardColor color, CardRarity rarity, CardTarget target, CardType type)
         {
             Name = name;
+            Id = id;
             Cost = cost;
             Color = color;
             Rarity = rarity;

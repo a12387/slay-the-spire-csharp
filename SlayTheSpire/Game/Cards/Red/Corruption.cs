@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Corruption : AbstractCard
     {
         static public Corruption Instance { get; } = new Corruption();
-        public Corruption() : base("Corruption", 2, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Power)
+        public Corruption() : base("腐化", "Corruption", 2, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Power)
         {
             IsRetain = false;
             IsInnate = false;

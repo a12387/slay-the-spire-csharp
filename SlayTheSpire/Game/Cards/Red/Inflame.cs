@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Inflame : AbstractCard
     {
         static public Inflame Instance { get; } = new Inflame();
-        public Inflame() : base("Inflame", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Power)
+        public Inflame() : base("燃烧", "Inflame", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Power)
         {
             IsRetain = false;
             IsInnate = false;

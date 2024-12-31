@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Bash : AbstractCard
     {
         static public Bash Instance { get; } = new Bash();
-        public Bash() : base("Bash", 2, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
+        public Bash() : base("痛击", "Bash", 2, CardColor.Red, CardRarity.Basic, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;

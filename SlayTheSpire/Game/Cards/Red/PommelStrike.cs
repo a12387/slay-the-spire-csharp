@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class PommelStrike : AbstractCard
     {
         static public PommelStrike Instance { get; } = new PommelStrike();
-        public PommelStrike() : base("PommelStrike", 1, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
+        public PommelStrike() : base("剑柄打击", "PommelStrike", 1, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;

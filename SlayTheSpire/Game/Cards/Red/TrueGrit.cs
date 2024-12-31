@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class TrueGrit : AbstractCard
     {
         static public TrueGrit Instance { get; } = new TrueGrit();
-        public TrueGrit() : base("TrueGrit", 1, CardColor.Red, CardRarity.Common, CardTarget.Self, CardType.Skill)
+        public TrueGrit() : base("坚毅", "TrueGrit", 1, CardColor.Red, CardRarity.Common, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

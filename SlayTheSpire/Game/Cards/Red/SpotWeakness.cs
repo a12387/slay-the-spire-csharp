@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class SpotWeakness : AbstractCard
     {
         static public SpotWeakness Instance { get; } = new SpotWeakness();
-        public SpotWeakness() : base("SpotWeakness", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Enemy, CardType.Skill)
+        public SpotWeakness() : base("观察弱点", "SpotWeakness", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Enemy, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

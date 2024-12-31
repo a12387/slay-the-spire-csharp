@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class DemonForm : AbstractCard
     {
         static public DemonForm Instance { get; } = new DemonForm();
-        public DemonForm() : base("DemonForm", 3, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Power)
+        public DemonForm() : base("恶魔形态", "DemonForm", 3, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Power)
         {
             IsRetain = false;
             IsInnate = false;

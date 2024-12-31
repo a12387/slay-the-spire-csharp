@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Entrench : AbstractCard
     {
         static public Entrench Instance { get; } = new Entrench();
-        public Entrench() : base("Entrench", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        public Entrench() : base("巩固", "Entrench", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

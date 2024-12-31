@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class PowerThrough : AbstractCard
     {
         static public PowerThrough Instance { get; } = new PowerThrough();
-        public PowerThrough() : base("PowerThrough", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        public PowerThrough() : base("硬撑", "PowerThrough", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

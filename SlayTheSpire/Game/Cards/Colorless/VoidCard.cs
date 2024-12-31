@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class VoidCard : AbstractCard
     {
         static public VoidCard Instance { get; } = new VoidCard();
-        public VoidCard() : base("Void", 1000, CardColor.Colorless, CardRarity.Special, CardTarget.None, CardType.Status)
+        public VoidCard() : base("虚空", "Void", 1000, CardColor.Colorless, CardRarity.Special, CardTarget.None, CardType.Status)
         {
             IsRetain = false;
             IsInnate = false;

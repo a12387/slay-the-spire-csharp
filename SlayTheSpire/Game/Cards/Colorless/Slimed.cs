@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Slimed : AbstractCard
     {
         static public Slimed Instance { get; } = new Slimed();
-        public Slimed() : base("Slimed", 1, CardColor.Colorless, CardRarity.Special, CardTarget.None, CardType.Status)
+        public Slimed() : base("粘液", "Slimed", 1, CardColor.Colorless, CardRarity.Special, CardTarget.None, CardType.Status)
         {
             IsRetain = false;
             IsInnate = false;

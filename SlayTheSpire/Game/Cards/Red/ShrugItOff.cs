@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class ShrugItOff : AbstractCard
     {
         static public ShrugItOff Instance { get; } = new ShrugItOff();
-        public ShrugItOff() : base("ShrugItOff", 1, CardColor.Red, CardRarity.Common, CardTarget.Self, CardType.Skill)
+        public ShrugItOff() : base("耸肩无视", "ShrugItOff", 1, CardColor.Red, CardRarity.Common, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

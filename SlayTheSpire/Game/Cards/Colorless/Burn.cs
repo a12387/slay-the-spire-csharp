@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Burn : AbstractCard
     {
         static public Burn Instance { get; } = new Burn();
-        public Burn() : base("Burn", 1000, CardColor.Colorless, CardRarity.Special, CardTarget.None, CardType.Status)
+        public Burn() : base("灼伤", "Burn", 1000, CardColor.Colorless, CardRarity.Special, CardTarget.None, CardType.Status)
         {
             IsRetain = false;
             IsInnate = false;

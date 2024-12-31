@@ -9,7 +9,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Bludgeon : AbstractCard
     {
         static public Bludgeon Instance { get; } = new Bludgeon();
-        public Bludgeon() : base("Bludgeon", 3, CardColor.Red, CardRarity.Rare, CardTarget.Enemy, CardType.Attack)
+        public Bludgeon() : base("重锤", "Bludgeon", 3, CardColor.Red, CardRarity.Rare, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;

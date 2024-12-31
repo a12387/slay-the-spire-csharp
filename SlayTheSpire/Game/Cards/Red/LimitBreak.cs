@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class LimitBreak : AbstractCard
     {
         static public LimitBreak Instance { get; } = new LimitBreak();
-        public LimitBreak() : base("LimitBreak", 1, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Skill)
+        public LimitBreak() : base("突破极限", "LimitBreak", 1, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

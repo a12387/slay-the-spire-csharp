@@ -9,7 +9,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class BodySlam : AbstractCard
     {
         static public BodySlam Instance { get; } = new BodySlam();
-        public BodySlam() : base("BodySlam", 0, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
+        public BodySlam() : base("全身撞击", "BodySlam", 0, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;

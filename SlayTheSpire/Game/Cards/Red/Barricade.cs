@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Barricade : AbstractCard
     {
         static public Barricade Instance { get; } = new Barricade();
-        public Barricade() : base("Barricade", 2, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Power)
+        public Barricade() : base("壁垒", "Barricade", 2, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Power)
         {
             IsRetain = false;
             IsInnate = false;

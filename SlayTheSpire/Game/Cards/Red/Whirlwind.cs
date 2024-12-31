@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Whirlwind : AbstractCard
     {
         static public Whirlwind Instance { get; } = new Whirlwind();
-        public Whirlwind() : base("Whirlwind", -1, CardColor.Red, CardRarity.Uncommon, CardTarget.AllEnemies, CardType.Attack)
+        public Whirlwind() : base("旋风斩", "Whirlwind", -1, CardColor.Red, CardRarity.Uncommon, CardTarget.AllEnemies, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;

@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Clothesline : AbstractCard
     {
         static public Clothesline Instance { get; } = new Clothesline();
-        public Clothesline() : base("Clothesline", 2, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
+        public Clothesline() : base("金刚臂", "Clothesline", 2, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;

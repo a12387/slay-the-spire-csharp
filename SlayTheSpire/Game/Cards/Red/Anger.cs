@@ -9,7 +9,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Anger : AbstractCard
     {
         static public Anger Instance { get; } = new Anger();
-        public Anger() : base("Anger", 0, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
+        public Anger() : base("愤怒", "Anger", 0, CardColor.Red, CardRarity.Common, CardTarget.Enemy, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;

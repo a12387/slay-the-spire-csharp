@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class DarkEmbrace : AbstractCard
     {
         static public DarkEmbrace Instance { get; } = new DarkEmbrace();
-        public DarkEmbrace() : base("DarkEmbrace", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Power)
+        public DarkEmbrace() : base("黑暗之拥", "DarkEmbrace", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Power)
         {
             IsRetain = false;
             IsInnate = false;

@@ -9,7 +9,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Cleave : AbstractCard
     {
         static public Cleave Instance { get; } = new Cleave();
-        public Cleave() : base("Cleave", 1, CardColor.Red, CardRarity.Common, CardTarget.AllEnemies, CardType.Attack)
+        public Cleave() : base("顺劈斩", "Cleave", 1, CardColor.Red, CardRarity.Common, CardTarget.AllEnemies, CardType.Attack)
         {
             IsRetain = false;
             IsInnate = false;

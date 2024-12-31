@@ -86,7 +86,7 @@ namespace SlayTheSpire
         }
         private void SetImage(PaintEventArgs e)
         {
-            e.Graphics.DrawImage(CardLibrary.GetCardImage(Card.Name), 18 * ScaleX, 36 * ScaleY, 240 * ScaleX, 183 * ScaleY);
+            e.Graphics.DrawImage(CardLibrary.GetCardImage(Card.Id), 18 * ScaleX, 36 * ScaleY, 240 * ScaleX, 183 * ScaleY);
         }
         private void SetFrame(PaintEventArgs e)
         {
@@ -150,7 +150,7 @@ namespace SlayTheSpire
         }
         private void SetName(PaintEventArgs e)
         {
-            Font stringFont = new Font("Arial", 15);
+            Font stringFont = new Font("Arial", 14);
             StringFormat stringFormat = new StringFormat();
             stringFormat.Alignment = StringAlignment.Center;
             e.Graphics.DrawString(Card.Name, stringFont, Brushes.Black, new RectangleF(0, 6 * ScaleY, 270 * ScaleX, 45 * ScaleY), stringFormat);

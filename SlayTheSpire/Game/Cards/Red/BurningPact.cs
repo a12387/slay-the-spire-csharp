@@ -9,7 +9,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class BurningPact : AbstractCard
     {
         static public BurningPact Instance { get; } = new BurningPact();
-        public BurningPact() : base("BurningPact", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        public BurningPact() : base("燃烧契约", "BurningPact", 1, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

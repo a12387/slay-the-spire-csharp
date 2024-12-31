@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class BattleTrance : AbstractCard
     {
         static public BattleTrance Instance { get; } = new BattleTrance();
-        public BattleTrance() : base("BattleTrance", 0, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
+        public BattleTrance() : base("战斗专注", "BattleTrance", 0, CardColor.Red, CardRarity.Uncommon, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;

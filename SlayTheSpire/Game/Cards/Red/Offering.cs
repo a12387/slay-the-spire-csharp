@@ -10,7 +10,7 @@ namespace SlayTheSpire.Game.Cards.Red
     internal class Offering : AbstractCard
     {
         static public Offering Instance { get; } = new Offering();
-        public Offering() : base("Offering", 0, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Skill)
+        public Offering() : base("祭品", "Offering", 0, CardColor.Red, CardRarity.Rare, CardTarget.Self, CardType.Skill)
         {
             IsRetain = false;
             IsInnate = false;
