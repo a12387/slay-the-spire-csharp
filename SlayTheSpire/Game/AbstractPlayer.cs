@@ -82,11 +82,8 @@ namespace SlayTheSpire.Game
             for(int i = 0; i < Hand.Count; i++)
             {
                 var card = Hand[i];
-                if (card.IsEthereal)
-                {
-                    ExhaustCard(card);
-                }
-                else if(!card.IsRetain)
+                card.OnTurnEnd(this);
+                if (!card.IsRetain)
                 {
                     DiscardPile.Add(card);
                     Hand.Remove(card);

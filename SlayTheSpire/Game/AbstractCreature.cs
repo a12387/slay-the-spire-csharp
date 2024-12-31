@@ -86,6 +86,7 @@ namespace SlayTheSpire.Game
             {
                 BuffList[i].OnAttack(ref amount, 2);
             }
+            if (amount < 0) return;
             target.Hurt(amount);
         }
         public void Hurt(int amount)
@@ -185,6 +186,11 @@ namespace SlayTheSpire.Game
                     BuffList[i].OnAppliedDebuff(ref amount);
                 }
                 power.Amount = amount;
+                if(power.Amount == 0)
+                {
+                    UpdateBuff();
+                    return;
+                }
             }
             int index = BuffList.FindIndex(pwr => pwr.Name.Equals(power.Name));
             if (index < 0)
@@ -205,7 +211,7 @@ namespace SlayTheSpire.Game
             {
                 BuffList[i].OnUpdate(this, ToRemove);
             }
-            BuffList.Except(ToRemove);
+            BuffList = BuffList.Except(ToRemove).ToList();
             BuffListChanged?.Invoke(buffList);
         }
         public virtual void BeforeBattle()

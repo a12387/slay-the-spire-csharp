@@ -17,7 +17,7 @@ namespace SlayTheSpire.Game.Powers
         }
         public override void OnTurnStart(ref bool loseblock, AbstractPlayer player)
         {
-            Amount = 0;
+            player.buffList.Remove(this);
         }
     }
 }

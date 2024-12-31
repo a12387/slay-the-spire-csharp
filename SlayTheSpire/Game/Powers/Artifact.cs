@@ -13,7 +13,7 @@ namespace SlayTheSpire.Game.Powers
         }
         public override void OnAppliedDebuff(ref int amount)
         {
-            this.Amount--;
+            Amount--;
             amount = 0;
         }
     }
