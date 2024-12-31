@@ -124,7 +124,6 @@ namespace SlayTheSpire.UI
                     break;
                 case 2:
                     battle = new Battle(Dungeon.Player, new List<AbstractMonster> { new CorruptHeart()}, 2);
-                    room = new BattleScene(battle);
                     break;
                 default:
                     throw new Exception();

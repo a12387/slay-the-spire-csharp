@@ -78,7 +78,6 @@
             labelExhaust.Name = "labelExhaust";
             labelExhaust.Size = new Size(120, 102);
             labelExhaust.TabIndex = 3;
-            labelExhaust.Text = "0";
             labelExhaust.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelHand

@@ -42,32 +42,36 @@
             // 
             // buttonTalk
             // 
+            buttonTalk.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
             buttonTalk.Location = new Point(84, 555);
             buttonTalk.Name = "buttonTalk";
             buttonTalk.Size = new Size(194, 47);
             buttonTalk.TabIndex = 0;
-            buttonTalk.Text = "Talk";
+            buttonTalk.Text = "对话";
             buttonTalk.UseVisualStyleBackColor = true;
             buttonTalk.Click += buttonTalk_Click;
             // 
             // buttonGetDeck
             // 
+            buttonGetDeck.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            buttonGetDeck.ForeColor = Color.Green;
             buttonGetDeck.Location = new Point(84, 555);
             buttonGetDeck.Name = "buttonGetDeck";
             buttonGetDeck.Size = new Size(194, 47);
             buttonGetDeck.TabIndex = 1;
-            buttonGetDeck.Text = "GetDeck";
+            buttonGetDeck.Text = "选择并获得15张牌";
             buttonGetDeck.UseVisualStyleBackColor = true;
             buttonGetDeck.Visible = false;
             buttonGetDeck.Click += buttonGetDeck_Click;
             // 
             // buttonLeave
             // 
+            buttonLeave.Font = new Font("Microsoft YaHei UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 134);
             buttonLeave.Location = new Point(84, 555);
             buttonLeave.Name = "buttonLeave";
             buttonLeave.Size = new Size(194, 47);
             buttonLeave.TabIndex = 2;
-            buttonLeave.Text = "Leave";
+            buttonLeave.Text = "前进";
             buttonLeave.UseVisualStyleBackColor = true;
             buttonLeave.Visible = false;
             buttonLeave.Click += StartJourney;

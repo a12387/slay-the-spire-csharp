@@ -38,7 +38,7 @@ namespace SlayTheSpire.Game.Cards.Red
             }
             for(int i = 0; i < cardsToExhaust.Count; i++)
             {
-                user.ExhaustCard(cardsToExhaust[i]);
+                user.ExhaustCards(cardsToExhaust);
             }
         }
     }

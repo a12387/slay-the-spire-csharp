@@ -156,6 +156,23 @@ namespace SlayTheSpire.Game
             }
             card.OnExhaust();
         }
+        public void ExhaustCards(List<AbstractCard> cards)
+        {
+            for(int i = 0; i < cards.Count; i++)
+            {
+                var card = cards[i];
+                DrawPile.Remove(card);
+                Hand.Remove(card);
+                DiscardPile.Remove(card);
+                ExhaustPile.Insert(0, card);
+                for (int j = 0; j < BuffList.Count; j++)
+                {
+                    BuffList[j].OnExhaustCard(this);
+                }
+                card.OnExhaust();
+            }
+            HandChanged?.Invoke(Hand);
+        }
         public void UseCard(AbstractCard card, AbstractCreature target)
         {
             for (int i = 0; i < BuffList.Count; i++)
