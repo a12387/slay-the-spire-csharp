@@ -28,5 +28,9 @@ namespace SlayTheSpire.Game.Cards.Red
         {
             player.LoseEnergy(BaseMagicNumber);
         }
+        public override void OnTurnEnd(AbstractPlayer player)
+        {
+            player.ExhaustCard(this);
+        }
     }
 }
