@@ -124,11 +124,18 @@ namespace SlayTheSpire
         }
         private void SetCost(PaintEventArgs e)
         {
-            if (Card.Rarity == CardRarity.Special)
+            if (Card.Rarity == CardRarity.Special && Card.Cost == 1000)
             {
                 return;
             }
-            e.Graphics.DrawImage(Properties.Resources.bg_energy, 0F, 0F, 48 * ScaleX, 48 * ScaleY);
+            if(Card.Color == CardColor.Red)
+            {
+                e.Graphics.DrawImage(Properties.Resources.bg_energy, 0F, 0F, 48 * ScaleX, 48 * ScaleY);
+            }
+            else
+            {
+                e.Graphics.DrawImage(Properties.Resources.bg_energy_colorless, 0F, 0F, 48 * ScaleX, 48 * ScaleY);
+            }
             Font stringFont = new Font("Arial", 16);
             StringFormat stringFormat = new StringFormat();
             stringFormat.Alignment = StringAlignment.Center;

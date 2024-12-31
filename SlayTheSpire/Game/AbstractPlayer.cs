@@ -72,6 +72,7 @@ namespace SlayTheSpire.Game
             }
             DrawCard(NumDrawCardsEachTurn);
             TurnStarted?.Invoke(Hand);
+            UpdateBuff();
         }
         public void TurnEnd()
         {

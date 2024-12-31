@@ -28,7 +28,7 @@ namespace SlayTheSpire.UI
             player.MaxHealthChanged += this.playerInfo.SetMaxHealth;
             player.Die += () =>
             {
-                var deathScene = new DeathScene();
+                var deathScene = new EndScene(false);
                 ChangePage(deathScene);
             };
             playerInfo.MapIconClicked += this.MapIcon_Click;
@@ -116,17 +116,21 @@ namespace SlayTheSpire.UI
         public void ChangeRoom(Object? sender, int floor)
         {
             BattleScene room;
+            Battle battle;
             switch (floor)
             {
                 case 1:
-                    room = new BattleScene(new Battle(Dungeon.Player, new List<AbstractMonster>() { new SpireShield(), new SpireSpear()}, 1));
+                    battle = new Battle(Dungeon.Player, new List<AbstractMonster>() { new SpireShield(), new SpireSpear()}, 1);
                     break;
                 case 2:
-                    room = new BattleScene(new Battle(Dungeon.Player, new List<AbstractMonster> { new CorruptHeart()}, 2));
+                    battle = new Battle(Dungeon.Player, new List<AbstractMonster> { new CorruptHeart()}, 2);
+                    room = new BattleScene(battle);
                     break;
                 default:
                     throw new Exception();
             }
+            room = new BattleScene(battle);
+            battle.Victory += room.BattleFinish;
             CloseMap();
             ChangePage(room);
         }

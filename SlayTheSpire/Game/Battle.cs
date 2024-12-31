@@ -13,6 +13,7 @@ namespace SlayTheSpire.Game
         public int CurrentFloor { get; }
         int round = 0;
 
+        public event Action Victory;
         public Battle(AbstractPlayer player, List<AbstractMonster> monsters, int currentFloor)
         {
             Player = player;
@@ -27,7 +28,14 @@ namespace SlayTheSpire.Game
             {
                 var monster = Monsters[i];
                 monster.BeforeBattle();
-                monster.Die += () => Monsters.Remove(monster);
+                monster.Die += () => 
+                {
+                    Monsters.Remove(monster);
+                    if(Monsters.Count == 0)
+                    {
+                        Victory?.Invoke();
+                    }
+                };
             }
             PlayerTurnStart();
 
@@ -36,7 +44,6 @@ namespace SlayTheSpire.Game
         public void PlayerTurnStart()
         {
             Player.TurnStart();
-            Player.UpdateBuff();
         }
         public void MonstersTurnStart()
         {

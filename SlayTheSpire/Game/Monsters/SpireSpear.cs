@@ -11,7 +11,7 @@ namespace SlayTheSpire.Game.Monsters
     internal class SpireSpear : AbstractMonster
     {
         MonsterIntent LastMove;
-        public SpireSpear() : base("Spire Spear", 10)
+        public SpireSpear() : base("Spire Spear", 160)
         {
             //CurrentBlock = 14;
         }

@@ -1,6 +1,6 @@
 ﻿namespace SlayTheSpire.UI
 {
-    partial class DeathScene
+    partial class EndScene
     {
         /// <summary> 
         /// 必需的设计器变量。
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            labelDied = new Label();
+            labelMessage = new Label();
             buttonReturn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -38,24 +38,24 @@
             // 
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = Properties.Resources.corpse;
-            pictureBox1.Location = new Point(440, 60);
+            pictureBox1.Location = new Point(440, 232);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(400, 500);
+            pictureBox1.Size = new Size(400, 328);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // labelDied
+            // labelMessage
             // 
-            labelDied.BackColor = Color.Transparent;
-            labelDied.Font = new Font("Microsoft YaHei UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 134);
-            labelDied.ForeColor = Color.Red;
-            labelDied.Location = new Point(440, 90);
-            labelDied.Name = "labelDied";
-            labelDied.Size = new Size(400, 200);
-            labelDied.TabIndex = 1;
-            labelDied.Text = "YOU DIED!";
-            labelDied.TextAlign = ContentAlignment.MiddleCenter;
+            labelMessage.BackColor = Color.Transparent;
+            labelMessage.Font = new Font("Microsoft YaHei UI", 48F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            labelMessage.ForeColor = Color.Red;
+            labelMessage.Location = new Point(440, 29);
+            labelMessage.Name = "labelMessage";
+            labelMessage.Size = new Size(400, 200);
+            labelMessage.TabIndex = 1;
+            labelMessage.Text = "YOU DIED!";
+            labelMessage.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // buttonReturn
             // 
@@ -68,16 +68,16 @@
             buttonReturn.UseVisualStyleBackColor = true;
             buttonReturn.Click += buttonReturn_Click;
             // 
-            // DeathScene
+            // EndScene
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.scene;
             BackgroundImageLayout = ImageLayout.Stretch;
             Controls.Add(buttonReturn);
-            Controls.Add(labelDied);
+            Controls.Add(labelMessage);
             Controls.Add(pictureBox1);
-            Name = "DeathScene";
+            Name = "EndScene";
             Size = new Size(1280, 720);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -86,7 +86,7 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Label labelDied;
+        private Label labelMessage;
         private Button buttonReturn;
     }
 }

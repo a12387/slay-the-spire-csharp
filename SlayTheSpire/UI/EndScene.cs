@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace SlayTheSpire.UI
 {
-    public partial class DeathScene : UserControl
+    public partial class EndScene : UserControl
     {
-        public DeathScene()
+        public EndScene(bool victory)
         {
             InitializeComponent();
+            if (victory)
+            {
+                pictureBox1.Image = Properties.Resources.ironclad;
+                labelMessage.Text = "YOU WIN!";
+            }
         }
 
         private void buttonReturn_Click(object sender, EventArgs e)

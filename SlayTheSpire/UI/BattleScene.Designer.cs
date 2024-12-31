@@ -32,6 +32,7 @@
             panelLeft = new Panel();
             panelRight = new Panel();
             panelMiddle = new Panel();
+            buttonContinue = new Button();
             SuspendLayout();
             // 
             // operationArea
@@ -66,12 +67,26 @@
             panelMiddle.Size = new Size(250, 310);
             panelMiddle.TabIndex = 3;
             // 
+            // buttonContinue
+            // 
+            buttonContinue.Font = new Font("Microsoft YaHei UI", 16F, FontStyle.Regular, GraphicsUnit.Point, 134);
+            buttonContinue.ForeColor = SystemColors.ControlText;
+            buttonContinue.Location = new Point(1166, 339);
+            buttonContinue.Name = "buttonContinue";
+            buttonContinue.Size = new Size(111, 61);
+            buttonContinue.TabIndex = 4;
+            buttonContinue.Text = "前进";
+            buttonContinue.UseVisualStyleBackColor = true;
+            buttonContinue.Visible = false;
+            buttonContinue.Click += buttonContinue_Click;
+            // 
             // BattleScene
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.scene;
             BackgroundImageLayout = ImageLayout.Stretch;
+            Controls.Add(buttonContinue);
             Controls.Add(operationArea);
             Controls.Add(panelMiddle);
             Controls.Add(panelRight);
@@ -86,5 +101,6 @@
         private Panel panelLeft;
         private Panel panelRight;
         private Panel panelMiddle;
+        private Button buttonContinue;
     }
 }

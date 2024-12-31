@@ -142,6 +142,24 @@ namespace SlayTheSpire.UI
             Controls.Remove(Pile);
             Pile.Dispose();
         }
-        
+
+        public void BattleFinish()
+        {
+            buttonContinue.Visible = true;
+            operationArea.Dispose();
+        }
+
+        private void buttonContinue_Click(object sender, EventArgs e)
+        {
+            if(Battle.CurrentFloor != 2)
+            {
+                Room.Instance.ShowMap();
+            }
+            else
+            {
+                var victoryScene = new EndScene(true);
+                Room.Instance.ChangePage(victoryScene);
+            }
+        }
     }
 }
